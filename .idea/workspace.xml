@@ -4,17 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c126f68-9797-4c9d-b0fd-12a00a6ed4b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/database.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/DemoApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/test/java/com/example/demo/DemoApplicationTests.java" afterDir="false" />
+    <list default="true" id="0c61c06e-1bf9-4567-aac2-0e9ce8d85ec1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/PetWedd.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/com/example/demo/DemoApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,10 +31,18 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
-  <component name="ProjectId" id="2VKsZkfDVFE10qCxQeQ9mOsWy9i" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2VKyDTpa5oTGts20szdVKngqgMM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -40,7 +52,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
+    "spring.configuration.checksum": "fe01ce2a7fbac8fafaed7c982a04e229",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -56,12 +69,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8c126f68-9797-4c9d-b0fd-12a00a6ed4b1" name="Changes" comment="" />
-      <created>1694596163633</created>
+      <changelist id="0c61c06e-1bf9-4567-aac2-0e9ce8d85ec1" name="Changes" comment="" />
+      <created>1694598948931</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1694596163633</updated>
-      <workItem from="1694596164846" duration="291000" />
+      <updated>1694598948931</updated>
+      <workItem from="1694598951677" duration="76000" />
+      <workItem from="1694599052818" duration="37000" />
     </task>
     <servers />
   </component>
