@@ -136,44 +136,6 @@ public class Usser {
         this.bio = bio;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Usser usser = (Usser) o;
-
-        if (id != usser.id) return false;
-        if (familyName != null ? !familyName.equals(usser.familyName) : usser.familyName != null) return false;
-        if (surname != null ? !surname.equals(usser.surname) : usser.surname != null) return false;
-        if (email != null ? !email.equals(usser.email) : usser.email != null) return false;
-        if (pasword != null ? !pasword.equals(usser.pasword) : usser.pasword != null) return false;
-        if (city != null ? !city.equals(usser.city) : usser.city != null) return false;
-        if (region != null ? !region.equals(usser.region) : usser.region != null) return false;
-        if (gender != null ? !gender.equals(usser.gender) : usser.gender != null) return false;
-        if (birthDate != null ? !birthDate.equals(usser.birthDate) : usser.birthDate != null) return false;
-        if (registrationDate != null ? !registrationDate.equals(usser.registrationDate) : usser.registrationDate != null)
-            return false;
-        if (bio != null ? !bio.equals(usser.bio) : usser.bio != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (familyName != null ? familyName.hashCode() : 0);
-        result = 31 * result + (surname != null ? surname.hashCode() : 0);
-        result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + (pasword != null ? pasword.hashCode() : 0);
-        result = 31 * result + (city != null ? city.hashCode() : 0);
-        result = 31 * result + (region != null ? region.hashCode() : 0);
-        result = 31 * result + (gender != null ? gender.hashCode() : 0);
-        result = 31 * result + (birthDate != null ? birthDate.hashCode() : 0);
-        result = 31 * result + (registrationDate != null ? registrationDate.hashCode() : 0);
-        result = 31 * result + (bio != null ? bio.hashCode() : 0);
-        return result;
-    }
 
     public Collection<Messages> getMessagesById() {
         return messagesById;

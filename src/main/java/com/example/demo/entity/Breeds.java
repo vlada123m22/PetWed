@@ -46,28 +46,7 @@ public class Breeds {
         this.parentBreedId = parentBreedId;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
 
-        Breeds breeds = (Breeds) o;
-
-        if (id != breeds.id) return false;
-        if (breed != null ? !breed.equals(breeds.breed) : breeds.breed != null) return false;
-        if (parentBreedId != null ? !parentBreedId.equals(breeds.parentBreedId) : breeds.parentBreedId != null)
-            return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (breed != null ? breed.hashCode() : 0);
-        result = 31 * result + (parentBreedId != null ? parentBreedId.hashCode() : 0);
-        return result;
-    }
 
     public Breeds getBreedsByParentBreedId() {
         return breedsByParentBreedId;
