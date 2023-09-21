@@ -5,7 +5,10 @@ import com.example.demo.entity.*;
 
 import java.util.List;
 
-public interface AnimalRepository {
-    @Query("SELECT p  from  Pet p where p.category.id= :categoryId")
-    List<Pet> getByCategoryId(Long categoryId);
+public interface PetRepository {
+    @Query("SELECT p  from  Pet p where p.breedId= :categoryId")
+    List<Pet> getByBreedId(Long BreedId);
+    @Query("SELECT p  from  Pet p where p.userId= :categoryId")
+    Usser getByUserId(Long UserId);
+
 }
