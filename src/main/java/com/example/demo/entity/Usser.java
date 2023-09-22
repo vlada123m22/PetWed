@@ -41,12 +41,11 @@ public class Usser {
     @Basic
     @Column(name = "bio")
     private String bio;
-    @OneToMany(mappedBy = "usserByFromUserId")
-    private Collection<Messages> messagesById;
-    @OneToMany(mappedBy = "usserByToUserId")
-    private Collection<Messages> messagesById_0;
-    @OneToMany(mappedBy = "usserByUserId")
-    private Collection<Pet> petsById;
+    @Basic
+    @Column(name = "avatar_path")
+    private String avatarPath;
+
+
 
     public int getId() {
         return id;
@@ -136,28 +135,11 @@ public class Usser {
         this.bio = bio;
     }
 
-
-    public Collection<Messages> getMessagesById() {
-        return messagesById;
+    public String getAvatarPath() {
+        return avatarPath;
     }
 
-    public void setMessagesById(Collection<Messages> messagesById) {
-        this.messagesById = messagesById;
-    }
-
-    public Collection<Messages> getMessagesById_0() {
-        return messagesById_0;
-    }
-
-    public void setMessagesById_0(Collection<Messages> messagesById_0) {
-        this.messagesById_0 = messagesById_0;
-    }
-
-    public Collection<Pet> getPetsById() {
-        return petsById;
-    }
-
-    public void setPetsById(Collection<Pet> petsById) {
-        this.petsById = petsById;
+    public void setAvatarPath(String avatarPath) {
+        this.avatarPath = avatarPath;
     }
 }

@@ -14,13 +14,9 @@ public class Breeds {
     @Column(name = "breed")
     private String breed;
     @Basic
-    @Column(name = "parent_breed_id")
-    private Integer parentBreedId;
-    @ManyToOne
-    @JoinColumn(name = "parent_breed_id", referencedColumnName = "id")
-    private Breeds breedsByParentBreedId;
-    @OneToMany(mappedBy = "breedsByParentBreedId")
-    private Collection<Breeds> breedsById;
+    @Column(name = "species")
+    private String species;
+
 
     public int getId() {
         return id;
@@ -38,29 +34,11 @@ public class Breeds {
         this.breed = breed;
     }
 
-    public Integer getParentBreedId() {
-        return parentBreedId;
+    public String getSpecies() {
+        return species;
     }
 
-    public void setParentBreedId(Integer parentBreedId) {
-        this.parentBreedId = parentBreedId;
-    }
-
-
-
-    public Breeds getBreedsByParentBreedId() {
-        return breedsByParentBreedId;
-    }
-
-    public void setBreedsByParentBreedId(Breeds breedsByParentBreedId) {
-        this.breedsByParentBreedId = breedsByParentBreedId;
-    }
-
-    public Collection<Breeds> getBreedsById() {
-        return breedsById;
-    }
-
-    public void setBreedsById(Collection<Breeds> breedsById) {
-        this.breedsById = breedsById;
+    public void setSpecies(String species) {
+        this.species = species;
     }
 }

@@ -9,17 +9,19 @@ public class Matching {
     @Column(name = "id")
     private int id;
     @Basic
-    @Column(name = "from_pet_id")
-    private Integer fromPetId;
-    @Basic
-    @Column(name = "to_pet_id")
-    private Integer toPetId;
-    @Basic
     @Column(name = "like_value")
     private Byte likeValue;
     @Basic
     @Column(name = "seen")
     private Byte seen;
+
+    @ManyToOne
+    @JoinColumn(name = "from_pet_id", referencedColumnName = "id")
+    private Pet fromPet;
+
+    @ManyToOne
+    @JoinColumn(name = "to_pet_id", referencedColumnName = "id")
+    private Pet toPet;
 
     public int getId() {
         return id;
@@ -29,21 +31,6 @@ public class Matching {
         this.id = id;
     }
 
-    public Integer getFromPetId() {
-        return fromPetId;
-    }
-
-    public void setFromPetId(Integer fromPetId) {
-        this.fromPetId = fromPetId;
-    }
-
-    public Integer getToPetId() {
-        return toPetId;
-    }
-
-    public void setToPetId(Integer toPetId) {
-        this.toPetId = toPetId;
-    }
 
     public Byte getLikeValue() {
         return likeValue;
@@ -61,5 +48,19 @@ public class Matching {
         this.seen = seen;
     }
 
+    public Pet getFromPet() {
+        return fromPet;
+    }
 
+    public void setFromPet(Pet fromPet) {
+        this.fromPet = fromPet;
+    }
+
+    public Pet getToPet() {
+        return toPet;
+    }
+
+    public void setToPet(Pet toPet) {
+        this.toPet = toPet;
+    }
 }

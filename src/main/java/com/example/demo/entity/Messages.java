@@ -11,12 +11,6 @@ public class Messages {
     @Column(name = "id")
     private int id;
     @Basic
-    @Column(name = "from_user_id")
-    private Integer fromUserId;
-    @Basic
-    @Column(name = "to_user_id")
-    private Integer toUserId;
-    @Basic
     @Column(name = "message")
     private String message;
     @Basic
@@ -26,6 +20,14 @@ public class Messages {
     @Column(name = "when_sent")
     private Timestamp whenSent;
 
+    @ManyToOne
+    @JoinColumn(name = "from_user_id", referencedColumnName = "id")
+    private Usser fromUser;
+
+    @ManyToOne
+    @JoinColumn(name = "to_user_id", referencedColumnName = "id")
+    private Usser toUser;
+
     public int getId() {
         return id;
     }
@@ -34,20 +36,20 @@ public class Messages {
         this.id = id;
     }
 
-    public Integer getFromUserId() {
-        return fromUserId;
+    public Usser getFromUserId() {
+        return fromUser;
     }
 
-    public void setFromUserId(Integer fromUserId) {
-        this.fromUserId = fromUserId;
+    public void setFromUserId(Usser fromUserId) {
+        this.fromUser = fromUserId;
     }
 
-    public Integer getToUserId() {
-        return toUserId;
+    public Usser getToUserId() {
+        return toUser;
     }
 
-    public void setToUserId(Integer toUserId) {
-        this.toUserId = toUserId;
+    public void setToUserId(Usser toUserId) {
+        this.toUser = toUserId;
     }
 
     public String getMessage() {

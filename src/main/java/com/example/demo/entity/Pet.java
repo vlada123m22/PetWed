@@ -24,9 +24,6 @@ public class Pet {
     @Column(name = "gender")
     private String gender;
     @Basic
-    @Column(name = "breed_id")
-    private Integer breedId;
-    @Basic
     @Column(name = "birth_date")
     private Date birthDate;
     @Basic
@@ -35,16 +32,17 @@ public class Pet {
     @Basic
     @Column(name = "bio")
     private String bio;
+
     @Basic
-    @Column(name = "user_id")
-    private Integer userId;
-    @OneToMany(mappedBy = "petByFromPetId")
-    private Collection<Matching> matchingsById;
-    @OneToMany(mappedBy = "petByToPetId")
-    private Collection<Matching> matchingsById_0;
+    @Column(name="avatar_path")
+    private String avatarPath;
     @ManyToOne
     @JoinColumn(name = "breed_id", referencedColumnName = "id")
-    private Breeds breedsByBreedId;
+    private Breeds breed;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private Usser user;
 
     public int getId() {
         return id;
@@ -86,13 +84,6 @@ public class Pet {
         this.gender = gender;
     }
 
-    public Integer getBreedId() {
-        return breedId;
-    }
-
-    public void setBreedId(Integer breedId) {
-        this.breedId = breedId;
-    }
 
     public Date getBirthDate() {
         return birthDate;
@@ -118,36 +109,29 @@ public class Pet {
         this.bio = bio;
     }
 
-    public Integer getUserId() {
-        return userId;
+
+    public String getAvatarPath() {
+        return avatarPath;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setAvatarPath(String avatarPath) {
+        this.avatarPath = avatarPath;
     }
 
-
-    public Collection<Matching> getMatchingsById() {
-        return matchingsById;
+    public Breeds getBreed() {
+        return breed;
     }
 
-    public void setMatchingsById(Collection<Matching> matchingsById) {
-        this.matchingsById = matchingsById;
+    public void setBreed(Breeds breed) {
+        this.breed = breed;
+
     }
 
-    public Collection<Matching> getMatchingsById_0() {
-        return matchingsById_0;
+    public Usser getUser() {
+        return user;
     }
 
-    public void setMatchingsById_0(Collection<Matching> matchingsById_0) {
-        this.matchingsById_0 = matchingsById_0;
-    }
-
-    public Breeds getBreedsByBreedId() {
-        return breedsByBreedId;
-    }
-
-    public void setBreedsByBreedId(Breeds breedsByBreedId) {
-        this.breedsByBreedId = breedsByBreedId;
+    public void setUser(Usser user) {
+        this.user = user;
     }
 }
