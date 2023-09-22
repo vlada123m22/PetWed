@@ -1,0 +1,24 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+
+    <changeSet author="vmusin" id="8803282161765-3" labels="version-0.0.1">
+        <sql>
+            INSERT INTO petmate.pet (adding_date, birth_date, breed_id,id,  user_id, avatar_path, bio, city, gender, nickname,
+                                     region)
+            VALUES ('2023-09-22', '2023-05-02', null, 1,  null, 'img/English-Cocker-Spaniel-Slide03.jpg',
+                    'A wonderful girl with a wonderful color and mind', 'Chisinau', 'F', 'Rickie', 'Chisinau')
+--                    ('2023-09-22', '2022-05-05', null, 2,  null, 'img/German_Shepherd_-_DSC_0346_(10096362833).jpg',
+--                     'A wonderful guy with a wonderful color and mind', 'Chisinau', 'M', 'Rack', 'Chisinau'),
+--                    ('2023-09-22', '2022-03-05', null, 3, null, 'img/GettyImages-1198704735-69e2d11cba434cb28a3c9e6caae9d128.jpg',
+--                     'A wonderful guy with a wonderful color and mind', 'Chisinau', 'M', 'Gray', 'Chisinau'),
+--                    ('2023-09-22', '2022-10-05', null, 4,  null, 'img/Sphinx2_July_2006.jpg',
+--                     'A wonderful guy with a wonderful color and mind', 'Chisinau', 'F', 'Miauca', 'Chisinau'),
+--                    ('2023-09-22', '2022-10-05', null, 5, null, 'img/Sphinx2_July_2006.jpg',
+--                     'A wonderful guy with a wonderful color and mind', 'Chisinau', 'M', 'Juju', 'Chisinau'),
+
+        </sql>
+
+    </changeSet>
+</databaseChangeLog>

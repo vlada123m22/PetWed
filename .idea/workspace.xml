@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c61c06e-1bf9-4567-aac2-0e9ce8d85ec1" name="Changes" comment="Changing entities">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changes/data/add-pets.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/HomePageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repository/PetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repository/PetRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/PetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/PetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/PetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/PetServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/includes/home-body.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/includes/home-body.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.ftl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +117,7 @@
       <workItem from="1695290606925" duration="186000" />
       <workItem from="1695296244031" duration="2376000" />
       <workItem from="1695372464092" duration="9478000" />
-      <workItem from="1695396131388" duration="7515000" />
+      <workItem from="1695396131388" duration="11025000" />
     </task>
     <task id="LOCAL-00001" summary="Changing entities">
       <option name="closed" value="true" />
