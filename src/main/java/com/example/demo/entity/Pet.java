@@ -10,7 +10,7 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
-    private int id;
+    private Integer id;
     @Basic
     @Column(name = "nickname")
     private String nickname;
