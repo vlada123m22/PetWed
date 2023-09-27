@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c61c06e-1bf9-4567-aac2-0e9ce8d85ec1" name="Changes" comment="Changing entities">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/LoginPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/NewPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/includes/new-page-body.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/entity/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/entity/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repository/PetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repository/PetRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/controller/HomePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/includes/header-menu.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/includes/header-menu.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/includes/home-body.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/includes/home-body.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/includes/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/includes/login.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.ftl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,7 +60,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Requests",
+    "git-widget-placeholder": "HTML",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -123,6 +128,10 @@
       <workItem from="1695411600367" duration="1026000" />
       <workItem from="1695445753720" duration="111000" />
       <workItem from="1695624467318" duration="1522000" />
+      <workItem from="1695631265254" duration="43000" />
+      <workItem from="1695725446735" duration="778000" />
+      <workItem from="1695733791994" duration="4166000" />
+      <workItem from="1695816081311" duration="5947000" />
     </task>
     <task id="LOCAL-00001" summary="Changing entities">
       <option name="closed" value="true" />
