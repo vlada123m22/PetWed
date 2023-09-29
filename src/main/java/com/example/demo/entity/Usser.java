@@ -21,8 +21,8 @@ public class Usser {
     @Column(name = "email")
     private String email;
     @Basic
-    @Column(name = "pasword")
-    private String pasword;
+    @Column(name = "password")
+    private String password;
     @Basic
     @Column(name = "city")
     private String city;
@@ -79,12 +79,12 @@ public class Usser {
         this.email = email;
     }
 
-    public String getPasword() {
-        return pasword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasword(String pasword) {
-        this.pasword = pasword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getCity() {

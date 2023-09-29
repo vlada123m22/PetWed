@@ -16,13 +16,13 @@ public class HomePageController {
         this.petService = petService;
     }
 
-    @GetMapping("/home")
+    @GetMapping({"/","/home"})
     public String getHomePage(Model model){
-        List<Pet> allPets = petService.allPets();
-        model.addAttribute("pets", allPets);
-        model.addAttribute("pageContent", "home-body");
-        model.addAttribute("pageTitle", "Petwed");
+//        List<Pet> allPets = petService.allPets();
+//        model.addAttribute("pets", allPets);
+//        model.addAttribute("pageContent", "home-body");
+//        model.addAttribute("pageTitle", "Petwed");
 
-        return "layout";
+        return "home";
     }
 }

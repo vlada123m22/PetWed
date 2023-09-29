@@ -1,4 +1,4 @@
-<!-- Pills navs -->
+ <!-- Pills navs -->
 <style>
     .gradient-custom-2 {
         /* fallback for old browsers */
