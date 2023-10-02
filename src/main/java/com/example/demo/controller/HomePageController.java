@@ -16,7 +16,7 @@ public class HomePageController {
         this.petService = petService;
     }
 
-    @GetMapping({"/","/home"})
+    @GetMapping("/")
     public String getHomePage(Model model){
 //        List<Pet> allPets = petService.allPets();
 //        model.addAttribute("pets", allPets);

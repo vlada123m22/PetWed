@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.dto.AddNewUserRequestDTO;
 import com.example.demo.entity.Usser;
+import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Objects;
 
@@ -22,18 +24,19 @@ public class AuthentificationPageController {
     }
 
 
-    @GetMapping("/login")
+    @GetMapping(value = "/login.html")
     public String getLoginPage(Model model) {
         model.addAttribute("pageTitle", "Login");
         model.addAttribute("pageContent", "login");
-        return "layout";
+        return "authentication-layout";
     }
 
-    @GetMapping("/registration")
-    public String getRegistrationPage(Model model){
-        model.addAttribute("pageTitle", "Register");
+    @GetMapping(value = "/registration.html")
+    public String getRegistrationPage(Model model) {
+        model.addAttribute("pageTitle", "Registration Page");
         model.addAttribute("pageContent", "registration");
-        return "layout";
+
+        return "authentication-layout";
     }
 
     @PostMapping("/add-new-user")
@@ -43,6 +46,7 @@ public class AuthentificationPageController {
             newUser  =     userService.saveUser(registryRequest);
         }
         if(Objects.isNull(newUser) && Objects.nonNull(newUser.getId())){
+
             return ResponseEntity.ok("success");
 
         } else {

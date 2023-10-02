@@ -20,8 +20,8 @@
         <div href="/login" style="left: 10vw; right: 10vw; top: 865px; position: absolute; text-align: center; color: #453837; font-size: 60px; font-family: Cagliostro; font-weight: 400; word-wrap: break-word">Find Your Pet The Perfect Mate</div>
         <div style="width: 70vw; left: 15vw; right: 10vw; top: 993px; position: absolute; text-align: center; color: #453837; font-size: 29px; font-family: Cagliostro; font-weight: 400; word-wrap: break-word">Searching for the perfect mate for your cherished pets? Look no further! PetMate is the ultimate web application designed to help pet owners find the ideal companion for their precious furry friends. <br/>With PetMate, finding a suitable match for your pet has never been easier. Just create a profile for your adorable companion, mentioning their breed, age, and unique personality traits. Our intelligent algorithm will then analyze the database for compatible matches, ensuring we find your pet the perfect mate! </div>
 
-            <button href="/login" style="left: 237px; top: 1412px; position: absolute; text-align: center; color: #453837; font-size: 60px; font-family: Cagliostro; font-weight: 400; line-height: 87px; word-wrap: break-word">Log in</button>
-            <button href="/registration" style="left: 950px; top: 1404px; position: absolute; text-align: center; color: #453837; font-size: 60px; font-family: Cagliostro; font-weight: 400; line-height: 87px; word-wrap: break-word">Sign up</button>
+            <button href="/login.html" style="left: 237px; top: 1412px; position: absolute; text-align: center; color: #453837; font-size: 60px; font-family: Cagliostro; font-weight: 400; line-height: 87px; word-wrap: break-word">Log in</button>
+            <button href="/registration.html" style="left: 950px; top: 1404px; position: absolute; text-align: center; color: #453837; font-size: 60px; font-family: Cagliostro; font-weight: 400; line-height: 87px; word-wrap: break-word">Sign up</button>
     </div>
 </div>
 </main>
