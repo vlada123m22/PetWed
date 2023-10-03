@@ -10,45 +10,45 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
-    private long id;
-    @Basic
+    private Long id;
+   
     @Column(name = "nickname")
     private String nickname;
-    @Basic
+   
     @Column(name = "city")
     private String city;
-    @Basic
+   
     @Column(name = "region")
     private String region;
-    @Basic
+   
     @Column(name = "gender")
     private String gender;
-    @Basic
+   
     @Column(name = "birth_date")
     private Date birthDate;
-    @Basic
+   
     @Column(name = "adding_date")
     private Date addingDate;
-    @Basic
+   
     @Column(name = "bio")
     private String bio;
 
-    @Basic
+   
     @Column(name="avatar_path")
     private String avatarPath;
     @ManyToOne
-    @JoinColumn(name = "breed_id", referencedColumnName = "id")
+    @JoinColumn(name = "breed_id")
     private Breeds breed;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JoinColumn(name = "user_id")
     private Usser user;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

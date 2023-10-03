@@ -8,21 +8,20 @@ import java.util.Collection;
 public class Breeds {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id")
-    private long id;
-    @Basic
+    private Long id;
+    
     @Column(name = "breed")
     private String breed;
-    @Basic
+    
     @Column(name = "species")
     private String species;
 
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

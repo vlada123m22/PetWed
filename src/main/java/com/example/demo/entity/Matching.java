@@ -7,11 +7,11 @@ public class Matching {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
-    private long id;
-    @Basic
+    private Long id;
+    
     @Column(name = "like_value")
     private Byte likeValue;
-    @Basic
+    
     @Column(name = "seen")
     private Byte seen;
 
@@ -23,11 +23,11 @@ public class Matching {
     @JoinColumn(name = "to_pet_id", referencedColumnName = "id")
     private Pet toPet;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

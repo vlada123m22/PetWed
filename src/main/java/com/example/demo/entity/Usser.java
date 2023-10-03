@@ -9,49 +9,48 @@ import java.util.Collection;
 public class Usser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id")
-    private long id;
-    @Basic
+    private Long id;
+    
     @Column(name = "family_name")
     private String familyName;
-    @Basic
+    
     @Column(name = "surname")
     private String surname;
-    @Basic
+    
     @Column(name = "email")
     private String email;
-    @Basic
+    
     @Column(name = "password")
     private String password;
-    @Basic
+    
     @Column(name = "city")
     private String city;
-    @Basic
+    
     @Column(name = "region")
     private String region;
-    @Basic
+    
     @Column(name = "gender")
     private String gender;
-    @Basic
+    
     @Column(name = "birth_date")
     private Date birthDate;
-    @Basic
+    
     @Column(name = "registration_date")
     private Date registrationDate;
-    @Basic
+    
     @Column(name = "bio")
     private String bio;
-    @Basic
+    
     @Column(name = "avatar_path")
     private String avatarPath;
 
 
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -13,10 +13,10 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends CrudRepository<Usser, Long> {
-    @Query("SELECT EXISTS(SELECT u FROM Usser u WHERE u.email=:email)")
+    @Query("SELECT EXISTS(SELECT u FROM Usser u WHERE u.email= :email)")
     boolean checkEmailExists(String email);
-    @Query("SELECT u FROM Usser u WHERE u.id=:id")
+    @Query("SELECT u FROM Usser u WHERE u.id= :id")
     Usser getById(long id);
-    @Query("SELECT u FROM Usser u WHERE u.email=:email")
+    @Query("SELECT u FROM Usser u WHERE u.email= :email")
     Usser getByEmail(String email);
 }

@@ -8,31 +8,30 @@ import java.sql.Timestamp;
 public class Messages {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id")
-    private long id;
-    @Basic
+    private Long id;
+   
     @Column(name = "message")
     private String message;
-    @Basic
+   
     @Column(name = "message_seen")
     private Byte messageSeen;
-    @Basic
+   
     @Column(name = "when_sent")
     private Timestamp whenSent;
 
     @ManyToOne
-    @JoinColumn(name = "from_user_id", referencedColumnName = "id")
+    @JoinColumn(name = "from_user_id")
     private Usser fromUser;
 
     @ManyToOne
-    @JoinColumn(name = "to_user_id", referencedColumnName = "id")
+    @JoinColumn(name = "to_user_id")
     private Usser toUser;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
