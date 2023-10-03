@@ -10,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Objects;
 
@@ -39,13 +38,15 @@ public class AuthentificationPageController {
         return "authentication-layout";
     }
 
+
+    //TODO open user's profile after registration
     @PostMapping("/add-new-user")
     public ResponseEntity<String> addNewUser(@RequestBody AddNewUserRequestDTO registryRequest) {
         Usser newUser = null;
         if (Objects.nonNull(registryRequest) && (registryRequest.getPassword().equals(registryRequest.getPasswordForCheck()))) {
             newUser  =     userService.saveUser(registryRequest);
         }
-        if(Objects.isNull(newUser) && Objects.nonNull(newUser.getId())){
+        if(Objects.nonNull(newUser)){
 
             return ResponseEntity.ok("success");
 

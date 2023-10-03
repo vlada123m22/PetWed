@@ -10,9 +10,9 @@ import java.util.List;
 @Repository
 public interface PetRepository extends CrudRepository<Pet, Integer> {
     @Query("SELECT p  from  Pet p where p.breed.id= :breedId")
-    List<Pet> getByBreedId(Long breedId);
+    List<Pet> getPetsByBreedId(Long breedId);
     @Query("SELECT p  from  Pet p where p.user.id= :userId")
-    Usser getByUserId(Long userId);
+    Pet getPetsByUserId(Long userId);
 
     @Query("SELECT p from Pet p")
     List<Pet> allPets();

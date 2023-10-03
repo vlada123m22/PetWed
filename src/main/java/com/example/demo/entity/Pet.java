@@ -10,7 +10,7 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
-    private Integer id;
+    private long id;
     @Basic
     @Column(name = "nickname")
     private String nickname;
@@ -44,11 +44,11 @@ public class Pet {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private Usser user;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

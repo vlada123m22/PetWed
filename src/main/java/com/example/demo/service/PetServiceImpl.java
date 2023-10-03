@@ -12,25 +12,10 @@ public class PetServiceImpl implements PetService{
 
     public PetServiceImpl(PetRepository petRepository) {
         this.petRepository = petRepository;
-    } //Could not autowire. Why?
-
-    @Override
-    public Pet findById(Long petId) {
-        return null;
     }
 
     @Override
-    public void savePet(Pet pet) {
-
-    }
-
-    @Override
-    public void removePet(Integer petId) {
-
-    }
-
-    @Override
-    public List<Pet> getPetsByBreed(Long breedId) {
+    public List<Pet> getPetsByUser(Long userId) {
         return null;
     }
 

@@ -10,4 +10,6 @@ import java.util.List;
 
 public interface UserService {
     public Usser saveUser(AddNewUserRequestDTO addNewUserRequestDTO);
+    public long getUsserId(Usser usser);
+    public Usser getUsserById(long id);
 }
