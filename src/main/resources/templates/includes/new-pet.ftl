@@ -36,4 +36,4 @@
         </div>
     </div>
 </div>
-<script src="js/registration.js"></script>
+<script src="js/newPet.js"></script>
