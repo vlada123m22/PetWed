@@ -5,8 +5,7 @@
         fetch("http://localhost:8080/add-new-user", {
             method: "POST",
             headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-                'x-csrf-token': csrfToken
+                'Content-type': 'application/json; charset=UTF-8'
             },
             body: JSON.stringify(serializeForm(e.target))
         })
@@ -21,6 +20,15 @@
         })
         return obj;
     }
+
+    const button = document.querySelector('#submitButton');
+    button.addEventListener("click", (e)=> {
+        // document.getElementById("demo").innerHTML = "Account Created";
+        fetch("http://localhost:8080", {
+            method:"POST",
+            body:button
+        })
+    });
 })();
 
 

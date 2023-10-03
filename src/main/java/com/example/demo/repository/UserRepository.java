@@ -10,4 +10,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public interface UserRepository extends CrudRepository<Usser, Long> {
+    @Query("SELECT u FROM Usser u WHERE u.email=:email ")
+    Usser getUserByEmail(String email);
+
+    @Query("SELECT u.password FROM Usser u WHERE u.email=:email")
+    Usser getPasswordByEmail(String email);
+
+    @Query("SELECT EXISTS(SELECT u FROM Usser u WHERE u.email=:email)")
+    boolean checkEmailExists(String email);
 }

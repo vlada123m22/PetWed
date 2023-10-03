@@ -27,7 +27,7 @@
 <div class="album py-5 bg-body-tertiary">
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            <#list pets as pet>
+            <#list pets as  pet>
                 <div class="col">
                     <div class="card shadow-sm">
                         <img src="/${pet.avatarPath}" class="img-fluid d-placeholder-img card-img-top" alt="...">

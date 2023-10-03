@@ -12,7 +12,7 @@ public class CustomWebMvcConfigurer implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry
                 .addResourceHandler("/js/**", "/css/**", "/images/**")
-                .addResourceLocations("classpath:/static/img/","classpath:/static/js", "classpath:/static/css") //to change in dependence of resources path
+                .addResourceLocations("classpath:/static/img/","classpath:/static/js/", "classpath:/static/css/") //to change in dependence of resources path
 //                .setCachePeriod(3600)
                 .resourceChain(true)
                 .addResolver(new PathResourceResolver());

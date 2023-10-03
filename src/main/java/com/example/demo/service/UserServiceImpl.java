@@ -5,6 +5,8 @@ import com.example.demo.entity.Usser;
 import com.example.demo.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
+
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
@@ -20,6 +22,9 @@ public class UserServiceImpl implements UserService {
         newUser.setFamilyName(dto.getLastName());
         newUser.setPassword(dto.getPassword());
         newUser.setEmail(dto.getEmail());
+        newUser.setRegion(dto.getRegion());
+        newUser.setCity(dto.getCity());
+        newUser.setRegistrationDate(new Date(System.currentTimeMillis()));
         return userRepository.save(newUser);
     }
 
