@@ -1,6 +1,6 @@
 CREATE DATABASE petmate;
 use petmate;
-CREATE TABLE usser (
+CREATE TABLE user (
 id int auto_increment primary key,
 family_name varchar(50),
 surname varchar(50),
@@ -32,7 +32,7 @@ birth_date date,
 adding_date date,
 bio varchar(1000),
 user_id int,
-foreign key(user_id) references usser(id) on delete cascade on update cascade,
+foreign key(user_id) references user(id) on delete cascade on update cascade,
 foreign key (breed_id) references breeds(id) on delete cascade on update cascade
 );
 
@@ -43,8 +43,8 @@ to_user_id int,
 message varchar(2000),
 message_seen boolean default false,
 when_sent timestamp,
-foreign key(from_user_id) references usser(id) on update cascade on delete cascade,
-foreign key(to_user_id) references usser(id) on update cascade on delete cascade
+foreign key(from_user_id) references user(id) on update cascade on delete cascade,
+foreign key(to_user_id) references user(id) on update cascade on delete cascade
 );
 
 
