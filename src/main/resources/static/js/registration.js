@@ -1,21 +1,26 @@
 (function () {
-    const form = document.querySelector('#registrationForm');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        fetch("http://localhost:8080/add-new-user", {
-            method: "POST",
+    const url = 'http://localhost:8080/add-new-user'
+    let form = document.querySelector('#registrationForm');
+    let csrfToken = document.querySelector('[name="_csrf"]').content;
+    let csrfHeader = document.querySelector('[name="_csrf_header"]').content;
+    form.addEventListener('submit', function (event) {
+        // Prevent form from submitting to the server
+        event.preventDefault();
+        // Do some stuff...
+        fetch(url, {
+            method: 'POST',
             headers: {
-                'Content-type': 'application/json; charset=UTF-8'
+                'Content-type': 'application/json; charset=UTF-8',
+                'x-csrf-token': csrfToken
             },
-            body: JSON.stringify(serializeForm(e.target))
-        })
-            .then(res => res.json())
-            .then(res => console.log(res)
-            if(res.status=== 200){
-                document.location.href="http://localhost:8080/";
-            }
-            );
-    })
+            body: JSON.stringify(serializeForm(event.target))
+        }).then((response) => {
+            // do something with response here...
+            console.log(response.statusText);
+            //todo: need to redirect to login.html page
+        });
+    });
+
     function serializeForm(form) {
         let obj = {};
         let formData = new FormData(form);
@@ -24,16 +29,8 @@
         })
         return obj;
     }
-
-    const button = document.querySelector('#submitButton');
-    button.addEventListener("click", (e)=> {
-        // document.getElementById("demo").innerHTML = "Account Created";
-        fetch("http://localhost:8080", {
-            method:"POST",
-            body:button
-        })
-    });
 })();
+
 
 
 

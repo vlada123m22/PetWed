@@ -1,16 +1,17 @@
-package com.example.demo.service;
+package com.example.demo.service.implementation;
 
 import com.example.demo.dto.AddNewPetRequestDTO;
 import com.example.demo.entity.Breed;
 import com.example.demo.entity.Pet;
 import com.example.demo.repository.BreedRepository;
 import com.example.demo.repository.PetRepository;
+import com.example.demo.service.PetService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class PetServiceImpl implements PetService{
+public class PetServiceImpl implements PetService {
     private final PetRepository petRepository;
     private final BreedRepository breedRepository;
 
