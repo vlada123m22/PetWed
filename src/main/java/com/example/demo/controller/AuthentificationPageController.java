@@ -1,9 +1,9 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.AddNewUserRequestDTO;
-import com.example.demo.entity.Usser;
-import com.example.demo.repository.UserRepository;
+import com.example.demo.entity.User;
 import com.example.demo.service.UserService;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,7 +42,7 @@ public class AuthentificationPageController {
     //TODO open user's profile after registration
     @PostMapping("/add-new-user")
     public ResponseEntity<String> addNewUser(@RequestBody AddNewUserRequestDTO registryRequest) {
-        Usser newUser = null;
+        User newUser = null;
         if (Objects.nonNull(registryRequest) && (registryRequest.getPassword().equals(registryRequest.getPasswordForCheck()))) {
             newUser  =     userService.saveUser(registryRequest);
         }
@@ -51,7 +51,7 @@ public class AuthentificationPageController {
             return ResponseEntity.ok("success");
 
         } else {
-            return ResponseEntity.ok("fail");
+            return ResponseEntity.status(HttpStatusCode.valueOf(404)).build();
         }
 
     }

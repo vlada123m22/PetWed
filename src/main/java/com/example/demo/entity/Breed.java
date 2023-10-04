@@ -2,10 +2,9 @@ package com.example.demo.entity;
 
 import jakarta.persistence.*;
 
-import java.util.Collection;
-
 @Entity
-public class Breeds {
+@Table(name="breeds")
+public class Breed {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;

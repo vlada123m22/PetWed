@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.dto.AddNewUserRequestDTO;
-import com.example.demo.entity.Usser;
+import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +16,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Usser saveUser(AddNewUserRequestDTO dto) {
-        Usser newUser = new Usser();
+    public User saveUser(AddNewUserRequestDTO dto) {
+        User newUser = new User();
         if(!userRepository.checkEmailExists(dto.getEmail())) {
             newUser.setSurname(dto.getFirstName());
             newUser.setFamilyName(dto.getLastName());
@@ -32,17 +32,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public long getUsserId(Usser usser) {
-        return usser.getId();
+    public long getUsserId(User user) {
+        return user.getId();
     }
 
     @Override
-    public Usser getUsserById(long id) {
+    public User getUsserById(long id) {
         return userRepository.getById(id);
     }
 
     @Override
-    public Usser getUserByEmail(String email) {
+    public User getUserByEmail(String email) {
         return userRepository.getByEmail(email);
     }
 

@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Pet;
-import com.example.demo.entity.Usser;
+import com.example.demo.entity.User;
 import com.example.demo.service.PetService;
 import com.example.demo.service.UserService;
 import org.springframework.stereotype.Controller;
@@ -24,7 +24,7 @@ public class UserPageController {
 
     @GetMapping("/profile")
     public String getProfilePage(Model model) {
-        Usser user = userService.getUsserById(1); //TODO user = userul care s-a logat
+        User user = userService.getUsserById(1); //TODO user = userul care s-a logat
         List<Pet> pets = petService.getPetsByUser(user.getId());
         model.addAttribute("pets", pets);
         model.addAttribute("firstName", user.getSurname());

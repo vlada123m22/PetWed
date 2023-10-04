@@ -10,7 +10,11 @@
             body: JSON.stringify(serializeForm(e.target))
         })
             .then(res => res.json())
-            .then(res => console.log(res));
+            .then(res => console.log(res)
+            if(res.status=== 200){
+                document.location.href="http://localhost:8080/";
+            }
+            );
     })
     function serializeForm(form) {
         let obj = {};

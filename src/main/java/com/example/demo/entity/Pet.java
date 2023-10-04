@@ -3,12 +3,13 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 
 import java.sql.Date;
-import java.util.Collection;
 
 @Entity
+@Table(name="pets")
 public class Pet {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
    
@@ -38,11 +39,11 @@ public class Pet {
     private String avatarPath;
     @ManyToOne
     @JoinColumn(name = "breed_id")
-    private Breeds breed;
+    private Breed breed;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private Usser user;
+    private User user;
 
     public Long getId() {
         return id;
@@ -118,20 +119,20 @@ public class Pet {
         this.avatarPath = avatarPath;
     }
 
-    public Breeds getBreed() {
+    public Breed getBreed() {
         return breed;
     }
 
-    public void setBreed(Breeds breed) {
+    public void setBreed(Breed breed) {
         this.breed = breed;
 
     }
 
-    public Usser getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(Usser user) {
+    public void setUser(User user) {
         this.user = user;
     }
 }

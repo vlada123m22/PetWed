@@ -5,7 +5,8 @@ import jakarta.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-public class Messages {
+@Table(name="messages")
+public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
@@ -21,11 +22,11 @@ public class Messages {
 
     @ManyToOne
     @JoinColumn(name = "from_user_id")
-    private Usser fromUser;
+    private User fromUser;
 
     @ManyToOne
     @JoinColumn(name = "to_user_id")
-    private Usser toUser;
+    private User toUser;
 
     public Long getId() {
         return id;
@@ -35,19 +36,19 @@ public class Messages {
         this.id = id;
     }
 
-    public Usser getFromUserId() {
+    public User getFromUserId() {
         return fromUser;
     }
 
-    public void setFromUserId(Usser fromUserId) {
+    public void setFromUserId(User fromUserId) {
         this.fromUser = fromUserId;
     }
 
-    public Usser getToUserId() {
+    public User getToUserId() {
         return toUser;
     }
 
-    public void setToUserId(Usser toUserId) {
+    public void setToUserId(User toUserId) {
         this.toUser = toUserId;
     }
 

@@ -3,10 +3,10 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 
 import java.sql.Date;
-import java.util.Collection;
 
 @Entity
-public class Usser {
+@Table(name="users")
+public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
