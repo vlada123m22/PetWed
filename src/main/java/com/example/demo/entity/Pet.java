@@ -3,54 +3,53 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 
 import java.sql.Date;
-import java.util.Collection;
 
 @Entity
+@Table(name="pets")
 public class Pet {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
-    @Basic
+    private Long id;
+   
     @Column(name = "nickname")
     private String nickname;
-    @Basic
+   
     @Column(name = "city")
     private String city;
-    @Basic
+   
     @Column(name = "region")
     private String region;
-    @Basic
+   
     @Column(name = "gender")
     private String gender;
-    @Basic
-    @Column(name = "breed_id")
-    private Integer breedId;
-    @Basic
+   
     @Column(name = "birth_date")
     private Date birthDate;
-    @Basic
+   
     @Column(name = "adding_date")
     private Date addingDate;
-    @Basic
+   
     @Column(name = "bio")
     private String bio;
-    @Basic
-    @Column(name = "user_id")
-    private Integer userId;
-    @OneToMany(mappedBy = "petByFromPetId")
-    private Collection<Matching> matchingsById;
-    @OneToMany(mappedBy = "petByToPetId")
-    private Collection<Matching> matchingsById_0;
-    @ManyToOne
-    @JoinColumn(name = "breed_id", referencedColumnName = "id")
-    private Breeds breedsByBreedId;
 
-    public int getId() {
+   
+    @Column(name="avatar_path")
+    private String avatarPath;
+    @ManyToOne
+    @JoinColumn(name = "breed_id")
+    private Breed breed;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -86,13 +85,6 @@ public class Pet {
         this.gender = gender;
     }
 
-    public Integer getBreedId() {
-        return breedId;
-    }
-
-    public void setBreedId(Integer breedId) {
-        this.breedId = breedId;
-    }
 
     public Date getBirthDate() {
         return birthDate;
@@ -118,36 +110,29 @@ public class Pet {
         this.bio = bio;
     }
 
-    public Integer getUserId() {
-        return userId;
+
+    public String getAvatarPath() {
+        return avatarPath;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setAvatarPath(String avatarPath) {
+        this.avatarPath = avatarPath;
     }
 
-
-    public Collection<Matching> getMatchingsById() {
-        return matchingsById;
+    public Breed getBreed() {
+        return breed;
     }
 
-    public void setMatchingsById(Collection<Matching> matchingsById) {
-        this.matchingsById = matchingsById;
+    public void setBreed(Breed breed) {
+        this.breed = breed;
+
     }
 
-    public Collection<Matching> getMatchingsById_0() {
-        return matchingsById_0;
+    public User getUser() {
+        return user;
     }
 
-    public void setMatchingsById_0(Collection<Matching> matchingsById_0) {
-        this.matchingsById_0 = matchingsById_0;
-    }
-
-    public Breeds getBreedsByBreedId() {
-        return breedsByBreedId;
-    }
-
-    public void setBreedsByBreedId(Breeds breedsByBreedId) {
-        this.breedsByBreedId = breedsByBreedId;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -3,56 +3,54 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 
 import java.sql.Date;
-import java.util.Collection;
 
 @Entity
-public class Usser {
+@Table(name="users")
+public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id")
-    private int id;
-    @Basic
+    private Long id;
+    
     @Column(name = "family_name")
     private String familyName;
-    @Basic
+    
     @Column(name = "surname")
     private String surname;
-    @Basic
+    
     @Column(name = "email")
     private String email;
-    @Basic
-    @Column(name = "pasword")
-    private String pasword;
-    @Basic
+    
+    @Column(name = "password")
+    private String password;
+    
     @Column(name = "city")
     private String city;
-    @Basic
+    
     @Column(name = "region")
     private String region;
-    @Basic
+    
     @Column(name = "gender")
     private String gender;
-    @Basic
+    
     @Column(name = "birth_date")
     private Date birthDate;
-    @Basic
+    
     @Column(name = "registration_date")
     private Date registrationDate;
-    @Basic
+    
     @Column(name = "bio")
     private String bio;
-    @OneToMany(mappedBy = "usserByFromUserId")
-    private Collection<Messages> messagesById;
-    @OneToMany(mappedBy = "usserByToUserId")
-    private Collection<Messages> messagesById_0;
-    @OneToMany(mappedBy = "usserByUserId")
-    private Collection<Pet> petsById;
+    
+    @Column(name = "avatar_path")
+    private String avatarPath;
 
-    public int getId() {
+
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -80,12 +78,12 @@ public class Usser {
         this.email = email;
     }
 
-    public String getPasword() {
-        return pasword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasword(String pasword) {
-        this.pasword = pasword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getCity() {
@@ -136,28 +134,11 @@ public class Usser {
         this.bio = bio;
     }
 
-
-    public Collection<Messages> getMessagesById() {
-        return messagesById;
+    public String getAvatarPath() {
+        return avatarPath;
     }
 
-    public void setMessagesById(Collection<Messages> messagesById) {
-        this.messagesById = messagesById;
-    }
-
-    public Collection<Messages> getMessagesById_0() {
-        return messagesById_0;
-    }
-
-    public void setMessagesById_0(Collection<Messages> messagesById_0) {
-        this.messagesById_0 = messagesById_0;
-    }
-
-    public Collection<Pet> getPetsById() {
-        return petsById;
-    }
-
-    public void setPetsById(Collection<Pet> petsById) {
-        this.petsById = petsById;
+    public void setAvatarPath(String avatarPath) {
+        this.avatarPath = avatarPath;
     }
 }
