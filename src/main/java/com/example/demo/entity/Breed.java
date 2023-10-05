@@ -11,10 +11,10 @@ public class Breed {
     
     @Column(name = "breed")
     private String breed;
-    
-    @ManyToOne
-    @JoinColumn(name = "species_id")
-    private Species species;
+
+
+    @Column(name="species")
+    private String species;
 
 
 
@@ -34,11 +34,11 @@ public class Breed {
         this.breed = breed;
     }
 
-    public Species getSpecies() {
+    public String getSpecies() {
         return species;
     }
 
-    public void setSpecies(Species species) {
+    public void setSpecies(String species) {
         this.species = species;
     }
 }
