@@ -4,6 +4,7 @@ import com.example.demo.entity.Pet;
 import com.example.demo.entity.User;
 import com.example.demo.service.PetService;
 import com.example.demo.service.UserService;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

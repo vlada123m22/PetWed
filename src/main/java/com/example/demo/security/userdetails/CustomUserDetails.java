@@ -1,5 +1,6 @@
 package com.example.demo.security.userdetails;
 
+import com.example.demo.entity.UserRole;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,19 +26,28 @@ public class CustomUserDetails implements UserDetails {
       Long id,
       String email,
       String password,
+      List<UserRole> roleList,
       Boolean enabled,
       String firstName,
       String lastName) {
     this.id = id;
     this.email = email;
     this.password = password;
+    this.authorities = mapAuthority(roleList);
     this.enabled = enabled;
     this.firstName = firstName;
     this.lastName = lastName;
   }
 
+  //TODO how to do that?
+  @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
     return authorities;
+  }
+  private Collection<? extends GrantedAuthority> mapAuthority(List<UserRole> roleNameList) {
+    return roleNameList.stream()
+            .map(role -> new SimpleGrantedAuthority(role.getRoleName().name()))
+            .collect(Collectors.toList());
   }
 
   @Override
@@ -74,11 +84,6 @@ public class CustomUserDetails implements UserDetails {
     return id;
   }
 
-//  private Collection<? extends GrantedAuthority> mapAuthority(List<UserRole> roleNameList) {
-//    return roleNameList.stream()
-//        .map(role -> new SimpleGrantedAuthority(role.getRoleName().name()))
-//        .collect(Collectors.toList());
-//  }
 
   public String getFirstName() {
     return firstName;

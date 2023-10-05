@@ -12,8 +12,10 @@ public class Breed {
     @Column(name = "breed")
     private String breed;
     
-    @Column(name = "species")
-    private String species;
+    @ManyToOne
+    @JoinColumn(name = "species_id")
+    private Species species;
+
 
 
     public Long getId() {
@@ -32,11 +34,11 @@ public class Breed {
         this.breed = breed;
     }
 
-    public String getSpecies() {
+    public Species getSpecies() {
         return species;
     }
 
-    public void setSpecies(String species) {
+    public void setSpecies(Species species) {
         this.species = species;
     }
 }

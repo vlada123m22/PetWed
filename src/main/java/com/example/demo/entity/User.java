@@ -44,6 +44,10 @@ public class User {
     @Column(name = "avatar_path")
     private String avatarPath;
 
+    @ManyToOne
+    @JoinColumn(name = "user_role_id")
+    private UserRole userRole;
+
 
 
     public Long getId() {
@@ -140,5 +144,13 @@ public class User {
 
     public void setAvatarPath(String avatarPath) {
         this.avatarPath = avatarPath;
+    }
+
+    public UserRole getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
     }
 }

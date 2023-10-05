@@ -1,11 +1,14 @@
 (function () {
     const form = document.querySelector('#registrationForm');
+    let csrfToken = document.querySelector('[name="_csrf"]').content;
+    let csrfHeader = document.querySelector('[name="_csrf_header"]').content;
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         fetch("http://localhost:8080/add-new-pet", {
             method: "POST",
             headers: {
-                'Content-type': 'application/json; charset=UTF-8'
+                'Content-type': 'application/json; charset=UTF-8',
+                'x-csrf-token': csrfToken
             },
             body: JSON.stringify(serializeForm(e.target))
         })

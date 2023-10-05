@@ -17,11 +17,11 @@ public class Matching {
     private Byte seen;
 
     @ManyToOne
-    @JoinColumn(name = "from_pet_id", referencedColumnName = "id")
+    @JoinColumn(name = "from_pet_id")
     private Pet fromPet;
 
     @ManyToOne
-    @JoinColumn(name = "to_pet_id", referencedColumnName = "id")
+    @JoinColumn(name = "to_pet_id")
     private Pet toPet;
 
     public Long getId() {
