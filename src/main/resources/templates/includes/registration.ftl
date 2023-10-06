@@ -30,7 +30,7 @@
                     <div class="mb-3">
                         <input id="file" type="file">
                     </div>
-                    <div id="submitButton" class="text-center"><button  type="submit" class="btn btn-primary px-5 mb-5 w-100"><a class="text-dark fw-bold">Create Account</a></button></div>
+                    <div id="submitButton" class="text-center"><a href="/"><button  type="submit" class="btn btn-primary px-5 mb-5 w-100">Create Account</button></a></div>
                     <div id="emailHelp" class="form-text mb-3 text-dark">
                         <div class="mb-2" >Go to login page ? <a href="/login" class="text-dark fw-bold">Login</a></div>
                         <div class="mb-2" >Forgot Password? <a href="/reset-password" class="text-dark fw-bold"> Reset Password</a></div>

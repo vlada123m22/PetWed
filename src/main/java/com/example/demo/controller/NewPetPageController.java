@@ -4,6 +4,7 @@ import com.example.demo.dto.AddNewPetRequestDTO;
 import com.example.demo.entity.Pet;
 import com.example.demo.service.PetService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,7 @@ public class NewPetPageController {
         this.petService = petService;
     }
 
+    @Secured("REGISTERED")
     @GetMapping("/new-pet")
     public String newPet(Model model){
         model.addAttribute("pageTitle", "New Pet");
@@ -28,6 +30,7 @@ public class NewPetPageController {
         return "authentication-layout";
     }
 
+    @Secured("REGISTERED")
     @PostMapping("/add-new-pet")
     public ResponseEntity<String> addNewUser(@RequestBody AddNewPetRequestDTO newPetRequest) {
         Pet newPet=null;

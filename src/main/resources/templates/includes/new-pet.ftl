@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <a href="/"><h2 class="text-center text-dark mt-5">Registration Form</h2></a>
+            <a href="/"><h2 class="text-center text-dark mt-5">Add new pet</h2></a>
             <div class="card my-5">
 
                 <#--                action="/add-new-user" method="post"-->
