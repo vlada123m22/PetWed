@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface PetService {
     public Pet savePet(AddNewPetRequestDTO addNewPetRequestDTO);
-    List<Pet> getPetsByUser(Long userId);
+    List<Pet> getPetsByUserId(Long userId);
     List <Pet> allPets();
 }

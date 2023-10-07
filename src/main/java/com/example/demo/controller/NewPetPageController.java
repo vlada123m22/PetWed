@@ -22,7 +22,7 @@ public class NewPetPageController {
         this.petService = petService;
     }
 
-    @Secured("REGISTERED")
+    //@Secured("REGISTERED")
     @GetMapping("/new-pet")
     public String newPet(Model model){
         model.addAttribute("pageTitle", "New Pet");
@@ -30,7 +30,7 @@ public class NewPetPageController {
         return "authentication-layout";
     }
 
-    @Secured("REGISTERED")
+    //@Secured("REGISTERED")
     @PostMapping("/add-new-pet")
     public ResponseEntity<String> addNewUser(@RequestBody AddNewPetRequestDTO newPetRequest) {
         Pet newPet=null;

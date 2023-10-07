@@ -17,5 +17,6 @@
                 </div>
             </div>
         </#list>
+        <a href="/new-pet">Add new pet</a>
     </div>
 </div>

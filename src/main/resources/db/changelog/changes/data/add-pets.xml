@@ -23,6 +23,9 @@
                                       user_id)
             VALUES (1, '2023-10-07', 'static/img/standard_puddel.jpg', 'A wonderful boy with a wonderful mind', '2023-07-02',
                     'Chisinau', 'M', 'Șarik', 'Chisinau', 3, 1);
+            INSERT INTO petmate.pets (adding_date, avatar_path, bio, birth_date, city, gender, nickname, region, breed_id, user_id)
+            VALUES ('2023-10-07', 'img/English-Cocker-Spaniel-Slide03.jpg', 'Hey boyyyyyyyyy', '2023-05-01', 'Chisinau', null,
+                    'Dolly', 'Chisinau', 3, 1);
         </sql>
 
     </changeSet>

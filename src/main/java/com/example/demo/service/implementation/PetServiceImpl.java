@@ -36,8 +36,8 @@ public class PetServiceImpl implements PetService {
     }
 
     @Override
-    public List<Pet> getPetsByUser(Long userId) {
-        return null;
+    public List<Pet> getPetsByUserId(Long userId) {
+        return petRepository.getPetsByUserId(userId);
     }
 
     @Override

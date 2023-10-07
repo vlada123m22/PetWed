@@ -17,7 +17,7 @@
 <main>
     <h3>${firstName}</h3>
     <h3>${lastName}</h3>
-    <a href="=/new-pet.html">Add new pet</a>
+    <a href="/new-pet.html">Add new pet</a>
 </main>
 <#--<foter>-->
 <#--    <#include "includes/footer.html">-->

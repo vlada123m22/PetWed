@@ -12,7 +12,7 @@ public interface PetRepository extends CrudRepository<Pet, Integer> {
     @Query("SELECT p  from  Pet p where p.breed.id= :breedId")
     List<Pet> getPetsByBreedId(Long breedId);
     @Query("SELECT p  from  Pet p where p.user.id= :userId")
-    Pet getPetsByUserId(Long userId);
+    List<Pet> getPetsByUserId(Long userId);
 
     @Query("SELECT p from Pet p")
     List<Pet> allPets();
