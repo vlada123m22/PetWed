@@ -1,8 +1,12 @@
 <div class = "container">
     <div class="row">
-        <h>${firstName}</h>
-        <h>${lastName}</h>
-        <img src="/${avatarPath}">
+        <div class="card shadow-sm">
+            <img src="/${user.avatarPath}" class="img-fluid d-placeholder-img card-img-top" alt="...">
+            <div class="card-body">
+                <h3 class="card-title">${user.firstName}</h3>
+                <h3 class="card-title">${user.lastName}</h3>
+            </div>
+        </div> 
         <#list pets as  pet>
             <div class="col">
                 <div class="card shadow-sm">

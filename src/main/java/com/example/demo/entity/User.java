@@ -11,11 +11,11 @@ public class User {
     @Id
     private Long id;
     
-    @Column(name = "family_name")
-    private String familyName;
+    @Column(name = "last_name")
+    private String lastName;
     
-    @Column(name = "surname")
-    private String surname;
+    @Column(name = "first_name")
+    private String firstName;
     
     @Column(name = "email")
     private String email;
@@ -58,20 +58,20 @@ public class User {
         this.id = id;
     }
 
-    public String getFamilyName() {
-        return familyName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setFamilyName(String familyName) {
-        this.familyName = familyName;
+    public void setLastName(String familyName) {
+        this.lastName = familyName;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setFirstName(String surname) {
+        this.firstName = surname;
     }
 
     public String getEmail() {

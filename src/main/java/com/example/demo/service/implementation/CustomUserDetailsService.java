@@ -32,7 +32,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         user.getPassword(),
             Arrays.asList(user.getUserRole()),
         true,
-        user.getSurname(),
-        user.getFamilyName());
+        user.getFirstName(),
+        user.getLastName());
   }
 }

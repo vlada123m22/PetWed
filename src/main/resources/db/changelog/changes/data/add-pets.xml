@@ -1,23 +1,28 @@
-<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-    <changeSet author="vmusin" id="8803282161765-3" labels="version-0.0.1">
+    <changeSet id="0" author="admin">
         <sql>
-            INSERT INTO petmate.pet (adding_date, birth_date, breed_id,id,  user_id, avatar_path, bio, city, gender, nickname,
-                                     region)
-            VALUES ('2023-09-22', '2023-05-02', null, 1,  null, 'img/English-Cocker-Spaniel-Slide03.jpg',
-                    'A wonderful girl with a wonderful color and mind', 'Chisinau', 'F', 'Rickie', 'Chisinau')
---                    ('2023-09-22', '2022-05-05', null, 2,  null, 'img/German_Shepherd_-_DSC_0346_(10096362833).jpg',
---                     'A wonderful guy with a wonderful color and mind', 'Chisinau', 'M', 'Rack', 'Chisinau'),
---                    ('2023-09-22', '2022-03-05', null, 3, null, 'img/GettyImages-1198704735-69e2d11cba434cb28a3c9e6caae9d128.jpg',
---                     'A wonderful guy with a wonderful color and mind', 'Chisinau', 'M', 'Gray', 'Chisinau'),
---                    ('2023-09-22', '2022-10-05', null, 4,  null, 'img/Sphinx2_July_2006.jpg',
---                     'A wonderful guy with a wonderful color and mind', 'Chisinau', 'F', 'Miauca', 'Chisinau'),
---                    ('2023-09-22', '2022-10-05', null, 5, null, 'img/Sphinx2_July_2006.jpg',
---                     'A wonderful guy with a wonderful color and mind', 'Chisinau', 'M', 'Juju', 'Chisinau'),
+            INSERT INTO petmate.users (id, avatar_path, bio, birth_date, city, email, last_name, gender, password, region,
+                                       registration_date, first_name, user_role_id)
+            VALUES (1, null, null, null, 'Chisinau', 'musin.vladislava@gmail.com', 'Vladislava', null, 'vlada', 'Chisinau',
+                    '2023-10-06', 'Musin', null);
+            INSERT INTO petmate.breeds (id, breed, species)
+            VALUES (1, 'nice cat', 'Cat');
 
+            INSERT INTO petmate.breeds (id, breed, species)
+            VALUES (2, 'swinks', 'Cat');
+
+            INSERT INTO petmate.breeds (id, breed, species)
+            VALUES (3, 'puddel', 'Dog');
+
+            INSERT INTO petmate.pets (id, adding_date, avatar_path, bio, birth_date, city, gender, nickname, region, breed_id,
+                                      user_id)
+            VALUES (1, '2023-10-07', 'static/img/standard_puddel.jpg', 'A wonderful boy with a wonderful mind', '2023-07-02',
+                    'Chisinau', 'M', 'Șarik', 'Chisinau', 3, 1);
         </sql>
 
     </changeSet>

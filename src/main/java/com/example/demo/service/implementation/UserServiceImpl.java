@@ -20,8 +20,8 @@ public class UserServiceImpl implements UserService {
     public User saveUser(AddNewUserRequestDTO dto) {
         User newUser = new User();
         if(!userRepository.checkEmailExists(dto.getEmail())) {
-            newUser.setSurname(dto.getFirstName());
-            newUser.setFamilyName(dto.getLastName());
+            newUser.setFirstName(dto.getFirstName());
+            newUser.setLastName(dto.getLastName());
             newUser.setPassword(dto.getPassword());
             newUser.setEmail(dto.getEmail());
             newUser.setRegion(dto.getRegion());
@@ -33,12 +33,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public long getUsserId(User user) {
+    public long getUserId(User user) {
         return user.getId();
     }
 
     @Override
-    public User getUsserById(long id) {
+    public User getUserById(long id) {
         return userRepository.getById(id);
     }
 

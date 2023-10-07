@@ -23,13 +23,14 @@ public class UserPageController {
     }
 
 
+    @Secured("REGISTERED")
     @GetMapping("/profile")
     public String getProfilePage(Model model) {
-        User user = userService.getUsserById(1); //TODO user = userul care s-a logat
+        User user = userService.getUserById(1); //TODO user = userul care s-a logat
         List<Pet> pets = petService.getPetsByUser(user.getId());
         model.addAttribute("pets", pets);
-        model.addAttribute("firstName", user.getSurname());
-        model.addAttribute("lastName", user.getFamilyName());
+        model.addAttribute("firstName", user.getFirstName());
+        model.addAttribute("lastName", user.getLastName());
         model.addAttribute("pageTitle", "Profile");
         model.addAttribute("pageContent", "user-profile-body");
         return "layout";

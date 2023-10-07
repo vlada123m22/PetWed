@@ -6,7 +6,7 @@ import com.example.demo.entity.User;
 
 public interface UserService {
     public User saveUser(AddNewUserRequestDTO addNewUserRequestDTO);
-    public long getUsserId(User user);
-    public User getUsserById(long id);
+    public long getUserId(User user);
+    public User getUserById(long id);
     public User getUserByEmail(String email);
 }
