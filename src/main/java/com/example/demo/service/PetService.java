@@ -6,7 +6,9 @@ import com.example.demo.entity.Pet;
 import java.util.List;
 
 public interface PetService {
-    public Pet savePet(AddNewPetRequestDTO addNewPetRequestDTO);
+    Pet savePet(AddNewPetRequestDTO addNewPetRequestDTO);
     List<Pet> getPetsByUserId(Long userId);
     List <Pet> allPets();
+//    int getAge(Pet pet);
+
 }

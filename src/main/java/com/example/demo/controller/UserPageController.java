@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
+import java.util.Map;
 
 //TODO this controller will work only if the user is logged in
 @Controller
@@ -39,13 +40,20 @@ public class UserPageController {
 
 
 //    will return the page with the potential partners for your pet
-    @Secured("REGISTERED")
+//    @Secured("REGISTERED")
     @GetMapping({"/home"})
     public String getHomePage(Model model){
         List<Pet> allPets = petService.allPets();
+//        int age;
+//
+//        for (Pet pet:
+//             allPets) {
+//            age=petService.getAge(pet);
+//            model.addAttribute("age", age);
+//        }
         model.addAttribute("pets", allPets);
         model.addAttribute("pageContent", "home-body");
-        model.addAttribute("pageTitle", "Petwed");
-        return "home";
+        model.addAttribute("pageTitle", "Home");
+        return "layout";
     }
 }
