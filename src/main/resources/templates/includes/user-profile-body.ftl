@@ -12,7 +12,7 @@
                 <div class="card shadow-sm">
                     <img src="/${pet.avatarPath}" class="img-fluid d-placeholder-img card-img-top" alt="...">
                     <div class="card-body">
-                        <h3 class="card-title">${pet.nickname}</h3>
+                        <a href="http://localhost:8080/pet/${pet.id}"><h3 class="card-title">${pet.nickname}</h3></a>
                     </div>
                 </div>
             </div>

@@ -18,6 +18,9 @@ public interface PetRepository extends CrudRepository<Pet, Integer> {
     @Query("SELECT p from Pet p")
     List<Pet> allPets();
 
+    @Query("SELECT p FROM Pet p WHERE p.id= :petId")
+    Pet getById(long petId);
+
 //    @Query("SELECT YEAR(GETDATE())-YEAR(p.birthDate) FROM Pet p WHERE p.id= :petId")
 //    int getAge(Long petId);
 

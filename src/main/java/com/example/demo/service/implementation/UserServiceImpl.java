@@ -47,4 +47,11 @@ public class UserServiceImpl implements UserService {
         return userRepository.getByEmail(email);
     }
 
+    @Override
+    public User getUserByPetId(long petId) {
+        return userRepository.getByPetId(petId);
+    }
+
+
+
 }

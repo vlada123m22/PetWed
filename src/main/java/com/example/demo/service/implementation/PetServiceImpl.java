@@ -45,6 +45,11 @@ public class PetServiceImpl implements PetService {
         return petRepository.allPets();
     }
 
+    @Override
+    public Pet getPetById(long petId) {
+        return petRepository.getById(petId);
+    }
+
 //    @Override
 //    public int getAge(Pet pet) {
 //        return petRepository.getAge(pet.getId());

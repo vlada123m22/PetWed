@@ -58,7 +58,7 @@
             <div class="carousel-item">
                 <img src="${pet.avatarPath}" class="d-block mx-auto" alt="Slide 2">
                 <div class="carousel-caption d-none d-md-block text-left">
-                    <h5> ${pet.nickname} 3yo</h5>
+                    <a href="http://localhost:8080/pet/${pet.id}"><h5> ${pet.nickname} 3yo</h5></a>
                     <p>${pet.bio}</p>
                 </div>
             </div>
