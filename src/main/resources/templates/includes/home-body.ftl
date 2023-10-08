@@ -65,8 +65,6 @@
             </#items>
         </#list>
     </div>
-</div>
-
     <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="next" style="left: 150px;">
         <span class="carousel-control-prev-icon" ></span>
     </a>
@@ -74,6 +72,9 @@
         <span class="carousel-control-next-icon"></span>
     </a>
 </div>
+
+
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
