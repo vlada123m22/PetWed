@@ -46,7 +46,7 @@
 
 <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
-        <#list pets>
+        <#list petAge>
             <div class="carousel-item active">
                 <img src="img/picture_animals.jpeg" class="d-block mx-auto" alt="Slide 1">
                 <div class="carousel-caption d-none d-md-block text-left">
@@ -54,11 +54,11 @@
                     <p>Click right to see suitable matches for your pet</p>
                 </div>
             </div>
-            <#items as pet>
+            <#items as pet, age>
             <div class="carousel-item">
                 <img src="${pet.avatarPath}" class="d-block mx-auto" alt="Slide 2">
                 <div class="carousel-caption d-none d-md-block text-left">
-                    <a href="http://localhost:8080/pet/${pet.id}"><h5> ${pet.nickname} 3yo</h5></a>
+                    <a href="http://localhost:8080/pet/${pet.id}"><h5> ${pet.nickname} ${age}yo</h5></a>
                     <p>${pet.bio}</p>
                 </div>
             </div>

@@ -10,6 +10,6 @@ public interface PetService {
     List<Pet> getPetsByUserId(Long userId);
     List <Pet> allPets();
     Pet getPetById(long petId);
-//    int getAge(Pet pet);
+    int getAge(Pet pet);
 
 }

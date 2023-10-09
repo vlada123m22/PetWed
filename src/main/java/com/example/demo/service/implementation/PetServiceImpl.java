@@ -50,8 +50,8 @@ public class PetServiceImpl implements PetService {
         return petRepository.getById(petId);
     }
 
-//    @Override
-//    public int getAge(Pet pet) {
-//        return petRepository.getAge(pet.getId());
-//    }
+    @Override
+    public int getAge(Pet pet) {
+        return petRepository.getAge(pet.getId());
+    }
 }

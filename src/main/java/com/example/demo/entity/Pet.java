@@ -44,8 +44,6 @@ public class Pet {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-    @Transient
-    private Integer age;
     public Long getId() {
         return id;
     }
@@ -137,7 +135,4 @@ public class Pet {
         this.user = user;
     }
 
-    public void setAge(){
-        this.age= new java.util.Date().getYear()-birthDate.getYear();
-    }
 }
