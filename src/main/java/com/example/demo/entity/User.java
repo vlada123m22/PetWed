@@ -10,40 +10,30 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
-    
     @Column(name = "last_name")
     private String lastName;
-    
     @Column(name = "first_name")
     private String firstName;
-    
     @Column(name = "email")
     private String email;
-    
     @Column(name = "password")
     private String password;
-    
     @Column(name = "city")
     private String city;
-    
     @Column(name = "region")
     private String region;
-    
     @Column(name = "gender")
     private String gender;
-    
     @Column(name = "birth_date")
     private Date birthDate;
-    
     @Column(name = "registration_date")
     private Date registrationDate;
-    
     @Column(name = "bio")
     private String bio;
-    
     @Column(name = "avatar_path")
     private String avatarPath;
-
+    @Column(name = "account_non_locked", columnDefinition = "BOOLEAN DEFAULT false")
+    private Boolean accountNonLocked;
     @ManyToOne
     @JoinColumn(name = "user_role_id")
     private UserRole userRole;
@@ -152,5 +142,13 @@ public class User {
 
     public void setUserRole(UserRole userRole) {
         this.userRole = userRole;
+    }
+
+    public Boolean getAccountNonLocked() {
+        return accountNonLocked;
+    }
+
+    public void setAccountNonLocked(Boolean accountNonLocked) {
+        this.accountNonLocked = accountNonLocked;
     }
 }

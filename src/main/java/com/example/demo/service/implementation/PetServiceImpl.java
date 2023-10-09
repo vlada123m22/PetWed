@@ -3,6 +3,7 @@ package com.example.demo.service.implementation;
 import com.example.demo.dto.AddNewPetRequestDTO;
 import com.example.demo.entity.Breed;
 import com.example.demo.entity.Pet;
+import com.example.demo.entity.User;
 import com.example.demo.repository.BreedRepository;
 import com.example.demo.repository.PetRepository;
 import com.example.demo.service.PetService;
@@ -24,7 +25,7 @@ public class PetServiceImpl implements PetService {
     public Pet savePet(AddNewPetRequestDTO addNewPetRequestDTO) {
         Pet newPet = new Pet();
         newPet.setNickname(addNewPetRequestDTO.getNickname());
-        //TODO newPet.setUser(the user who is adding the pet);
+        // TODO newPet.setUser(userul logat);
 
         //TODO the list breedsForSpecies will be used later in the dropdown list to display all the species of the specified breed
         List<Breed> breedsForSpecies=breedRepository.getBySpecies(addNewPetRequestDTO.getSpecies());

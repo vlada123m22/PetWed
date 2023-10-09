@@ -27,6 +27,7 @@ public class CustomUserDetails implements UserDetails {
       String email,
       String password,
       List<UserRole> roleList,
+      Boolean accountNonLocked,
       Boolean enabled,
       String firstName,
       String lastName) {
@@ -34,6 +35,7 @@ public class CustomUserDetails implements UserDetails {
     this.email = email;
     this.password = password;
     this.authorities = mapAuthority(roleList);
+    this.accountNonLocked=accountNonLocked;
     this.enabled = enabled;
     this.firstName = firstName;
     this.lastName = lastName;

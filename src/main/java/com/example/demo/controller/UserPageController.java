@@ -9,8 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,9 +25,24 @@ public class UserPageController {
     }
 
 
+    @Secured("REGISTERED")
+    @GetMapping("/profile")
+    public String getPersonalProfilePage(Model model) {
+        User user = userService.getUserById(1); //TODO user = userul care s-a logat
+        List<Pet> pets = petService.getPetsByUserId(user.getId());
+        model.addAttribute("pets", pets);
+        model.addAttribute("user", user);
+        model.addAttribute("firstName", user.getFirstName());
+        model.addAttribute("lastName", user.getLastName());
+        model.addAttribute("pageTitle", "Profile");
+        model.addAttribute("pageContent", "personal-profile-body");
+        return "layout";
+    }
+
+
     @GetMapping("/profile/{userId}")
     public String getProfilePage(Model model, @PathVariable Long userId) {
-        User user = userService.getUserById(userId); //TODO user = userul care s-a logat
+        User user = userService.getUserById(userId);
         List<Pet> pets = petService.getPetsByUserId(user.getId());
         model.addAttribute("pets", pets);
         model.addAttribute("user", user);

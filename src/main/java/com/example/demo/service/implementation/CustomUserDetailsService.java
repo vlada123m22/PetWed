@@ -31,6 +31,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         user.getEmail(),
         user.getPassword(),
             Arrays.asList(user.getUserRole()),
+        user.getAccountNonLocked(),
         true,
         user.getFirstName(),
         user.getLastName());
