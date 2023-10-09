@@ -9,6 +9,7 @@ public interface PetService {
     Pet savePet(AddNewPetRequestDTO addNewPetRequestDTO);
     List<Pet> getPetsByUserId(Long userId);
     List <Pet> allPets();
-//    int getAge(Pet pet);
+    Pet getPetById(long petId);
+    int getAge(Pet pet);
 
 }

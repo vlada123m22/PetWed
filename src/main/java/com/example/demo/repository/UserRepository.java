@@ -1,5 +1,6 @@
 package com.example.demo.repository;
 
+import com.example.demo.entity.Pet;
 import com.example.demo.entity.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -13,5 +14,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
     User getById(long id);
     @Query("SELECT u FROM User u WHERE u.email= :email")
     User getByEmail(String email);
+    @Query("SELECT p.user FROM Pet p WHERE p.id= :petId ")
+    User getByPetId(long petId);
 
 }

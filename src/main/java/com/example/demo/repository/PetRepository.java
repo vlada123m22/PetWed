@@ -18,8 +18,11 @@ public interface PetRepository extends CrudRepository<Pet, Integer> {
     @Query("SELECT p from Pet p")
     List<Pet> allPets();
 
-//    @Query("SELECT YEAR(GETDATE())-YEAR(p.birthDate) FROM Pet p WHERE p.id= :petId")
-//    int getAge(Long petId);
+    @Query("SELECT p FROM Pet p WHERE p.id= :petId")
+    Pet getById(long petId);
+//DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), date_of_birth)), '%Y') + 0
+    @Query("SELECT DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(),p.birthDate)), '%Y') FROM Pet p WHERE p.id= :petId")
+    int getAge(Long petId);
 
 
 }

@@ -6,7 +6,7 @@
                 <h3 class="card-title">${user.firstName}</h3>
                 <h3 class="card-title">${user.lastName}</h3>
             </div>
-        </div> 
+        </div>
         <#list pets as  pet>
             <div class="col">
                 <div class="card shadow-sm">
@@ -17,5 +17,6 @@
                 </div>
             </div>
         </#list>
+        <a href="/new-pet"><h3>Add new pet</h3></a>
     </div>
 </div>

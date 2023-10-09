@@ -46,7 +46,7 @@
 
 <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
-        <#list pets>
+        <#list petAge>
             <div class="carousel-item active">
                 <img src="img/picture_animals.jpeg" class="d-block mx-auto" alt="Slide 1">
                 <div class="carousel-caption d-none d-md-block text-left">
@@ -54,19 +54,17 @@
                     <p>Click right to see suitable matches for your pet</p>
                 </div>
             </div>
-            <#items as pet>
+            <#items as pet, age>
             <div class="carousel-item">
                 <img src="${pet.avatarPath}" class="d-block mx-auto" alt="Slide 2">
                 <div class="carousel-caption d-none d-md-block text-left">
-                    <h5> ${pet.nickname} 3yo</h5>
+                    <a href="http://localhost:8080/pet/${pet.id}"><h5> ${pet.nickname} ${age}yo</h5></a>
                     <p>${pet.bio}</p>
                 </div>
             </div>
             </#items>
         </#list>
     </div>
-</div>
-
     <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="next" style="left: 150px;">
         <span class="carousel-control-prev-icon" ></span>
     </a>
@@ -74,6 +72,9 @@
         <span class="carousel-control-next-icon"></span>
     </a>
 </div>
+
+
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>

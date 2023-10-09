@@ -8,7 +8,10 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,9 +27,9 @@ public class UserPageController {
     }
 
 
-    @GetMapping("/profile")
-    public String getProfilePage(Model model) {
-        User user = userService.getUserById(1); //TODO user = userul care s-a logat
+    @GetMapping("/profile/{userId}")
+    public String getProfilePage(Model model, @PathVariable Long userId) {
+        User user = userService.getUserById(userId); //TODO user = userul care s-a logat
         List<Pet> pets = petService.getPetsByUserId(user.getId());
         model.addAttribute("pets", pets);
         model.addAttribute("user", user);
@@ -39,19 +42,20 @@ public class UserPageController {
 
 
 
+
 //    will return the page with the potential partners for your pet
 //    @Secured("REGISTERED")
     @GetMapping({"/home"})
     public String getHomePage(Model model){
         List<Pet> allPets = petService.allPets();
-//        int age;
-//
-//        for (Pet pet:
-//             allPets) {
-//            age=petService.getAge(pet);
-//            model.addAttribute("age", age);
-//        }
-        model.addAttribute("pets", allPets);
+        Map <Pet,Integer> petAge=new HashMap<>();
+        int age;
+
+        for (Pet pet:
+             allPets) {
+            petAge.put(pet,petService.getAge(pet));
+        }
+        model.addAttribute("petAge", petAge);
         model.addAttribute("pageContent", "home-body");
         model.addAttribute("pageTitle", "Home");
         return "layout";

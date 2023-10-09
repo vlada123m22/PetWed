@@ -26,7 +26,14 @@
             INSERT INTO petmate.pets (adding_date, avatar_path, bio, birth_date, city, gender, nickname, region, breed_id, user_id)
             VALUES ('2023-10-07', 'img/English-Cocker-Spaniel-Slide03.jpg', 'Hey boyyyyyyyyy', '2023-05-01', 'Chisinau', null,
                     'Dolly', 'Chisinau', 3, 1);
-        </sql>
 
+
+            INSERT INTO petmate.user_roles (role_name, user_id) VALUES ('ADMIN', 1);
+            INSERT INTO petmate.user_roles (role_name, user_id) VALUES ('GUEST', 2);
+    </sql>
     </changeSet>
+
+
+
+
 </databaseChangeLog>
