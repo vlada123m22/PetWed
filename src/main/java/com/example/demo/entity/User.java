@@ -33,7 +33,7 @@ public class User {
     private String bio;
     @Column(name = "avatar_path")
     private String avatarPath;
-    @Column(name = "account_non_locked", columnDefinition = "BOOLEAN DEFAULT false")
+    @Column(name = "account_non_locked", columnDefinition = "BOOLEAN DEFAULT true")
     private Boolean accountNonLocked;
     @ManyToOne
     @JoinColumn(name = "user_role_id")

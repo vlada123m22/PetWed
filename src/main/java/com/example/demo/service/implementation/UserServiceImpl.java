@@ -30,31 +30,30 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public User saveUser(AddNewUserRequestDTO dto) {
         User newUser = new User();
-        if(!userRepository.checkEmailExists(dto.getEmail())) {
-            newUser.setFirstName(dto.getFirstName());
-            newUser.setLastName(dto.getLastName());
-            newUser.setPassword(dto.getPassword());
-            newUser.setEmail(dto.getEmail());
-            newUser.setRegion(dto.getRegion());
-            newUser.setCity(dto.getCity());
-            newUser.setRegistrationDateTime(LocalDateTime.now());
-            newUser.setPassword(passwordEncoder.encode(dto.getPassword()));
-            //TODO
-            //1. Inject password encoder
-            //2. Encode password from DTO with password encoder
-            //3. Create UserRole Repository
-            //4. Select from database userRoleRegistered
-            //5. Set this role to user
-            //6. Save user into database
-
-            newUser = userRepository.save(newUser);
-            UserRole registered = new UserRole();
-            registered.setRoleName("REGISTERED");
-            newUser.setUserRole(registered);
-            return newUser;
-
+        if(userRepository.checkEmailExists(dto.getEmail())) {
+            return null;
         }
-        else return null;
+        newUser.setFirstName(dto.getFirstName());
+        newUser.setLastName(dto.getLastName());
+        newUser.setPassword(dto.getPassword());
+        newUser.setEmail(dto.getEmail());
+        newUser.setRegion(dto.getRegion());
+        newUser.setCity(dto.getCity());
+        newUser.setRegistrationDateTime(LocalDateTime.now());
+        newUser.setPassword(passwordEncoder.encode(dto.getPassword()));
+        //TODO
+        //1. Inject password encoder
+        //2. Encode password from DTO with password encoder
+        //3. Create UserRole Repository
+        //4. Select from database userRoleRegistered
+        //5. Set this role to user
+        //6. Save user into database
+
+        newUser = userRepository.save(newUser);
+        UserRole registered = new UserRole();
+        registered.setRoleName("REGISTERED");
+        newUser.setUserRole(registered);
+        return newUser;
     }
 
     @Override
