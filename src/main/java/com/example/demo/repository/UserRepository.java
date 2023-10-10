@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
-    @Query("SELECT EXISTS(SELECT u FROM User u WHERE u.email= :email)")
-    boolean checkEmailExists(String email);
+    @Query("SELECT EXISTS(SELECT u.id FROM User u WHERE u.email= :email)")
+    Boolean checkEmailExists(String email);
     @Query("SELECT u FROM User u WHERE u.id= :id")
     User getById(long id);
     @Query("SELECT u FROM User u WHERE u.email= :email")

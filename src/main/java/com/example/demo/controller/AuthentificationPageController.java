@@ -46,10 +46,6 @@ public class AuthentificationPageController {
         User newUser = null;
         if (Objects.nonNull(registryRequest) && (registryRequest.getPassword().equals(registryRequest.getPasswordForCheck()))) {
             newUser  =     userService.saveUser(registryRequest);
-            UserRole userRole=new UserRole();
-            userRole.setRoleName("REGISTERED");
-            userRole.setId(2L);
-            newUser.setUserRole(userRole);
 
         }
         if(Objects.nonNull(newUser)){

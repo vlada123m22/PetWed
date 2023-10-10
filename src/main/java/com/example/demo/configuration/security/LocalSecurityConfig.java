@@ -68,7 +68,6 @@ public class LocalSecurityConfig {
                 form.usernameParameter("userEmail")
                     .passwordParameter("password")
                     .loginPage("/login.html")
-                    .defaultSuccessUrl("/profile")
                     .failureUrl("/login.html?error=true")
                     .loginProcessingUrl("/login")
                     .successHandler(customSimpleUrlAuthenticationSuccessHandler))
