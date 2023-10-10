@@ -26,8 +26,8 @@ public class UserRole {
         return roleName;
     }
 
-    public void setRoleName(RoleName roleName) {
-        this.roleName = roleName;
+    public void setRoleName(String roleName) {
+        this.roleName = RoleName.valueOf(roleName);
     }
 
 }
