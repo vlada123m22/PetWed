@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.dto.AddNewUserRequestDTO;
 import com.example.demo.entity.User;
+import com.example.demo.entity.UserRole;
 import com.example.demo.service.UserService;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -45,6 +46,11 @@ public class AuthentificationPageController {
         User newUser = null;
         if (Objects.nonNull(registryRequest) && (registryRequest.getPassword().equals(registryRequest.getPasswordForCheck()))) {
             newUser  =     userService.saveUser(registryRequest);
+            UserRole userRole=new UserRole();
+            userRole.setRoleName("REGISTERED");
+            userRole.setId(2L);
+            newUser.setUserRole(userRole);
+
         }
         if(Objects.nonNull(newUser)){
 

@@ -50,15 +50,14 @@
             <div class="carousel-item active">
                 <img src="img/picture_animals.jpeg" class="d-block mx-auto" alt="Slide 1">
                 <div class="carousel-caption d-none d-md-block text-left">
-                    <h5>Click right</h5>
-                    <p>Click right to see suitable matches for your pet</p>
+                    <h5>Click right to see pets</h5>
                 </div>
             </div>
             <#items as pet, age>
             <div class="carousel-item">
                 <img src="${pet.avatarPath}" class="d-block mx-auto" alt="Slide 2">
                 <div class="carousel-caption d-none d-md-block text-left">
-                    <a href="http://localhost:8080/pet/${pet.id}"><h5> ${pet.nickname} ${age}yo</h5></a>
+                    <a href="http://localhost:8080/pet/${pet.id}"><h5> ${pet.nickname} ${age} y/o</h5></a>
                     <p>${pet.bio}</p>
                 </div>
             </div>

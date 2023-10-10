@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="0" author="admin">
+        <sql>
+
+            INSERT INTO petmate.user_roles (id, role_name)
+            VALUES (1, 'ADMIN');
+
+            INSERT INTO petmate.user_roles (id, role_name)
+            VALUES (2, 'REGISTERED');
+
+
+
+            INSERT INTO petmate.breeds (id, breed, species)
+            VALUES (1, 'Cocker Spaniel', 'Dog');
+
+            INSERT INTO petmate.breeds (id, breed, species)
+            VALUES (2, 'Pudel', 'Dog');
+
+            INSERT INTO petmate.breeds (id, breed, species)
+            VALUES (3,'Swinks', 'Cat');
+
+            INSERT INTO petmate.breeds (id, breed, species)
+            VALUES (4, 'Siberian Cat', 'Cat');
+        </sql>
+
+    </changeSet>
+</databaseChangeLog>

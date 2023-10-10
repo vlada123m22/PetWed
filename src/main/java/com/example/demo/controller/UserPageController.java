@@ -62,7 +62,6 @@ public class UserPageController {
     public String getHomePage(Model model){
         List<Pet> allPets = petService.allPets();
         Map <Pet,Integer> petAge=new HashMap<>();
-        int age;
 
         for (Pet pet:
              allPets) {
