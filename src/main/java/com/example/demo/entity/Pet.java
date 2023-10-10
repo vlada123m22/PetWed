@@ -3,6 +3,7 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name="pets")
@@ -28,8 +29,8 @@ public class Pet {
     @Column(name = "birth_date")
     private Date birthDate;
    
-    @Column(name = "adding_date")
-    private Date addingDate;
+    @Column(name = "adding_date", columnDefinition = "TIMESTAMP")
+    private LocalDateTime addingDateTime;
    
     @Column(name = "bio")
     private String bio;
@@ -93,12 +94,12 @@ public class Pet {
         this.birthDate = birthDate;
     }
 
-    public Date getAddingDate() {
-        return addingDate;
+    public LocalDateTime getAddingDateTime() {
+        return addingDateTime;
     }
 
-    public void setAddingDate(Date addingDate) {
-        this.addingDate = addingDate;
+    public void setAddingDateTime(LocalDateTime addingDate) {
+        this.addingDateTime = addingDate;
     }
 
     public String getBio() {

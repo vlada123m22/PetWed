@@ -3,6 +3,7 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name="users")
@@ -26,8 +27,8 @@ public class User {
     private String gender;
     @Column(name = "birth_date")
     private Date birthDate;
-    @Column(name = "registration_date")
-    private Date registrationDate;
+    @Column(name = "registration_date_time", columnDefinition = "TIMESTAMP")
+    private LocalDateTime registrationDateTime;
     @Column(name = "bio")
     private String bio;
     @Column(name = "avatar_path")
@@ -112,12 +113,12 @@ public class User {
         this.birthDate = birthDate;
     }
 
-    public Date getRegistrationDate() {
-        return registrationDate;
+    public LocalDateTime getRegistrationDateTime() {
+        return registrationDateTime;
     }
 
-    public void setRegistrationDate(Date registrationDate) {
-        this.registrationDate = registrationDate;
+    public void setRegistrationDateTime(LocalDateTime registrationDate) {
+        this.registrationDateTime = registrationDate;
     }
 
     public String getBio() {
@@ -151,4 +152,6 @@ public class User {
     public void setAccountNonLocked(Boolean accountNonLocked) {
         this.accountNonLocked = accountNonLocked;
     }
+
+
 }

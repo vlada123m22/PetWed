@@ -38,7 +38,7 @@ public class CustomSimpleUrlAuthenticationSuccessHandler
     if (roles.contains("ADMIN")) {
       url = "/admin-dashboard";
     } else if (roles.contains("REGISTERED")) {
-      url = "/home";
+      url = "/profile";
     } else if (roles.contains("GUEST")) {
       url = "/";
     }
