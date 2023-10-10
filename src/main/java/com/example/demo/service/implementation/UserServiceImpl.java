@@ -27,7 +27,15 @@ public class UserServiceImpl implements UserService {
             newUser.setRegion(dto.getRegion());
             newUser.setCity(dto.getCity());
             newUser.setRegistrationDate(new Date(System.currentTimeMillis()));
+            //TODO
+            //1. Inject password encoder
+            //2. Encode password from DTO with password encoder
+            //3. Create UserRole Repository
+            //4. Select from database userRoleRegistered
+            //5. Set this role to user
+            //6. Save user into database
             return userRepository.save(newUser);
+
         }
         else return null;
     }
