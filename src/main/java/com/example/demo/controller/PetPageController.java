@@ -6,6 +6,9 @@ import com.example.demo.entity.User;
 import com.example.demo.service.PetService;
 import com.example.demo.service.UserService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,6 +36,19 @@ public class PetPageController {
         model.addAttribute("pageTitle", "New Pet");
         model.addAttribute("pageContent", "new-pet");
         return "authentication-layout";
+    }
+
+
+    @Secured("REGISTERED")
+    @GetMapping("/personal-pet/{petId}")
+    public String getPersonalPetProfilePage(Model model, @PathVariable Long petId) {
+        Pet pet = petService.getPetById(petId);
+        User user = userService.getUserByPetId(petId);
+        model.addAttribute("pet", pet);
+        model.addAttribute("user", user);
+        model.addAttribute("pageTitle", "Pet profile");
+        model.addAttribute("pageContent", "personal-pet-profile-body");
+        return "layout";
     }
 
     @GetMapping("/pet/{petId}")

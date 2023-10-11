@@ -48,12 +48,10 @@ public class UserServiceImpl implements UserService {
         //4. Select from database userRoleRegistered
         //5. Set this role to user
         //6. Save user into database
-
-        newUser = userRepository.save(newUser);
         UserRole registered = new UserRole();
         registered.setRoleName("REGISTERED");
         newUser.setUserRole(registered);
-        return newUser;
+        return userRepository.save(newUser);
     }
 
     @Override

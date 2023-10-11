@@ -17,4 +17,6 @@ public interface UserRepository extends CrudRepository<User, Long> {
     @Query("SELECT p.user FROM Pet p WHERE p.id= :petId ")
     User getByPetId(long petId);
 
+
+
 }

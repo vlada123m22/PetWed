@@ -18,6 +18,5 @@
                     </div>
                 </div>
             </div>
-        <a href="/new-pet">Add new pet</a>
     </div>
 </div>
