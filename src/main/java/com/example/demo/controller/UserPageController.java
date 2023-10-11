@@ -5,6 +5,9 @@ import com.example.demo.entity.User;
 import com.example.demo.service.PetService;
 import com.example.demo.service.UserService;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +31,9 @@ public class UserPageController {
     @Secured("REGISTERED")
     @GetMapping("/profile")
     public String getPersonalProfilePage(Model model) {
-        User user = userService.getUserById(1); //TODO user = userul care s-a logat
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String email= authentication.getName();
+        User user = userService.getUserByEmail(email);
         List<Pet> pets = petService.getPetsByUserId(user.getId());
         model.addAttribute("pets", pets);
         model.addAttribute("user", user);
