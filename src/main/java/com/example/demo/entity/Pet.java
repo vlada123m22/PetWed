@@ -45,6 +45,14 @@ public class Pet {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    public Pet(Long id) {
+        this.id = id;
+    }
+
+    public Pet() {
+    }
+
     public Long getId() {
         return id;
     }
