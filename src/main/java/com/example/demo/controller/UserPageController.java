@@ -63,6 +63,8 @@ public class UserPageController {
 
 //    will return the page with the potential partners for your pet
 //    @Secured("REGISTERED")
+
+    @Secured("REGISTERED")
     @GetMapping({"/home"})
     public String getHomePage(Model model){
         List<Pet> allPets = petService.allPets();
