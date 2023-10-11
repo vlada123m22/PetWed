@@ -2,9 +2,10 @@ package com.example.demo.service.implementation;
 
 import com.example.demo.dto.AddNewPetRequestDTO;
 import com.example.demo.entity.Breed;
+import com.example.demo.entity.Matching;
 import com.example.demo.entity.Pet;
-import com.example.demo.entity.User;
 import com.example.demo.repository.BreedRepository;
+import com.example.demo.repository.MatchingRepository;
 import com.example.demo.repository.PetRepository;
 import com.example.demo.service.PetService;
 import org.springframework.stereotype.Service;
@@ -15,10 +16,12 @@ import java.util.List;
 public class PetServiceImpl implements PetService {
     private final PetRepository petRepository;
     private final BreedRepository breedRepository;
+    private final MatchingRepository matchingRepository;
 
-    public PetServiceImpl(PetRepository petRepository, BreedRepository breedRepository) {
+    public PetServiceImpl(PetRepository petRepository, BreedRepository breedRepository, MatchingRepository matchingRepository) {
         this.petRepository = petRepository;
         this.breedRepository = breedRepository;
+        this.matchingRepository = matchingRepository;
     }
 
     @Override
@@ -54,5 +57,12 @@ public class PetServiceImpl implements PetService {
     @Override
     public int getAge(Pet pet) {
         return petRepository.getAge(pet.getId());
+    }
+
+    @Override
+    public void likeDislikePet(boolean like, Long petFromId, Long petToId) {
+        Matching matching = new Matching(like, new Pet(petFromId), new Pet(petToId));
+        matchingRepository.save(matching);
+
     }
 }

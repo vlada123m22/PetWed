@@ -11,10 +11,7 @@ public class Matching {
     private Long id;
     
     @Column(name = "like_value")
-    private Byte likeValue;
-    
-    @Column(name = "seen")
-    private Byte seen;
+    private Boolean likeValue;
 
     @ManyToOne
     @JoinColumn(name = "from_pet_id")
@@ -23,6 +20,22 @@ public class Matching {
     @ManyToOne
     @JoinColumn(name = "to_pet_id")
     private Pet toPet;
+
+    public Matching() {
+    }
+
+    public Matching(Boolean likeValue, Pet fromPet, Pet toPet) {
+        this.likeValue = likeValue;
+        this.fromPet = fromPet;
+        this.toPet = toPet;
+    }
+
+    public Matching(Long id, Boolean likeValue, Pet fromPet, Pet toPet) {
+        this.id = id;
+        this.likeValue = likeValue;
+        this.fromPet = fromPet;
+        this.toPet = toPet;
+    }
 
     public Long getId() {
         return id;
@@ -33,21 +46,15 @@ public class Matching {
     }
 
 
-    public Byte getLikeValue() {
+    public Boolean getLikeValue() {
         return likeValue;
     }
 
-    public void setLikeValue(Byte likeValue) {
+    public void setLikeValue(Boolean likeValue) {
         this.likeValue = likeValue;
     }
 
-    public Byte getSeen() {
-        return seen;
-    }
 
-    public void setSeen(Byte seen) {
-        this.seen = seen;
-    }
 
     public Pet getFromPet() {
         return fromPet;
