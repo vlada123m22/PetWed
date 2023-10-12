@@ -60,9 +60,16 @@ public class PetServiceImpl implements PetService {
     }
 
     @Override
+    public List<Pet> getSuitablePets(Long petId, Long userId) {
+        Breed breed=breedRepository.getBreedByPetId(petId);
+        return petRepository.getSuitablePets(breed, userId);
+    }
+
+    @Override
     public void likeDislikePet(boolean like, Long petFromId, Long petToId) {
         Matching matching = new Matching(like, new Pet(petFromId), new Pet(petToId));
         matchingRepository.save(matching);
 
     }
+
 }

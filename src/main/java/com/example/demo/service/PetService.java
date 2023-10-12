@@ -13,6 +13,7 @@ public interface PetService {
     List <Pet> allPets();
     Pet getPetById(long petId);
     int getAge(Pet pet);
+    List<Pet> getSuitablePets(Long petId, Long userId);
     void likeDislikePet(boolean like, Long petFromId, Long petToId);
 }
 

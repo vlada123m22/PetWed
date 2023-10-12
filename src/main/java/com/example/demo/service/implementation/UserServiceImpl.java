@@ -1,6 +1,8 @@
 package com.example.demo.service.implementation;
 
 import com.example.demo.dto.AddNewUserRequestDTO;
+import com.example.demo.entity.Breed;
+import com.example.demo.entity.Pet;
 import com.example.demo.entity.User;
 import com.example.demo.entity.UserRole;
 import com.example.demo.entity.enums.RoleName;
@@ -11,7 +13,6 @@ import jakarta.transaction.Transactional;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
 import java.time.LocalDateTime;
 
 @Service
@@ -41,13 +42,6 @@ public class UserServiceImpl implements UserService {
         newUser.setCity(dto.getCity());
         newUser.setRegistrationDateTime(LocalDateTime.now());
         newUser.setPassword(passwordEncoder.encode(dto.getPassword()));
-        //TODO
-        //1. Inject password encoder
-        //2. Encode password from DTO with password encoder
-        //3. Create UserRole Repository
-        //4. Select from database userRoleRegistered
-        //5. Set this role to user
-        //6. Save user into database
         newUser=userRepository.save(newUser);
         UserRole registered = userRoleRepository.getUserRoleByName(RoleName.REGISTERED);
         registered.setRoleName(RoleName.REGISTERED);
@@ -77,6 +71,11 @@ public class UserServiceImpl implements UserService {
         return userRepository.getByPetId(petId);
     }
 
+    @Override
+    public Boolean userHasPet(Pet pet, User user) {
+        return pet.getUser() == user;
+
+    }
 
 
 }

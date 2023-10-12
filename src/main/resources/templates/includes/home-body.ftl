@@ -46,14 +46,13 @@
 
 <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
-        <#list petAge>
-            <div class="carousel-item active">
-                <img src="img/picture_animals.jpeg" class="d-block mx-auto" alt="Slide 1">
-                <div class="carousel-caption d-none d-md-block text-left">
-                    <h5>Click right to see pets</h5>
-                </div>
+        <div class="carousel-item active">
+            <img src="img/picture_animals.jpeg" class="d-block mx-auto" alt="Slide 1">
+            <div class="carousel-caption d-none d-md-block text-left">
+                <h5>Select the pet for witch you're seeking a partner and then click right or left</h5>
             </div>
-            <#items as pet, age>
+        </div>
+        <#list petAge as pet, age>
             <div class="carousel-item">
                 <img src="${pet.avatarPath}" class="d-block mx-auto" alt="Slide 2">
                 <div class="carousel-caption d-none d-md-block text-left">
@@ -61,14 +60,14 @@
                     <p>${pet.bio}</p>
                 </div>
             </div>
-            </#items>
         </#list>
     </div>
-    <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="next" style="left: 150px;">
-        <span class="carousel-control-prev-icon" ></span>
+    <a id="dislike" class="carousel-control-prev" href="#carouselExample" role="button" data-slide="next" style="left: 150px;">
+        <img src="img/cross.jpg">
+
     </a>
-    <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next" style="right: 150px;">
-        <span class="carousel-control-next-icon"></span>
+    <a id="dislike" class="carousel-control-next" href="#carouselExample" role="button" data-slide="next" style="right: 150px;">
+        <img src="img/heart.png">
     </a>
 </div>
 

@@ -10,8 +10,12 @@ import java.util.List;
 
 @Repository
 public interface PetRepository extends CrudRepository<Pet, Integer> {
-    @Query("SELECT p  from  Pet p where p.breed.id= :breedId")
-    List<Pet> getPetsByBreedId(Long breedId);
+//    @Query("SELECT p  from  Pet p where p.breed.id= :pet.breed.id")
+//    List<Pet> getSameBreedPets(Pet pet);
+
+    @Query("SELECT p  from  Pet p where p.breed= :breed and p.user.id!= :userId")
+    List<Pet> getSuitablePets(Breed breed, Long userId); //returns all pets of the indicated breed excluding the pets of the user with the indicated userId
+
     @Query("SELECT p  from  Pet p where p.user.id= :userId ")
     List<Pet> getPetsByUserId(Long userId);
 
@@ -20,7 +24,7 @@ public interface PetRepository extends CrudRepository<Pet, Integer> {
 
     @Query("SELECT p FROM Pet p WHERE p.id= :petId")
     Pet getById(long petId);
-//DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), date_of_birth)), '%Y') + 0
+
     @Query("SELECT DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(),p.birthDate)), '%Y') FROM Pet p WHERE p.id= :petId")
     int getAge(Long petId);
 

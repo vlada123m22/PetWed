@@ -1,7 +1,7 @@
 package com.example.demo.entity.enums;
 
 public enum RoleName {
-    GUEST("GUEST"),
+
     ADMIN("ADMIN"),
     REGISTERED("REGISTERED");
     private String role;

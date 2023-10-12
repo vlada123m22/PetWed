@@ -16,7 +16,4 @@ public interface UserRepository extends CrudRepository<User, Long> {
     User getByEmail(String email);
     @Query("SELECT p.user FROM Pet p WHERE p.id= :petId ")
     User getByPetId(long petId);
-
-
-
 }

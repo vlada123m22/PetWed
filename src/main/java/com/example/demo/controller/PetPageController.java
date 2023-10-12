@@ -76,8 +76,4 @@ public class PetPageController {
         }
 
     }
-    @PutMapping("/like-dislike/{like}/{petFromId}/{petToId}")
-    public void likeDislikePet(@PathVariable boolean like, @PathVariable Long petFromId, @PathVariable Long petToId){
-        petService.likeDislikePet(like, petFromId, petToId);
-    }
 }

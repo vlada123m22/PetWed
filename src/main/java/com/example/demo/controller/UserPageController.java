@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.entity.Breed;
 import com.example.demo.entity.Pet;
 import com.example.demo.entity.User;
 import com.example.demo.service.PetService;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 //TODO this controller will work only if the user is logged in
 @Controller
@@ -64,19 +66,5 @@ public class UserPageController {
 //    will return the page with the potential partners for your pet
 //    @Secured("REGISTERED")
 
-    @Secured("REGISTERED")
-    @GetMapping({"/home"})
-    public String getHomePage(Model model){
-        List<Pet> allPets = petService.allPets();
-        Map <Pet,Integer> petAge=new HashMap<>();
 
-        for (Pet pet:
-             allPets) {
-            petAge.put(pet,petService.getAge(pet));
-        }
-        model.addAttribute("petAge", petAge);
-        model.addAttribute("pageContent", "home-body");
-        model.addAttribute("pageTitle", "Home");
-        return "layout";
-    }
 }
