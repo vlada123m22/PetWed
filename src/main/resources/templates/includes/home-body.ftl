@@ -47,33 +47,34 @@
 <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="img/picture_animals.jpeg" class="d-block mx-auto" alt="Slide 1">
+            <img src="/img/picture_animals.jpeg" class="d-block mx-auto" alt="Slide 1">
             <div class="carousel-caption d-none d-md-block text-left">
                 <h5>Select the pet for witch you're seeking a partner and then click right or left</h5>
             </div>
         </div>
         <#list petAge as pet, age>
             <div class="carousel-item">
-                <img src="${pet.avatarPath}" class="d-block mx-auto" alt="Slide 2">
+                <img src="/${pet.avatarPath}" class="d-block mx-auto" alt="Slide 2">
                 <div class="carousel-caption d-none d-md-block text-left">
                     <a href="http://localhost:8080/pet/${pet.id}"><h5> ${pet.nickname} ${age} y/o</h5></a>
                     <p>${pet.bio}</p>
                 </div>
+               //TODO need to clarify how to: in vanilla js read custom atribute value from element(tag) a- idLike, after click event
             </div>
+
+            <a id="dislike" class="carousel-control-prev dislike-button" href="#carouselExample" role="button" data-slide="next" style="left: 150px;">
+                <img src="/img/cross.jpg">
+
+            </a>
+            <a id="like" class="carousel-control-next like-button" href="#carouselExample" role="button" data-slide="next" style="right: 150px;" customAtribute="${pet.id}">
+                <img src="/img/heart.png">
+
+            </a>
         </#list>
     </div>
-    <a id="dislike" class="carousel-control-prev" href="#carouselExample" role="button" data-slide="next" style="left: 150px;">
-        <img src="img/cross.jpg">
 
-    </a>
-    <a id="dislike" class="carousel-control-next" href="#carouselExample" role="button" data-slide="next" style="right: 150px;">
-        <img src="img/heart.png">
-    </a>
 </div>
-
-
-
-
+<script src="/js/like.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>

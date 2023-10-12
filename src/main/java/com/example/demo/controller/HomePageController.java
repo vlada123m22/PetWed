@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.HashMap;
@@ -31,7 +32,7 @@ public class HomePageController {
 
     // @Secured("REGISTERED")
     @GetMapping({"/home"})
-    public String getRecomendations(Model model){
+    public String getHomePage(Model model){
 
 
         List<Pet> pets = petService.allPets();
@@ -46,7 +47,7 @@ public class HomePageController {
     }
     @Secured("REGISTERED")
     @GetMapping({"/home/{petId}"})
-    public String getHomePage(Model model, @PathVariable Long petId){
+    public String getRecommendations(Model model, @PathVariable Long petId){
         Pet pet = petService.getPetById(petId);
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email= authentication.getName();
@@ -68,7 +69,7 @@ public class HomePageController {
 
 
 
-    @PutMapping("/like-dislike/{like}/{petFromId}/{petToId}")
+    @PostMapping("/like-dislike/{like}/{petFromId}/{petToId}")
     public void likeDislikePet(@PathVariable boolean like, @PathVariable Long petFromId, @PathVariable Long petToId){
         petService.likeDislikePet(like, petFromId, petToId);
     }
