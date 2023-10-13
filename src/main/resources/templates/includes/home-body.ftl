@@ -55,18 +55,17 @@
         <#list petAge as pet, age>
             <div class="carousel-item">
                 <img src="/${pet.avatarPath}" class="d-block mx-auto" alt="Slide 2">
-                <div class="carousel-caption d-none d-md-block text-left">
-                    <a href="http://localhost:8080/pet/${pet.id}"><h5> ${pet.nickname} ${age} y/o</h5></a>
+                <div class="carousel-caption d-none d-md-block text-left" >
+                    <a href="http://localhost:8080/pet/${pet.id}" ><h5> ${pet.nickname} ${age} y/o</h5></a>
                     <p>${pet.bio}</p>
                 </div>
                //TODO need to clarify how to: in vanilla js read custom atribute value from element(tag) a- idLike, after click event
             </div>
-
-            <a id="dislike" class="carousel-control-prev dislike-button" href="#carouselExample" role="button" data-slide="next" style="left: 150px;">
+            <a class="carousel-control-prev like-button" href="#carouselExample" role="button" data-slide="next" style="left: 150px;" data-petTo="${pet.id}" data-petFrom="2" data-like="false" >
                 <img src="/img/cross.jpg">
 
             </a>
-            <a id="like" class="carousel-control-next like-button" href="#carouselExample" role="button" data-slide="next" style="right: 150px;" customAtribute="${pet.id}">
+            <a class="carousel-control-next like-button" href="#carouselExample" role="button" data-slide="next" style="right: 150px;" data-petTo="${pet.id}" data-petFrom="2" data-like="false">
                 <img src="/img/heart.png">
 
             </a>
