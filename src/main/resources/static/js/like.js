@@ -1,5 +1,5 @@
 (function ()  {
-    const buttons = document.querySelectorAll(".carousel-control-prev, .carousel-control-next");
+    const buttons = document.querySelectorAll(".like-button");
     let csrfToken = document.querySelector('[name="_csrf"]').content;
     let csrfHeader = document.querySelector('[name="_csrf_header"]').content;
     buttons.forEach(button =>{
@@ -8,7 +8,7 @@
             let like=button.dataset.like;
             let petFromId=button.dataset.from;
             let petToId=button.dataset.to;
-            if(petFromId<=1){
+            if(petToId<=0){
                 return;
             }
             petToId=petToId-1;

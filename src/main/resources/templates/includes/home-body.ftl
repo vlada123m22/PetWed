@@ -48,32 +48,63 @@
 
 
 <div id="carouselExampleCaptions" class="carousel slide">
+    <#assign x = 1>
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="/img/picture_animals.jpeg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Select the pet for witch you're seeking a partner and then click right or left</h5>
+
+
+
+        <#list petAge>
+
+            <div class="carousel-item active">
+                <img src="/img/picture_animals.jpeg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Select the pet for witch you're seeking a partner and then click right or left</h5>
+                </div>
+
             </div>
-        </div>
-        <#list petAge as pet, age>
-            <div class="carousel-item">
+            <button class="like-button carousel-control-prev" type="button" data-bs-target="#carousel-item${x}" data-bs-slide="next" data-to="0" data-from="2" data-like="false">
+
+                <#--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+                Like
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="like-button carousel-control-next" type="button" data-bs-target="#carousel-item${x}" data-bs-slide="next" data-to="0" data-from="2" data-like="false">
+                <#--                <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+                Dislike
+                <span class="visually-hidden">Next</span>
+            </button>
+            <#items as pet, age>
+
+                <div class="carousel-item" id="carousel-item${x}">
                 <img src="/${pet.avatarPath}" class="d-block mx-auto" alt="Slide 2">
                 <div class="carousel-caption d-none d-md-block text-left" >
                     <a href="http://localhost:8080/pet/${pet.id}" ><h5> ${pet.nickname} ${age} y/o</h5></a>
                     <p>${pet.bio}</p>
                 </div>
 
-            </div>
-            <div class="like-button">
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" data-to="${pet.id}" data-from="2" data-like="false">
+                <#assign x++>
+                </div>
+                <button class="carousel-control-prev like-button" type="button" data-bs-target="#carousel-item${x}" data-bs-slide="next" data-to="${pet.id}" data-from="2" data-like="false">
 
                     <#--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" data-to="${pet.id}" data-from="2" data-like="true">
+                <button class="carousel-control-prev like-button" type="button" data-bs-target="#carousel-item${x}" data-bs-slide="next" data-to="${pet.id}" data-from="2" data-like="true">
                     <#--                <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
                     <span class="visually-hidden">Next</span>
                 </button>
+            </#items>
+
+
+
+
+
+        <#else>
+            <div class="carousel-item active">
+                <img src="/img/picture_animals.jpeg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Select the pet for witch you're seeking a partner and then click right or left</h5>
+                </div>
             </div>
 
         </#list>
