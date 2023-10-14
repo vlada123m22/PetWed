@@ -1,23 +1,27 @@
 (function ()  {
-    const button = document.querySelector('.like-button');
+    const buttons = document.querySelectorAll(".carousel-control-prev, .carousel-control-next");
     let csrfToken = document.querySelector('[name="_csrf"]').content;
     let csrfHeader = document.querySelector('[name="_csrf_header"]').content;
-    button.addEventListener('click', (e) => {
-        let like=button.dataset.like;
-        let petFromId=button.dataset.petFrom;
-        let petToId=button.dataset.petTo;
-        e.preventDefault();
-        //TODO look vanilla js string concatination
-        fetch("http://localhost:8080//like-dislike/"+like+"/"+petFromId+"/"+petToId, {
-            method: "POST",
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-                'x-csrf-token': csrfToken
-            },
+    buttons.forEach(button =>{
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            let like=button.dataset.like;
+            let petFromId=button.dataset.from;
+            let petToId=button.dataset.to;
+            if(petFromId<=1){
+                return;
+            }
+            petToId=petToId-1;
+            let url ="http://localhost:8080//like-dislike/"+like+"/"+petFromId+"/"+petToId;
+            fetch(url, {
+                method: "POST",
+                headers: {
+                    'x-csrf-token':csrfToken
+                },
+            }).then((response) => {
+                console.log(response.statusText);
+            });
         })
-            .then(res => res.json())
-            .then(res => console.log(res));
     })
-
 
 })();

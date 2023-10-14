@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="0" author="admin">
+        <sql>
+
+            create table breeds (id bigint not null auto_increment, breed varchar(255), species varchar(255), primary key (id)) engine=InnoDB;
+            create table matching (like_value bit, from_pet_id bigint, id bigint not null auto_increment, to_pet_id bigint, primary key (id)) engine=InnoDB;
+            create table messages (message_seen bit, from_user_id bigint, id bigint not null auto_increment, to_user_id bigint, when_sent datetime(6), message varchar(255), primary key (id)) engine=InnoDB;
+            create table pets (birth_date date, adding_date TIMESTAMP null, breed_id bigint, id bigint not null auto_increment, user_id bigint, avatar_path varchar(255), bio varchar(255), city varchar(255), gender varchar(255), nickname varchar(255), region varchar(255), primary key (id)) engine=InnoDB;
+            create table user_roles (id bigint not null auto_increment, role_name enum ('ADMIN','REGISTERED'), primary key (id)) engine=InnoDB;
+            create table users (account_non_locked BOOLEAN DEFAULT true, birth_date date, id bigint not null auto_increment, registration_date_time TIMESTAMP null, user_role_id bigint, avatar_path varchar(255), bio varchar(255), city varchar(255), email varchar(255), first_name varchar(255), gender varchar(255), last_name varchar(255), password varchar(255), region varchar(255), primary key (id)) engine=InnoDB;
+            alter table matching add constraint FKb37bbio5fh8nb3w0sy2n9g5wv foreign key (from_pet_id) references pets (id);
+            alter table matching add constraint FK61fnj2nle1iiejgtpoc0c558i foreign key (to_pet_id) references pets (id);
+            alter table messages add constraint FKms9o5dx3lfmikr6k8kyxi030e foreign key (from_user_id) references users (id);
+            alter table messages add constraint FK6y0sbofpv484p7yi78nr9hii1 foreign key (to_user_id) references users (id);
+            alter table pets add constraint FKr2wnqcmtrr16oaipocajcdn7w foreign key (breed_id) references breeds (id);
+            alter table pets add constraint FKc47kjb41qf50bwgddm024m5xn foreign key (user_id) references users (id);
+            alter table users add constraint FKsy1luwgtc2qas77si4xlrkjtl foreign key (user_role_id) references user_roles (id);
+
+        </sql>
+    </changeSet>
+</databaseChangeLog>

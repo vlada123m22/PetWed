@@ -33,8 +33,6 @@ public class HomePageController {
     // @Secured("REGISTERED")
     @GetMapping({"/home"})
     public String getHomePage(Model model){
-
-
         List<Pet> pets = petService.allPets();
         Map<Pet,Integer> petAge=new HashMap<>();
         for (Pet p: pets) {
@@ -69,6 +67,7 @@ public class HomePageController {
 
 
 
+    @Secured("REGISTERED")
     @PostMapping("/like-dislike/{like}/{petFromId}/{petToId}")
     public void likeDislikePet(@PathVariable boolean like, @PathVariable Long petFromId, @PathVariable Long petToId){
         petService.likeDislikePet(like, petFromId, petToId);

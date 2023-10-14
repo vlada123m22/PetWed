@@ -15,7 +15,7 @@ public class Message {
     private String message;
    
     @Column(name = "message_seen")
-    private Byte messageSeen;
+    private Boolean messageSeen;
    
     @Column(name = "when_sent")
     private Timestamp whenSent;
@@ -60,11 +60,11 @@ public class Message {
         this.message = message;
     }
 
-    public Byte getMessageSeen() {
+    public Boolean getMessageSeen() {
         return messageSeen;
     }
 
-    public void setMessageSeen(Byte messageSeen) {
+    public void setMessageSeen(Boolean messageSeen) {
         this.messageSeen = messageSeen;
     }
 

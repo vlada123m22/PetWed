@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
 
 <style>
 
@@ -44,11 +44,14 @@
 
 </style>
 
-<div id="carouselExample" class="carousel slide">
+
+
+
+<div id="carouselExampleCaptions" class="carousel slide">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="/img/picture_animals.jpeg" class="d-block mx-auto" alt="Slide 1">
-            <div class="carousel-caption d-none d-md-block text-left">
+            <img src="/img/picture_animals.jpeg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
                 <h5>Select the pet for witch you're seeking a partner and then click right or left</h5>
             </div>
         </div>
@@ -59,21 +62,54 @@
                     <a href="http://localhost:8080/pet/${pet.id}" ><h5> ${pet.nickname} ${age} y/o</h5></a>
                     <p>${pet.bio}</p>
                 </div>
-               //TODO need to clarify how to: in vanilla js read custom atribute value from element(tag) a- idLike, after click event
+
             </div>
-            <a class="carousel-control-prev like-button" href="#carouselExample" role="button" data-slide="next" style="left: 150px;" data-petTo="${pet.id}" data-petFrom="2" data-like="false" >
-                <img src="/img/cross.jpg">
+            <div class="like-button">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" data-to="${pet.id}" data-from="2" data-like="false">
 
-            </a>
-            <a class="carousel-control-next like-button" href="#carouselExample" role="button" data-slide="next" style="right: 150px;" data-petTo="${pet.id}" data-petFrom="2" data-like="false">
-                <img src="/img/heart.png">
+                    <#--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" data-to="${pet.id}" data-from="2" data-like="true">
+                    <#--                <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
 
-            </a>
         </#list>
     </div>
 
 </div>
+
+
+
+
+<#--<div id="carouselExample" class="carousel slide">-->
+<#--    <div class="carousel-inner">-->
+<#--        <div class="carousel-item active">-->
+<#--            <img src="/img/picture_animals.jpeg" class="d-block mx-auto" alt="Slide 1">-->
+<#--            <div class="carousel-caption d-none d-md-block text-left">-->
+<#--                <h5>Select the pet for witch you're seeking a partner and then click right or left</h5>-->
+<#--            </div>-->
+<#--        </div>-->
+<#--        <#list petAge as pet, age>-->
+<#--            <div class="carousel-item">-->
+<#--                <img src="/${pet.avatarPath}" class="d-block mx-auto" alt="Slide 2">-->
+<#--                <div class="carousel-caption d-none d-md-block text-left" >-->
+<#--                    <a href="http://localhost:8080/pet/${pet.id}" ><h5> ${pet.nickname} ${age} y/o</h5></a>-->
+<#--                    <p>${pet.bio}</p>-->
+<#--                </div>-->
+<#--               //TODO need to clarify how to: in vanilla js read custom atribute value from element(tag) a- idLike, after click event-->
+<#--            </div>-->
+<#--            <a class="carousel-control-prev dislike-button" href="#carouselExample" role="button" data-slide="next" style="left: 150px;" data-petTo="${pet.id}" data-petFrom="2" data-like="false" >-->
+<#--&lt;#&ndash;                //<img src="/img/cross.jpg">&ndash;&gt;-->
+<#--            </a>-->
+<#--            <a class="carousel-control-next like-button" href="#carouselExample" role="button" data-slide="next" style="right: 150px;" data-petTo="${pet.id}" data-petFrom="2" data-like="true">-->
+<#--&lt;#&ndash;                <img src="/img/heart.png">&ndash;&gt;-->
+
+<#--            </a>-->
+<#--        </#list>-->
+<#--    </div>-->
+
+<#--</div>-->
 <script src="/js/like.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
