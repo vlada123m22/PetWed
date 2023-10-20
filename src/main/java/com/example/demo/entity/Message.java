@@ -40,7 +40,7 @@ public class Message {
         return fromUser;
     }
 
-    public void setFromUserId(User fromUserId) {
+    public void setFromUser(User fromUserId) {
         this.fromUser = fromUserId;
     }
 
@@ -48,8 +48,8 @@ public class Message {
         return toUser;
     }
 
-    public void setToUserId(User toUserId) {
-        this.toUser = toUserId;
+    public void setToUser(User toUser) {
+        this.toUser = toUser;
     }
 
     public String getMessage() {

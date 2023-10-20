@@ -60,11 +60,4 @@ public class UserPageController {
         return "layout";
     }
 
-
-
-
-//    will return the page with the potential partners for your pet
-//    @Secured("REGISTERED")
-
-
 }

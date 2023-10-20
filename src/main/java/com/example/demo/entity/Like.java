@@ -3,8 +3,8 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="matching")
-public class Matching {
+@Table(name="likes")
+public class Like {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
@@ -21,17 +21,10 @@ public class Matching {
     @JoinColumn(name = "to_pet_id")
     private Pet toPet;
 
-    public Matching() {
+    public Like() {
     }
 
-    public Matching(Boolean likeValue, Pet fromPet, Pet toPet) {
-        this.likeValue = likeValue;
-        this.fromPet = fromPet;
-        this.toPet = toPet;
-    }
-
-    public Matching(Long id, Boolean likeValue, Pet fromPet, Pet toPet) {
-        this.id = id;
+    public Like(Boolean likeValue, Pet fromPet, Pet toPet) {
         this.likeValue = likeValue;
         this.fromPet = fromPet;
         this.toPet = toPet;

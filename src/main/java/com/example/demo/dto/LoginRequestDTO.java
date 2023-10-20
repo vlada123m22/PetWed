@@ -1,8 +1,6 @@
 package com.example.demo.dto;
 
-/**
- * @author scelac
- */
+
 public class LoginRequestDTO {
     private String userEmail;
     private String password;

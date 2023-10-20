@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
 
 import java.sql.Date;
 import java.time.LocalDateTime;
@@ -45,6 +46,10 @@ public class Pet {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    @Transient
+    Integer age;
+
 
     public Pet(Long id) {
         this.id = id;
@@ -144,4 +149,11 @@ public class Pet {
         this.user = user;
     }
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 }
