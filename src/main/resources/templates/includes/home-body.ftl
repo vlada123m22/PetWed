@@ -1,5 +1,3 @@
-
-
 <style>
 
     .carousel-control-next {
@@ -17,29 +15,56 @@
         width: 70px;
         height: 70px;
         border-radius: 50%;
-        background-color: #cc6a90;
+        background-color: #E28E9E;
         border: 2px solid #ffffff;
-        color: #cc6a90;
+        color: #E28E9E;
         top: 50%;
         content: '\2713'; /* Unicode character for a checkmark, change as needed */
     }
 
     .carousel-inner img {
         object-fit: cover;
-        height: 90vh;
-        width: 85%;
+        height: 85vh;
+        width: 100%;
     }
 
     .carousel-caption {
         position: absolute;
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(255,255,255, 0.5);
         padding: 20px;
         font-size: 20px;
-        color: #000;
+        color: #462d21; /* Soft brown text color */
+        border-radius: 15px; /* Rounded corners */
     }
 
     h5 {
         font-size: 27px;
+    }
+
+    .btn-group .btn {
+        border: 2px solid #ffffff;
+        background-color: #E28E9E; /* Soft pink */
+        color: #fff;
+    }
+
+    .dropdown-menu {
+        background-color: rgba(255,255,255, 0.6); /* White background */
+        border: none;
+        text-align: center; /* Center the text */
+        border-radius: 10px; /* Rounded corners */
+    }
+
+    .dropdown-menu a {
+        color: #000;
+        text-decoration: none;
+        font-size: 18px; /* Larger font size */
+        padding: 10px 20px; /* Increased padding */
+        display: block; /* Make them block elements for spacing */
+        border-radius: 5px; /* Rounded corners for each item */
+    }
+
+    .dropdown-menu a:hover {
+        background-color: #eee; /* Lighter gray on hover */
     }
 
 </style>
@@ -48,7 +73,7 @@
 <div>
 <div class="btn-group">
     <a class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Select the pet
+        Select pet
     </a>
     <ul class="dropdown-menu">
         <#list personalPets as pp>
@@ -62,9 +87,9 @@
     <div class="carousel-inner">
         <#list pets>
             <div class="carousel-item active">
-                <img src="/img/picture_animals.jpeg" class="d-block w-100" alt="...">
+                <img src="/img/pets-3715734_1280.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Select the pet for witch you're seeking a partner and then click right or left</h5>
+                    <h5>Select the pet for which you're seeking a partner and then click right or left</h5>
                 </div>
 <#--                <script>-->
 <#--                    var petFromId="${petFromId}";-->
@@ -112,9 +137,9 @@
 
         <#else>
             <div class="carousel-item active">
-                <img src="/img/picture_animals.jpeg" class="d-block w-100" alt="...">
+                <img src="/img/pets-3715734_1280.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Select the pet for witch you're seeking a partner and then click right or left</h5>
+                    <h5>Select the pet for which you're seeking a partner and then click right or left</h5>
                 </div>
             </div>
 
