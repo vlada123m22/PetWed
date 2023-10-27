@@ -29,6 +29,6 @@ Let the Pet Adventures Begin!
 Thank you for choosing PetMate. Get ready for your pets to create lasting friendships and unforgettable memories. Visit the Web App, connect, and let the tail-wagging fun commence!
 
 We used the following technologies:
-For UI: Freemarker, Bootstrap 5, CSS, HTML
-For Frontend: JS
-For Backed: Spring Boot and Spring Security
+1. For UI: Freemarker, Bootstrap 5, CSS, HTML
+2. For Frontend: JS
+3. For Backed: Spring Boot and Spring Security
