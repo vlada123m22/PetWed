@@ -56,4 +56,8 @@
             VALUES ('2023-10-10 22:43:59', '/img/standard_puddel.jpg', 'I am a dog', '2021-10-02','Chisinau', 'F', 'Rickie', 'Chisinau', 2, 1);
         </sql>
     </changeSet>
+    <changeSet id="01" author="Catalina">
+        <sql>
+        </sql>
+    </changeSet>
 </databaseChangeLog>

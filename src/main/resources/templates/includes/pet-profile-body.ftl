@@ -28,9 +28,11 @@
             <div class="co-md-5 text-center text-md-start">
                 <div>
                     <div class="text-center">
-                        <div class="display-3" style="font-family: cursive; color:fuchsia">Hello, my name is Willow!</div>
+                        <div class="display-3" style=" color:#E28E9E">Hello, my name is ${pet.nickname}</div>
 
-                        <div class="display-6"> Dog</div>
+                        <div class="display-6">
+                            <small>${pet.bio}</small>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -53,7 +55,6 @@
                                 <div class="carousel-item active">
                                     <img src="${pet.avatarPath}" class="img-fluid" alt="Nickname">
                                     <div class="carousel-caption d-none d-md-block">
-                                        <h5>${pet.bio}</h5>
 <#--                                        <p>I like walks</p>-->
                                     </div>
                                 </div>
@@ -92,7 +93,7 @@
                         <hr>
                     </div>
                 </div>
-                <div style="border: 2px solid #c900bf;   outline: #e8bbe6 solid 10px;  margin: auto;padding: 50px;
+                <div style="border: 2px solid #E28E9E;   outline: #F8DCE1 solid 10px;  margin: auto;padding: 50px;
  text-align: center; width: 50%;">
 
                     <ul class="list-group">
@@ -102,7 +103,7 @@
                         <p> ${pet.nickname}</p>
                         <li class="list-group-item list-group-item-danger">Breed</li>
 
-                        <p> ${pet.breed}</p>
+                        <p> ${pet.breed.breed}</p>
                         <li class="list-group-item list-group-item-danger">Gender</li>
 
                         <p>${pet.gender}</p>

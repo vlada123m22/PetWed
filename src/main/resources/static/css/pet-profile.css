@@ -6,7 +6,7 @@ body {
 }
 .p1 {
     color: rgba(52, 30, 12, 0.99);
-    text-shadow: 1px 1px 2px rgb(201, 0, 191), 0 0 25px #e550f1, 0 0 5px #ea8de7;
+    text-shadow: 1px 1px 2px #E28E9E, 0 0 25px #E28E9E, 0 0 5px #F8DCE1;
 }
 
 .italic-text {
@@ -57,7 +57,7 @@ div.container {
 }
 
 .profile-link {
-    background-color: #de9cdb;
+    background-color: #E28E9E;
     color: white;
     text-align: center;
     padding: 14px 25px;
@@ -70,7 +70,7 @@ div.container {
 }
 
 .profile-link {
-    background-color: #FF69B4;
+    background-color: #E28E9E;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -82,7 +82,7 @@ div.container {
 }
 
 .profile-link:hover {
-    background-color: #FF1493;
+    background-color: #E28E9E;
 }
 .image-upload-container {
     text-align: center;
@@ -92,14 +92,14 @@ div.container {
     display: none;
 }
 .image-upload-label {
-    background-color: #e384e0;
+    background-color: #E28E9E;
     color: #fff;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
 }
 .image-upload-label:hover {
-    background-color: #e550f1;
+    background-color: #E28E9E;
 }
 .uploaded-image {
     max-width: 100%;
