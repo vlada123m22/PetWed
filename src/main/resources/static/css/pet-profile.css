@@ -1,0 +1,118 @@
+body {
+   /*background-image: url('/img/background.png'); /* Replace 'your-image.jpg' with your image file path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional: Prevents scrolling with the background */
+}
+.p1 {
+    color: rgba(52, 30, 12, 0.99);
+    text-shadow: 1px 1px 2px #E28E9E, 0 0 25px #E28E9E, 0 0 5px #F8DCE1;
+}
+
+.italic-text {
+    font-style: italic;
+}
+
+
+.custom-caption {
+    background: rgba(255, 255, 255, 0.7); /* Culoarea albă cu opacitate (a patra valoare) pentru transparență */
+    padding: 15px; /* Spațiere pentru text */
+    border-radius: 5px; /* Rotunjirea marginilor */
+    color: #000; /* Culoarea textului (negru în acest exemplu) */
+}
+
+
+div.polaroid {
+    width: 30%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+}
+
+div.container {
+    text-align: center;
+    padding: 10px 20px;
+}
+.polaroid-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centrarea pe întreaga înălțime a ecranului */
+}
+
+.polaroid {
+    background-color: #fff;
+    border: 2px solid #000;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    padding: 10px;
+}
+
+.polaroid img {
+    max-width: 100%;
+    height: auto;
+}
+
+.profile-link {
+    background-color: #E28E9E;
+    color: white;
+    text-align: center;
+    padding: 14px 25px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.profile-link:hover {
+    text-decoration: underline;
+}
+
+.profile-link {
+    background-color: #E28E9E;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.profile-link:hover {
+    background-color: #E28E9E;
+}
+.image-upload-container {
+    text-align: center;
+    margin: 20px;
+}
+.image-upload-container input[type="file"] {
+    display: none;
+}
+.image-upload-label {
+    background-color: #E28E9E;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.image-upload-label:hover {
+    background-color: #E28E9E;
+}
+.uploaded-image {
+    max-width: 100%;
+    margin: 20px auto;
+    display: block;
+}
+.profile-link {
+    color: inherit;
+    text-decoration: none;
+
+}
+
+
+.profile-link:hover {
+    color: white;
+}

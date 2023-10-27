@@ -52,6 +52,7 @@ public class PetPageController {
     public String getPetProfilePage(Model model,@PathVariable Long petId) {
         Pet pet = petService.getPetById(petId);
         User user = userService.getUserByPetId(petId);
+        petService.computeAge(pet);
         model.addAttribute("pet", pet);
         model.addAttribute("user", user);
         model.addAttribute("pageTitle", "Pet profile");
