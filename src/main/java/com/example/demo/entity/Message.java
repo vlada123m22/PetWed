@@ -25,8 +25,8 @@ public class Message {
     private User fromUser;
 
     @ManyToOne
-    @JoinColumn(name = "to_user_id")
-    private User toUser;
+    @JoinColumn(name="chat_id")
+    private Chat chat;
 
     public Long getId() {
         return id;
@@ -44,13 +44,6 @@ public class Message {
         this.fromUser = fromUserId;
     }
 
-    public User getToUserId() {
-        return toUser;
-    }
-
-    public void setToUser(User toUser) {
-        this.toUser = toUser;
-    }
 
     public String getMessage() {
         return message;
@@ -76,4 +69,15 @@ public class Message {
         this.whenSent = whenSent;
     }
 
+    public User getFromUser() {
+        return fromUser;
+    }
+
+    public Chat getChat() {
+        return chat;
+    }
+
+    public void setChat(Chat chat) {
+        this.chat = chat;
+    }
 }

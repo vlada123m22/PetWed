@@ -37,7 +37,7 @@
             INSERT INTO petmate.users (avatar_path, bio, birth_date, city, email, first_name, gender, last_name, password, region,
                                        registration_date_time, user_role_id, account_non_locked)
             VALUES ( '/img/53bf80bcf1a0d9d759b04b35bd07f377.jpg', 'A girl with many pets', '2023-01-07', 'Chisinau',
-                    'musin.vladislava@gmail.com', 'Valeria', 'F', 'Grosu', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT);
+                    'valeria.grosu@gmail.com', 'Valeria', 'F', 'Grosu', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT);
 
 
 
@@ -46,14 +46,14 @@
                     'Chisinau', 4, 1);
 
             INSERT INTO petmate.pets (adding_date, avatar_path, bio, birth_date, city, gender, nickname, region, breed_id, user_id)
-            VALUES ('2023-10-10 22:43:59', '/img/standard_puddel.jpg', 'I am a dog', '2022-10-02','Chisinau', 'M', 'Rag', 'Chisinau', 2, 1);
+            VALUES ('2023-10-10 22:43:59', '/img/standard_puddel.jpg', 'I am a dog', '2022-10-02','Chisinau', 'M', 'Rag', 'Chisinau', 4, 2);
 
             INSERT INTO petmate.pets (adding_date, avatar_path, bio, birth_date, city, gender, nickname, region, breed_id, user_id)
             VALUES ('2023-10-10 22:43:59', '/img/English-Cocker-Spaniel-Slide03.jpg', 'This is my bio', '2019-10-06', 'Chisinau', 'F', 'Bella',
-                    'Chisinau', 2, 1);
+                    'Chisinau', 4, 2);
 
             INSERT INTO petmate.pets (adding_date, avatar_path, bio, birth_date, city, gender, nickname, region, breed_id, user_id)
-            VALUES ('2023-10-10 22:43:59', '/img/standard_puddel.jpg', 'I am a dog', '2021-10-02','Chisinau', 'F', 'Rickie', 'Chisinau', 2, 1);
+            VALUES ('2023-10-10 22:43:59', '/img/standard_puddel.jpg', 'I am a dog', '2021-10-02','Chisinau', 'F', 'Rickie', 'Chisinau', 4, 2);
         </sql>
     </changeSet>
 </databaseChangeLog>

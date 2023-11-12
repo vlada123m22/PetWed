@@ -7,8 +7,6 @@ import com.example.demo.service.PetService;
 import com.example.demo.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -63,7 +61,7 @@ public class PetPageController {
 
 
     @PostMapping("/add-new-pet")
-    public ResponseEntity<String> addNewUser(@RequestBody AddNewPetRequestDTO newPetRequest) {
+    public ResponseEntity<String> addNewPet(@RequestBody AddNewPetRequestDTO newPetRequest) {
         Pet newPet=null;
         if (Objects.nonNull(newPetRequest)) {
             newPet  =     petService.savePet(newPetRequest);

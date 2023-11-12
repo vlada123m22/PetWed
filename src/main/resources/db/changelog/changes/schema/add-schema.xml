@@ -6,21 +6,22 @@
 
     <changeSet id="0" author="admin">
         <sql>
-
-            create table breeds (id bigint not null auto_increment, breed varchar(255), species varchar(255), primary key (id)) engine=InnoDB;
-            create table likes (like_value bit, from_pet_id bigint, id bigint not null auto_increment, to_pet_id bigint, primary key (id)) engine=InnoDB;
-            create table messages (message_seen bit, from_user_id bigint, id bigint not null auto_increment, to_user_id bigint, when_sent datetime(6), message varchar(255), primary key (id)) engine=InnoDB;
-            create table pets (birth_date date, adding_date TIMESTAMP null, breed_id bigint, id bigint not null auto_increment, user_id bigint, avatar_path varchar(255), bio varchar(255), city varchar(255), gender varchar(255), nickname varchar(255), region varchar(255), primary key (id)) engine=InnoDB;
+            create table breeds (id bigint not null auto_increment, breed varchar(255), species varchar(255), primary key (id));
+            create table chats (id bigint not null auto_increment, last_updated datetime(6), participant1_id bigint, participant2_id bigint, when_created datetime(6), primary key (id)) ;
+            create table likes (like_value bit, from_pet_id bigint, id bigint not null auto_increment, to_pet_id bigint, primary key (id)) ;
+            create table messages (message_seen bit, chat_id bigint, from_user_id bigint, id bigint not null auto_increment, when_sent datetime(6), message varchar(255), primary key (id)) ;
+            create table pets (birth_date date, adding_date TIMESTAMP null, breed_id bigint, id bigint not null auto_increment, user_id bigint, avatar_path varchar(255), bio varchar(255), city varchar(255), gender varchar(255), nickname varchar(255), region varchar(255), primary key (id)) ;
             create table user_roles (id bigint not null auto_increment, role_name enum ('ADMIN','REGISTERED'), primary key (id)) engine=InnoDB;
-            create table users (account_non_locked BOOLEAN DEFAULT true, birth_date date, id bigint not null auto_increment, registration_date_time TIMESTAMP null, user_role_id bigint, avatar_path varchar(255), bio varchar(255), city varchar(255), email varchar(255), first_name varchar(255), gender varchar(255), last_name varchar(255), password varchar(255), region varchar(255), primary key (id)) engine=InnoDB;
-            alter table likes add constraint FKb37bbio5fh8nb3w0sy2n9g5wv foreign key (from_pet_id) references pets (id);
-            alter table likes add constraint FK61fnj2nle1iiejgtpoc0c558i foreign key (to_pet_id) references pets (id);
+            create table users (account_non_locked BOOLEAN DEFAULT true, birth_date date, id bigint not null auto_increment, registration_date_time TIMESTAMP null, user_role_id bigint, avatar_path varchar(255), bio varchar(255), city varchar(255), email varchar(255), first_name varchar(255), gender varchar(255), last_name varchar(255), password varchar(255), region varchar(255), primary key (id)) ;
+            alter table chats add constraint FKdtrd6ej7w1tiw8cl1neq6j9m9 foreign key (participant1_id) references users (id);
+            alter table chats add constraint FKk1oesf4sqtkok2n6b46hkom1c foreign key (participant2_id) references users (id);
+            alter table likes add constraint FK5o0cwndu3eet0p6vc6rqp900n foreign key (from_pet_id) references pets (id);
+            alter table likes add constraint FKalhrlro4j9b1ubb6i3g6t7ib7 foreign key (to_pet_id) references pets (id);
+            alter table messages add constraint FK64w44ngcpqp99ptcb9werdfmb foreign key (chat_id) references chats (id);
             alter table messages add constraint FKms9o5dx3lfmikr6k8kyxi030e foreign key (from_user_id) references users (id);
-            alter table messages add constraint FK6y0sbofpv484p7yi78nr9hii1 foreign key (to_user_id) references users (id);
             alter table pets add constraint FKr2wnqcmtrr16oaipocajcdn7w foreign key (breed_id) references breeds (id);
             alter table pets add constraint FKc47kjb41qf50bwgddm024m5xn foreign key (user_id) references users (id);
             alter table users add constraint FKsy1luwgtc2qas77si4xlrkjtl foreign key (user_role_id) references user_roles (id);
-
         </sql>
     </changeSet>
 </databaseChangeLog>
