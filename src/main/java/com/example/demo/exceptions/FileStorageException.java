@@ -1,6 +1,6 @@
-package com.celac.ecommerce.exceptions;/**
-* @author scelac
-*/public class FileStorageException extends Exception {
+package com.example.demo.exceptions;
+
+public class FileStorageException extends Exception {
     public FileStorageException() {
         super();
     }

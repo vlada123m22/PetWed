@@ -1,34 +1,29 @@
-package com.celac.ecommerce.dto;
+package com.example.demo.dto;
 
 import java.time.LocalDateTime;
 
-/**
-* @author scelac
-*/
 public class UserProfileDTO {
     private Long userId;
     private String userName;
     private String imgPath;
     private String firstName;
     private String lastName;
-    private String address;
-    private String phoneNumber;
+    private String region;
+    private String city;
     private LocalDateTime createdDateTime;
-    private LocalDateTime updatedDateTime;
 
     public UserProfileDTO() {
     }
 
-    public UserProfileDTO(Long userId, String userName, String firstName, String lastName, String imgPath,  String address, String phoneNumber, LocalDateTime createdDateTime, LocalDateTime updatedDateTime) {
+    public UserProfileDTO(Long userId, String userName, String firstName, String lastName, String imgPath, String region, String city,  LocalDateTime createdDateTime) {
         this.userId = userId;
         this.userName = userName;
         this.imgPath = imgPath;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
+        this.region = region;
+        this.city = city;
         this.createdDateTime = createdDateTime;
-        this.updatedDateTime = updatedDateTime;
     }
 
     public Long getUserId() {
@@ -71,20 +66,20 @@ public class UserProfileDTO {
         this.lastName = lastName;
     }
 
-    public String getAddress() {
-        return address;
+    public String getRegion() {
+        return region;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setRegion(String region) {
+        this.region = region;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getCity() {
+        return city;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public LocalDateTime getCreatedDateTime() {
@@ -95,11 +90,4 @@ public class UserProfileDTO {
         this.createdDateTime = createdDateTime;
     }
 
-    public LocalDateTime getUpdatedDateTime() {
-        return updatedDateTime;
-    }
-
-    public void setUpdatedDateTime(LocalDateTime updatedDateTime) {
-        this.updatedDateTime = updatedDateTime;
-    }
 }

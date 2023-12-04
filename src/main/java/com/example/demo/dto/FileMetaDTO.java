@@ -1,4 +1,6 @@
-package com.celac.ecommerce.dto;/**
+package com.example.demo.dto;
+
+/**
 * @author scelac
 */
 public class FileMetaDTO {

@@ -11,8 +11,9 @@ public class CustomWebMvcConfigurer implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry
-                .addResourceHandler("/js/**", "/css/**", "/images/**")
-                .addResourceLocations("classpath:/static/img/","classpath:/static/js/", "classpath:/static/css/") //to change in dependence of resources path
+                .addResourceHandler("/js/**", "/css/**", "/images/**", "/img /**")
+                .addResourceLocations("classpath:src/main/resources/static/img/","classpath:src/main/resources/static/js/", "classpath:src/main/resources/static/css/",
+                        "file:/Univer/PBL_anul2_sem/Uploaded_files") //to change in dependence of resources path
 //                .setCachePeriod(3600)
                 .resourceChain(true)
                 .addResolver(new PathResourceResolver());

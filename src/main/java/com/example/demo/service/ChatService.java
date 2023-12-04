@@ -11,7 +11,8 @@ public interface ChatService {
 //    void addMessage(Chat chat, User fromUser, Message message);
 
     List<Message> getChatMessages(User participant2);
-    Message getLastMessage();
+    void setLastMessage(Chat chat);
     Chat createChat(User participant1, User participant2);
 
+    List<Chat> getUserChats(Long userId);
 }

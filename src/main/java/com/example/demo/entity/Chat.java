@@ -26,6 +26,8 @@ public class Chat {
     @ManyToOne
     @JoinColumn(name="participant2_id")
     User participant2;
+    @Transient
+    Message lastMessage;
 
     public Chat(){};
     public Chat(User participant1, User participant2) {
@@ -56,5 +58,29 @@ public class Chat {
 
     public void setParticipant2(User participant2) {
         this.participant2 = participant2;
+    }
+
+    public Timestamp getWhenCreated() {
+        return whenCreated;
+    }
+
+    public void setWhenCreated(Timestamp whenCreated) {
+        this.whenCreated = whenCreated;
+    }
+
+    public Timestamp getLastUpdated() {
+        return lastUpdated;
+    }
+
+    public void setLastUpdated(Timestamp lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
+
+    public Message getLastMessage() {
+        return lastMessage;
+    }
+
+    public void setLastMessage(Message lastMessage) {
+        this.lastMessage = lastMessage;
     }
 }

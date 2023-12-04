@@ -22,11 +22,6 @@ public class ChatServiceImpl implements ChatService {
         this.chatRepository = chatRepository;
         this.userRepository = userRepository;
     }
-//    @Override
-//    public void addMessage(Chat chat, User fromUser, Message message) {
-//        message.setChat(chat);
-//        message.setFromUser(fromUser);
-//    }
 
     @Override
     public List<Message> getChatMessages(User participant2) {
@@ -36,13 +31,18 @@ public class ChatServiceImpl implements ChatService {
     }
 
     @Override
-    public Message getLastMessage() {
-        return null;
+    public void setLastMessage(Chat chat) {
+        chat.setLastMessage(chatRepository.getLastMessage(chat));
     }
 
     @Override
     public Chat createChat(User participant1, User participant2) {
         Chat chat=new Chat(participant1,participant2);
         return chatRepository.save(chat);
+    }
+
+    @Override
+    public List<Chat> getUserChats(Long userId) {
+        return chatRepository.getChatsByUser(userId);
     }
 }

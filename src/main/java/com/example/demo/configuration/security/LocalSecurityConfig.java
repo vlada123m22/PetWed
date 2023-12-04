@@ -70,7 +70,10 @@ public class LocalSecurityConfig {
                     .loginPage("/login.html")
                     .failureUrl("/login.html?error=true")
                     .loginProcessingUrl("/login")
-                    .successHandler(customSimpleUrlAuthenticationSuccessHandler))
+                    .successHandler(customSimpleUrlAuthenticationSuccessHandler)
+
+        )
+
         .logout(
             logout ->
                 logout

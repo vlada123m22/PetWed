@@ -1,13 +1,11 @@
-package com.celac.ecommerce.service;
+package com.example.demo.service;
 
-import com.celac.ecommerce.dto.FileMetaDTO;
-import com.celac.ecommerce.exceptions.FileStorageException;
-import java.nio.file.Path;
+
+import com.example.demo.dto.FileMetaDTO;
+import com.example.demo.exceptions.FileStorageException;
 import org.springframework.web.multipart.MultipartFile;
 
-/**
-* @author scelac
-*/
+
 
 public interface StorageService {
 

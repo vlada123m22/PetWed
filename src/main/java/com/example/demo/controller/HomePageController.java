@@ -81,9 +81,6 @@ public class HomePageController {
     @PostMapping("/like/{petFromId}/{petToId}")
     public ResponseEntity<AppreciatingDTO> likePet(@PathVariable Long petFromId, @PathVariable Long petToId){
         likeService.likeDislikePet(true, petFromId, petToId);
-        //TODO need to find a solution how to display modals from vanilla js
-        //TODO after registry of this like need to check if it is a match
-        //TODO if the method returns true return (new AppreciatingDTO("matching"))
         if (likeService.isMatch(petFromId,petToId)) return ResponseEntity.ok(new AppreciatingDTO("Match"));
         else return ResponseEntity.ok(new AppreciatingDTO("Not Match"));
     }

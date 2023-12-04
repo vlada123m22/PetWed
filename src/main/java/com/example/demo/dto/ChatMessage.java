@@ -1,15 +1,34 @@
-package com.alibou.websocket.chat;
+package com.example.demo.dto;
 
-import lombok.*;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+import com.example.demo.entity.Chat;
+
 public class ChatMessage {
-
-//    private MessageType type;
+    private Chat chat;
     private String content;
     private String sender;
 
+    public Chat getChat() {
+        return chat;
+    }
+
+    public void setChat(Chat chat) {
+        this.chat = chat;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getSender() {
+        return sender;
+    }
+
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
 }

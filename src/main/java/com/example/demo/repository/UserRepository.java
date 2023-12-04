@@ -1,5 +1,6 @@
 package com.example.demo.repository;
 
+import com.example.demo.dto.UserProfileDTO;
 import com.example.demo.entity.Pet;
 import com.example.demo.entity.User;
 import org.springframework.data.jpa.repository.Query;
@@ -16,4 +17,10 @@ public interface UserRepository extends CrudRepository<User, Long> {
     User getByEmail(String email);
     @Query("SELECT p.user FROM Pet p WHERE p.id= :petId ")
     User getByPetId(long petId);
+
+    @Query ("SELECT new com.example.demo.dto.UserProfileDTO(" +
+            " u.id, u.email, u.firstName, u.lastName,u.avatarPath,u.region,u.city, u.registrationDateTime) " +
+            " FROM User u " +
+            " WHERE u.id = :userId")
+    UserProfileDTO UserProfileDTOByUserId(Long userId);
 }

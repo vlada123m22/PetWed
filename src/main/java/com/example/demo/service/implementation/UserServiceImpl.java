@@ -1,6 +1,7 @@
 package com.example.demo.service.implementation;
 
 import com.example.demo.dto.AddNewUserRequestDTO;
+import com.example.demo.dto.UserProfileDTO;
 import com.example.demo.entity.Breed;
 import com.example.demo.entity.Pet;
 import com.example.demo.entity.User;
@@ -14,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -74,6 +76,25 @@ public class UserServiceImpl implements UserService {
     @Override
     public Boolean userHasPet(Pet pet, User user) {
         return pet.getUser() == user;
+
+    }
+
+    public UserProfileDTO getUserProfileDTOByUserId(Long userId) {
+
+        return userRepository.UserProfileDTOByUserId(userId);
+    }
+
+    @Override
+    public void updateUserProfile(UserProfileDTO dto) {
+        if (Objects.nonNull(dto.getUserId())){
+            User userProfile = userRepository.getById(dto.getUserId());
+            userProfile.setFirstName(dto.getFirstName());
+            userProfile.setLastName(dto.getLastName());
+            userProfile.setAvatarPath(dto.getImgPath());
+            userProfile.setRegion(dto.getRegion());
+            userProfile.setCity(dto.getCity());
+            userRepository.save(userProfile);
+        }
 
     }
 
