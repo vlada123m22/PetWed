@@ -1,22 +1,51 @@
-<div class = "container">
-    <div class="row">
-        <div class="card shadow-sm">
-            <img src="/${user.avatarPath}" class="img-fluid d-placeholder-img card-img-top" alt="...">
-            <div class="card-body">
-                <h3 class="card-title">${user.firstName}</h3>
-                <h3 class="card-title">${user.lastName}</h3>
-            </div>
-        </div>
-        <#list pets as  pet>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="/${pet.avatarPath}" class="img-fluid d-placeholder-img card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="http://localhost:8080/personal-pet/${pet.id}"><h3 class="card-title">${pet.nickname}</h3></a>
+<div>
+    <div class="container mt-5">
+        <h3 class="text-center">My account</h3>
+        <hr>
+        <div class="row justify-content-around">
+            <div class="col-12 col-lg-6">
+                <div class="card" style="width: 100%; border: 2px solid #eee; padding: 10px;">
+                    <div class="container text-center">
+                        <img src="${user.avatarPath}" alt="${user.firstName} ${user.lastName}" class="img-fluid" style="max-width: 100%;">
+                        <p class="p"><h4>${user.firstName} ${user.lastName}</h4></p>
+                        <p class="about-text italic-text">"${user.bio}"</p>
                     </div>
                 </div>
             </div>
-        </#list>
-        <a href="/new-pet"><h3>Add new pet</h3></a>
+            <div class="col-12 col-lg-6">
+                <div class="card" style="width: 100%; border: 2px solid #eee; padding: 22px;">
+                    <div class="container">
+                        <h2 class="text-center">About me</h2>
+                        <p><span class="label">Name:</span> ${user.firstName} ${user.lastName}</p>
+                        <p><span class="label">Location:</span> ${user.region}, Republica Moldova</p>
+                        <p><span class="label">Date of birth:</span> ${user.birthDate} y/o</p>
+                        <p class="text-center">${user.bio} </p>
+                        <a href="/profile/edit" type="button" class="btn btn-primary btn-lg float-right">Edit Profile info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2> My pets </h2>
+        <hr>
     </div>
+
+
+    <#list pets as pet>
+        <div class="row justify-content-around">
+            <div class="card" style="width: 18rem;">
+                <img src="${pet.avatarPath}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <center>
+                        <p class="card-text">${pet.nickname}</p>
+                        <button>
+                            <a href="/personal-pet/${pet.id}"> Check profile </a>
+                        </button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </#list >
 </div>
+
+

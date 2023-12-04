@@ -4,8 +4,6 @@
     let csrfToken = document.querySelector('[name="_csrf"]').content;
     let csrfHeader = document.querySelector('[name="_csrf_header"]').content;
     form.addEventListener('submit', function (event) {
-        // Prevent form from submitting to the server
-        event.preventDefault();
         // Do some stuff...
         fetch(url, {
             method: 'POST',

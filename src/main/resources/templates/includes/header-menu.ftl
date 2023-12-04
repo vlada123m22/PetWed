@@ -34,13 +34,13 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Your Account</a>
+                        <a class="nav-link" href="/profile">Your Account</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Liked</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Messages</a>
+                        <a class="nav-link" href="/chats">Messages</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -50,8 +50,9 @@
                             Your Pets
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="EditPetProfile.html">Pet 1</a></li>
-                            <li><a class="dropdown-item" href="EditPetProfile.html">Pet 2</a></li>
+                            <#list personalPets as pet>
+                                <li><a class="dropdown-item" href="/personal-pet/edit/${pet.id}">${pet.nickname}</a></li>
+                            </#list>
                         </ul>
                     </li>
                     <li class="nav-item">

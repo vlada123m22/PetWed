@@ -28,9 +28,9 @@
             <div class="co-md-5 text-center text-md-start">
                 <div>
                     <div class="text-center">
-                        <div class="display-3" style="font-family: cursive; color:fuchsia">Hello, my name is Willow!</div>
+                        <div class="display-3" style="font-family: cursive; color:fuchsia">Hello, my name is ${pet.nickname}!</div>
 
-                        <div class="display-6"> Dog</div>
+                        <div class="display-6"> ${pet.breed.breed}</div>
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
                         <p> ${pet.nickname}</p>
                         <li class="list-group-item list-group-item-danger">Breed</li>
 
-                        <p> ${pet.breed}</p>
+                        <p> ${pet.breed.breed}</p>
                         <li class="list-group-item list-group-item-danger">Gender</li>
 
                         <p>${pet.gender}</p>
