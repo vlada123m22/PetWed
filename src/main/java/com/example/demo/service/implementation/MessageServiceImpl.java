@@ -1,6 +1,7 @@
 package com.example.demo.service.implementation;
 
 import com.example.demo.dto.MessageDTO;
+import com.example.demo.entity.Chat;
 import com.example.demo.entity.Message;
 import com.example.demo.entity.User;
 import com.example.demo.repository.MessageRepository;
@@ -16,13 +17,11 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
-    public Message saveMessage(MessageDTO messageDTO, User fromUser, User toUser) {
+    public void saveMessage(MessageDTO messageDTO, User fromUser, Chat chat) {
         Message message=new Message();
         message.setMessage(messageDTO.getMessageText());
         message.setFromUser(fromUser);
-        message.setToUser(toUser);
-
-
-        return messageRepository.save(message);
+        message.setChat(chat);
+        messageRepository.save(message);
     }
 }

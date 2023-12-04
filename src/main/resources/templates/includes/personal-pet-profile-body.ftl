@@ -18,6 +18,6 @@
                 </div>
             </div>
         </div>
-        <a href="#">Edit info</a>
+        <a class="h3" href="/personal-pet/edit/${pet.id}">Edit info</a>
     </div>
 </div>

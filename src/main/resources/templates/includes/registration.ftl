@@ -3,7 +3,9 @@
         <div class="col-md-6 offset-md-3">
             <a href="/"><h2 class="text-center text-dark mt-5">Registration Form</h2></a>
             <div class="card my-5">
-                <form id="registrationForm" class="card-body cardbody-color p-lg-5">
+
+                <form id="registrationForm" class="card-body cardbody-color p-lg-5" action="/login.html" method="get">
+
                     <div class="mb-3">
                         <input name="firstName" type="text" class="form-control" id="FirstName" aria-describedby="User name" placeholder="First name">
                     </div>
@@ -29,9 +31,8 @@
                         <input id="file" type="file">
                     </div>
                     <div id="submitButton" class="text-center">
-                        <a href="/">
-                            <button type="submit" class="btn btn-primary px-5 mb-5 w-100" style="background-color: #E28E9E; border: 2px solid #E28E9E; text-decoration: underline; font-size: 18px;">Create Account</button>
-                        </a>
+                            <input type="submit" value="Create Account" class="btn btn-primary px-5 mb-5 w-100" style="background-color: #E28E9E; border: 2px solid #E28E9E; text-decoration: underline; font-size: 18px;">
+
                     </div>
                     <div id="emailHelp" class="form-text mb-3 text-dark">
                         <div class="mb-2">Go to login page? <a href="/login" class="text-dark fw-bold">Login</a></div>

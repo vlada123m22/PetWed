@@ -3,13 +3,11 @@ package com.example.demo.controller;
 
 import com.example.demo.dto.AppreciatingDTO;
 import com.example.demo.dto.MessageDTO;
+import com.example.demo.entity.Chat;
 import com.example.demo.entity.Message;
 import com.example.demo.entity.Pet;
 import com.example.demo.entity.User;
-import com.example.demo.service.LikeService;
-import com.example.demo.service.MessageService;
-import com.example.demo.service.PetService;
-import com.example.demo.service.UserService;
+import com.example.demo.service.*;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
@@ -32,12 +30,14 @@ public class HomePageController {
     private final PetService petService;
     private final LikeService likeService;
     private final MessageService messageService;
+    private final ChatService chatService;
 
-    public HomePageController(UserService userService, PetService petService, LikeService likeService, MessageService messageService) {
+    public HomePageController(UserService userService, PetService petService, LikeService likeService, MessageService messageService, ChatService chatService) {
         this.userService = userService;
         this.petService = petService;
         this.likeService = likeService;
         this.messageService = messageService;
+        this.chatService = chatService;
     }
 
 
@@ -102,19 +102,11 @@ public class HomePageController {
         String email= authentication.getName();
         User fromUser = userService.getUserByEmail(email);
         User toUser=userService.getUserByPetId(petToId);
-
-
-        Message newMessage = null;
+        Chat chat = chatService.createChat(fromUser,toUser);
         if (Objects.nonNull(messageRequest)){
-            newMessage  =     messageService.saveMessage(messageRequest,fromUser,toUser);
-
+            messageService.saveMessage(messageRequest,fromUser,chat);
         }
-        if(Objects.nonNull(newMessage)){
+        return ResponseEntity.ok("success");
 
-            return ResponseEntity.ok("success");
-
-        } else {
-            return ResponseEntity.status(HttpStatusCode.valueOf(404)).build();
-        }
     }
 }

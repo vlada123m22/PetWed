@@ -1,17 +1,4 @@
 
-<#--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
-<#--    <a class="navbar-brand" href="#">Pet Mate</a>-->
-<#--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
-<#--        <span class="navbar-toggler-icon"></span>-->
-<#--    </button>-->
-<#--    <div class="collapse navbar-collapse" id="navbarNav">-->
-<#--        <ul class="navbar-nav">-->
-<#--            <li class="nav-item active">-->
-<#--                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
-<#--            </li>-->
-<#--        </ul>-->
-<#--    </div>-->
-<#--</nav>-->
 
 <div class="container-lg-5">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -19,7 +6,8 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="http://localhost:8080/home" style="color: #E28E9E;">PetMate</a>
+            <a class="navbar-brand" href="http://localhost:8080/home" style="color: rgb(234, 141, 231); font-family: 'Lobster', cursive;">PetMate</a>
+
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item active">
@@ -35,13 +23,13 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Your Account</a>
+                        <a class="nav-link" href="/profile">Your Account</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Liked</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Messages</a>
+                        <a class="nav-link" href="/chats">Messages</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -51,8 +39,10 @@
                             Your Pets
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="EditPetProfile.html">Pet 1</a></li>
-                            <li><a class="dropdown-item" href="EditPetProfile.html">Pet 2</a></li>
+
+                            <#list personalPets as pet>
+                                <li><a class="dropdown-item" href="/personal-pet/edit/${pet.id}">${pet.nickname}</a></li>
+                            </#list>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -63,3 +53,4 @@
         </div>
     </nav>
 </div>
+
