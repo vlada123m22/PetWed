@@ -110,13 +110,13 @@
                 <div class="carousel-item">
                 <img src="${pet.avatarPath}" class="d-block mx-auto" alt="Slide 2">
                 <div class="carousel-caption d-none d-md-block text-left" >
-                    <a href="http://localhost:8080/pet/${pet.id}" ><h5> ${pet.nickname} ${pet.age} y/o</h5></a>
+                    <a href="http://localhost:8080/pet/${pet.id}" style="color: rgba(52, 30, 12, 0.99); text-decoration: none;" onmouseover="this.style.color=rgba(52, 30, 12, 0.50)" onmouseout="this.style.color=rgba(52, 30, 12, 0.99)">
+                        <h5>${pet.nickname} ${pet.age} y/o</h5>
+                    </a>
 <#--                    <#assign petToId= "${pet.id}" >-->
                     <p>${pet.bio}</p>
                 </div>
                     <button class="btn dislike-button carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" data-from="${petFrom}" data-to="${pet.id}">
-
-                        <#--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
                         <span class="visually-hidden">Previous</span>
                     </button>
                     <button class="btn like-button carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next"  data-from="${petFrom}" data-to="${pet.id}">
