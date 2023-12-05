@@ -12,25 +12,26 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.text.MessageFormat;
 import java.util.Objects;
 
 @Service
 public class FileSystemStorageService implements StorageService {
-    @Value("${file.upload.dir}")
-    private String fileUploadDir;
+    private static final String ROOT_FOLDER = System.getProperty("user.dir");
+    private final String fileUploadDir=ROOT_FOLDER+"/src/main/resources/static/img";
 
     @Override
-    public FileMetaDTO  store(MultipartFile file) throws FileStorageException {
+    public FileMetaDTO store(MultipartFile file) throws FileStorageException {
         Path root = Paths.get(fileUploadDir);
         String fileName = StringUtils.cleanPath(Objects.requireNonNull(file.getOriginalFilename()));
         try {
             Files.createDirectories(root);
             Path uploadFile = root.resolve(fileName);
-            //Files.copy(file.getInputStream(), uploadFile);
+            Files.copy(file.getInputStream(), uploadFile, StandardCopyOption.REPLACE_EXISTING);
             return new FileMetaDTO(fileName,"/img/"+fileName,uploadFile.toString(),file.getSize());
         } catch (IOException e) {
-            throw new FileStorageException(MessageFormat.format("Cant save file: {0}", fileName));
+            throw new FileStorageException(MessageFormat.format("Cannot save file: {0}", fileName));
         }
     }
 }

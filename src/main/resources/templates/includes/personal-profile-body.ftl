@@ -18,7 +18,7 @@
                         <h2 class="text-center">About me</h2>
                         <p><span class="label">Name:</span> ${user.firstName} ${user.lastName}</p>
                         <p><span class="label">Location:</span> ${user.region}, Republica Moldova</p>
-                        <p><span class="label">Date of birth:</span> ${user.birthDate} y/o</p>
+                        <p><span class="label">Date of birth:</span> ${user.birthDate}</p>
                         <p class="text-center">${user.bio} </p>
                         <a href="/profile/edit" type="button" class="btn btn-primary btn-lg float-right">Edit Profile info</a>
                     </div>

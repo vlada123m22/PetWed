@@ -89,7 +89,7 @@ public class UserPageController {
 
     @Secured("REGISTERED")
     @PostMapping("/update-user-profile")
-    public ResponseEntity<String> addNewUser(@RequestBody UserProfileDTO userProfileDTO) {
+    public ResponseEntity<String> updateUserProfile(@RequestBody UserProfileDTO userProfileDTO) {
         userService.updateUserProfile(userProfileDTO);
         return ResponseEntity.ok("Success");
     }
