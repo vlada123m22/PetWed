@@ -28,6 +28,7 @@
             <div class="co-md-5 text-center text-md-start">
                 <div>
                     <div class="text-center">
+
                         <div class="display-3" style="font-family: cursive; color:fuchsia">Hello, my name is ${pet.nickname}!</div>
 
                         <div class="display-6"> ${pet.breed.breed}</div>
@@ -53,7 +54,9 @@
                                 <div class="carousel-item active">
                                     <img src="${pet.avatarPath}" class="img-fluid" alt="Nickname">
                                     <div class="carousel-caption d-none d-md-block">
+
                                         <h5>${pet.bio}</h5>
+
 <#--                                        <p>I like walks</p>-->
                                     </div>
                                 </div>
@@ -92,7 +95,9 @@
                         <hr>
                     </div>
                 </div>
+
                 <div style="border: 2px solid #c900bf;   outline: #e8bbe6 solid 10px;  margin: auto;padding: 50px;
+
  text-align: center; width: 50%;">
 
                     <ul class="list-group">
