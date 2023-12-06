@@ -1,0 +1,169 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styleepp.css">
+    <title>Edit Pet Profile</title>
+    <style>
+        .rubric-editable {
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#" style="color: rgb(234, 141, 231); font-family: 'Lobster', cursive;">PetMate</a>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="Home page.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Settings
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">FAQ</a></li>
+                        <li><a class="dropdown-item" href="#">About us</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Your Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Liked</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Messages</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="PetMate2.html"><span class="bi bi-person"></span>Pet Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="petmate.html"><span class="bi bi-person"></span>Log out</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<style>
+    .btn {
+        background-color: #ea8de7;
+    }
+</style>
+<div class="container mt-5">
+    <div class="display-5 text-center"  style="font-family: cursive; color: rgb(234, 141, 231)">Edit your Pet's information</div>
+    <hr>
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                <img class="rounded-circle mt-5" width="150px" src="default_image.png" alt="Pet image">
+            </div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Pet Profile Settings</h4>
+                </div>
+                <input type="hidden" name="userId" class="user-profile-input" value="${userProfile.userId}" />
+                <input id="userProfileImagePath" type="hidden" name="imgPath" class="user-profile-input" value="${userProfile.imgPath}" />
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label class="labels">Name</label>
+                        <input type="text" name="firstName" class="form-control user-profile-input" placeholder="Enter Pet's name" value="${userProfile.firstName}" />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="labels">Species</label>
+                        <input type="text" name="lastName" class="form-control user-profile-input" placeholder="Your pet is a..." value="${userProfile.species}" />
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="row mt-2 text-center">
+                        <div class="col-md"> <label class="labels">Profile Image</label></div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <input id="fileImageElemInput" type="file" name="fileImageElem" />
+                        </div>
+                        <div class="col-md-6">
+                            <button id="submitImageProfile" class="btn btn-custom" type="button">Save Image</button>
+                        </div>
+                    </div>
+                    <small id="status"></small>
+                    <div id="imagePreview"></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label class="labels">Breed</label>
+                        <input type="text" name="phoneNumber" class="form-control user-profile-input" placeholder="Enter breed" value="${userProfile.breed}">
+                    </div>
+                    <div class="col-md-12">
+                        <label class="labels">Gender</label>
+                        <input type="text" name="address" class="form-control user-profile-input" placeholder="Enter gender" value="${userProfile.gender}">
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="labels">Age</label>
+                        <input type="text" name="address" class="form-control user-profile-input" placeholder="Enter address age" value="${userProfile.age}">
+                    </div>
+                    <div class="col-md-12">
+                        <label class="labels">Personality</label>
+                        <input type="text" name="address" class="form-control user-profile-input" placeholder="Enter personality" value="${userProfile.personality}">
+                    </div>
+                    <div class="col-md-12">
+                        <label class="labels">Hobby</label>
+                        <input type="text" name="address" class="form-control user-profile-input" placeholder="Enter hobby" value="${userProfile.hobby}">
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="labels">Favourite Treat</label>
+                        <input type="text" name="address" class="form-control user-profile-input" placeholder="Enter favourite treat" value="${userProfile.FavouriteTreat}">
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 text-center">
+                <button id="saveProfile" class="btn profile-button custom-button btn-custom" type="button">Save Profile</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="display-6 text-center"  style="font-family: cursive; color: rgb(234, 141, 231)">Add a new photo of your pet!</div>
+<hr>
+<div class="image-upload-container">
+    <label class="image-upload-label" for="imageInput">Upload a new photo</label>
+    <input type="file" id="imageInput" accept="image/*">
+</div>
+
+<img id="uploadedImage" class="uploaded-image" src="" alt="Uploaded Image">
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/javascript.js"></script>
+</body>
+</html>
+
+</body>
+</html>
