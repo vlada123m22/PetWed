@@ -12,7 +12,7 @@
     })
 
     saveProfile.addEventListener('click', () => {
-        let url = 'http://localhost:8080/update-pet-profile'
+        let url = `http://localhost:8080/update-pet-profile`
         let obj = {};
         document.querySelectorAll('.user-profile-input').forEach((el) => {
             obj[el.name] =  el.value;

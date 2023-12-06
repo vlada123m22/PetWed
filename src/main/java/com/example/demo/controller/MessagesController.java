@@ -68,27 +68,7 @@ public class MessagesController {
         return "layout";
     }
 
-    @MessageMapping("/chat/{chatId}/sendMessage") //WHere the message comes from
-    @SendTo("/topic/{chatId}")
-    public ChatMessage sendMessage(
-            @DestinationVariable Long chatId,
-            @Payload ChatMessage chatMessage //@RequestBody in REST
-    ) {
-        //save chatMessage into the database (for the chat with id ChatId)
-        return chatMessage;
-    }
 
-    @MessageMapping("/chat/{chatId}/addUser") //TODO add @DestinationVariable(userFromId, userToId)
-    @SendTo("/topic/{chatId}")  //TODO add @DestinationVariable(userFromId, userToId)
-    public ChatMessage addUser(
-            @Payload ChatMessage chatMessage,
-            SimpMessageHeaderAccessor headerAccessor
-    ) {
-        // Add username in web socket session
-        headerAccessor.getSessionAttributes().put("username", chatMessage.getSender()); //TODO instead of that line do:
-        //TODO No2: headerAccessor.getSessionAttributes().put("username", username of userTo);
-        return chatMessage;
-    }
 
 
 }
