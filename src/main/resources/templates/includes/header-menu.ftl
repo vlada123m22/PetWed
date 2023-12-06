@@ -8,6 +8,7 @@
             </button>
             <a class="navbar-brand" href="/home" style="color: rgb(234, 141, 231); font-family: 'Lobster', cursive;">PetMate</a>
 
+
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item active">

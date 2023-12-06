@@ -112,6 +112,7 @@
                 <div class="carousel-caption d-none d-md-block text-left" >
                     <a href="/pet/${pet.id}" ><h5> ${pet.nickname} ${pet.age} y/o</h5></a>
 
+
 <#--                    <#assign petToId= "${pet.id}" >-->
                     <p>${pet.bio}</p>
                 </div>
@@ -136,7 +137,7 @@
 
         <#else>
             <div class="carousel-item active">
-                <img src="/img/pets-3715734_1280.jpg" class="d-block w-100" alt="...">
+                <img src="/img/picture_animals.jpeg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Select the pet for which you're seeking a partner and then click right or left</h5>
                 </div>
