@@ -110,9 +110,8 @@
                 <div class="carousel-item">
                 <img src="${pet.avatarPath}" class="d-block mx-auto" alt="Slide 2">
                 <div class="carousel-caption d-none d-md-block text-left" >
-                    <a href="http://localhost:8080/pet/${pet.id}" style="color: rgba(52, 30, 12, 0.99); text-decoration: none;" onmouseover="this.style.color=rgba(52, 30, 12, 0.50)" onmouseout="this.style.color=rgba(52, 30, 12, 0.99)">
-                        <h5>${pet.nickname} ${pet.age} y/o</h5>
-                    </a>
+                    <a href="/pet/${pet.id}" ><h5> ${pet.nickname} ${pet.age} y/o</h5></a>
+
 <#--                    <#assign petToId= "${pet.id}" >-->
                     <p>${pet.bio}</p>
                 </div>

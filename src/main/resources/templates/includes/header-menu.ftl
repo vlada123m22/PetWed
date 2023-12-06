@@ -6,12 +6,12 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="http://localhost:8080/home" style="color: rgb(234, 141, 231); font-family: 'Lobster', cursive;">PetMate</a>
+            <a class="navbar-brand" href="/home" style="color: rgb(234, 141, 231); font-family: 'Lobster', cursive;">PetMate</a>
 
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="http://localhost:8080/home">Home</a>
+                        <a class="nav-link" href="/home">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

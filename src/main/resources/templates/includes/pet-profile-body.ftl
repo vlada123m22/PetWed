@@ -147,7 +147,7 @@
                                 <div class="container">
                                     <p class="p"><h5>${user.firstName} ${user.lastName}</h5></p>
                                     <p class="about-text italic-text">${user.bio}</p>
-                                    <a href="http://localhost:8080/profile/${user.id}" target="_blank" class="profile-link">Check Profile</a>
+                                    <a href="/profile/${user.id}" target="_blank" class="profile-link">Check Profile</a>
                                     <button class="profile-link message-button">Message</button>
                                 </div>
                             </div>

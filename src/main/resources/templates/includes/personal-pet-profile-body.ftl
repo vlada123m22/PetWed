@@ -10,7 +10,7 @@
             <div class="card shadow-sm">
                 <img src="/${user.avatarPath}" class="img-fluid d-placeholder-img card-img-top" alt="...">
                 <div class="card-body">
-                    <a href="http://localhost:8080/profile">
+                    <a href="/profile">
                         <h3 class="card-title">${user.firstName}</h3>
                         <h3 class="card-title">${user.lastName}</h3>
                     </a>
