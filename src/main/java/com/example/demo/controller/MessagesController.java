@@ -1,6 +1,4 @@
 package com.example.demo.controller;
-
-import com.example.demo.dto.ChatMessage;
 import com.example.demo.entity.Message;
 import com.example.demo.entity.Pet;
 import com.example.demo.entity.User;
@@ -8,11 +6,6 @@ import com.example.demo.entity.Chat;
 import com.example.demo.service.ChatService;
 import com.example.demo.service.PetService;
 import com.example.demo.service.UserService;
-import org.springframework.messaging.handler.annotation.DestinationVariable;
-import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.Payload;
-import org.springframework.messaging.handler.annotation.SendTo;
-import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
