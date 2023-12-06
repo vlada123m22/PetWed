@@ -6,6 +6,7 @@
 
     <changeSet id="0" author="admin">
         <sql>
+            use petmate;
             create table breeds (id bigint not null auto_increment, breed varchar(255), species varchar(255), primary key (id));
             create table chats (id bigint not null auto_increment, last_updated datetime(6), participant1_id bigint, participant2_id bigint, when_created datetime(6), primary key (id)) ;
             create table likes (like_value bit, from_pet_id bigint, id bigint not null auto_increment, to_pet_id bigint, primary key (id)) ;
@@ -24,4 +25,5 @@
             alter table users add constraint FKsy1luwgtc2qas77si4xlrkjtl foreign key (user_role_id) references user_roles (id);
         </sql>
     </changeSet>
+
 </databaseChangeLog>
