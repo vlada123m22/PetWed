@@ -13,47 +13,51 @@
             INSERT INTO petmate.user_roles (id, role_name)
             VALUES (2, 'REGISTERED');
 
-
-
             INSERT INTO petmate.breeds (id, breed, species)
-            VALUES (1, 'Cocker Spaniel', 'Dog');
-
-            INSERT INTO petmate.breeds (id, breed, species)
-            VALUES (2, 'Pudel', 'Dog');
-
-            INSERT INTO petmate.breeds (id, breed, species)
-            VALUES (3,'Swinks', 'Cat');
-
-            INSERT INTO petmate.breeds (id, breed, species)
-            VALUES (4, 'Siberian Cat', 'Cat');
+            VALUES (1, 'Dog', 'Dog'),
+                    (2, 'Cat', 'Cat'),
+                    (3, 'Parrot', 'Parrot');
 
 
             INSERT INTO petmate.users (avatar_path, bio, birth_date, city, email, first_name, gender, last_name, password, region,
                                        registration_date_time, user_role_id, account_non_locked)
-            VALUES ('/img/53bf80bcf1a0d9d759b04b35bd07f377.jpg', 'A girl with many pets', '2023-01-07', 'Chisinau',
-                    'musin.vladislava@gmail.com', 'Vladislava', 'F', 'Musin', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT);
-
-
-            INSERT INTO petmate.users (avatar_path, bio, birth_date, city, email, first_name, gender, last_name, password, region,
-                                       registration_date_time, user_role_id, account_non_locked)
-            VALUES ( '/img/53bf80bcf1a0d9d759b04b35bd07f377.jpg', 'A girl with many pets', '2023-01-07', 'Chisinau',
-                    'valeria.grosu@gmail.com', 'Valeria', 'F', 'Grosu', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT);
-
+            VALUES ('/img/user1.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2023-01-07', 'Chisinau',
+                    'mary.wolf@gmail.com', 'Mary', 'F', 'Wolf', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT),
+                    ( '/img/user3.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2023-01-07', 'Chisinau',
+                    'john.smith@gmail.com', 'John', 'M', 'Smith', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT),
+                    ( '/img/user2.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2023-01-07', 'Chisinau',
+                     'valeria.grosu@gmail.com', 'Valeria', 'F', 'Grosu', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT),
+                    ( '/img/user4.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2023-01-07', 'Chisinau',
+                     'adela.mihaiescu@gmail.com', 'Adela', 'F', 'Mihaiescu', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT),
+                    ( '/img/user5.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2023-01-07', 'Chisinau',
+                     'nenea.vasea@gmail.com', 'Nenea', 'M', 'Vasea', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT),
+                    ( '/img/user6.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2023-01-07', 'Chisinau',
+                    'ion.calugarescu@gmail.com', 'Ion', 'M', 'Calugarescu', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT),
+                   ( '/img/user7.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2023-01-07', 'Chisinau',
+                     'maria.gutu@gmail.com', 'Maria', 'F', 'Gutu', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT);
 
 
             INSERT INTO petmate.pets (adding_date, avatar_path, bio, birth_date, city, gender, nickname, region, breed_id, user_id)
-            VALUES ('2023-10-10 22:43:59', '/img/GettyImages-1198704735-69e2d11cba434cb28a3c9e6caae9d128.jpg', 'This is my bio', '2020-10-06', 'Chisinau', 'M', 'Nick',
-                    'Chisinau', 4, 1);
+            VALUES('2023-10-10 22:43:59', '/img/cat1.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2019-10-06', 'Chisinau', 'M', 'Nick',
+                    'Chisinau', 2, 1),
+                  ('2023-10-10 22:43:59', '/img/cat2.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2020-10-06', 'Chisinau', 'M', 'Rag',
+                   'Chisinau', 2, 2),
+                  ('2023-10-10 22:43:59', '/img/cat3.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2018-10-06', 'Chisinau', 'M', 'Nickie',
+                   'Chisinau', 2, 4),
+                  ('2023-10-10 22:43:59', '/img/cat4.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2021-10-06', 'Chisinau', 'M', 'Alexa',
+                   'Chisinau', 2, 5),
+                  ('2023-10-10 22:43:59', '/img/cat5.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2020-10-06', 'Chisinau', 'M', 'Murzik',
+                   'Chisinau', 2, 7),
 
-            INSERT INTO petmate.pets (adding_date, avatar_path, bio, birth_date, city, gender, nickname, region, breed_id, user_id)
-            VALUES ('2023-10-10 22:43:59', '/img/standard_puddel.jpg', 'I am a dog', '2022-10-02','Chisinau', 'M', 'Rag', 'Chisinau', 4, 2);
+                  ('2023-10-10 22:43:59', '/img/dog1.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2022-10-02','Chisinau', 'M', 'Rag', 'Sharik', 1, 1),
+                  ('2023-10-10 22:43:59', '/img/dog2.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2019-10-02','Chisinau', 'F', 'Rag', 'Crowly', 1, 2),
+                  ('2023-10-10 22:43:59', '/img/dog3.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2020-10-02','Chisinau', 'M', 'Rag', 'Cutu', 1, 7),
+                  ('2023-10-10 22:43:59', '/img/dog4.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2021-10-02','Chisinau', 'F', 'Rag', 'Annie', 1, 5),
 
-            INSERT INTO petmate.pets (adding_date, avatar_path, bio, birth_date, city, gender, nickname, region, breed_id, user_id)
-            VALUES ('2023-10-10 22:43:59', '/img/English-Cocker-Spaniel-Slide03.jpg', 'This is my bio', '2019-10-06', 'Chisinau', 'F', 'Bella',
-                    'Chisinau', 4, 2);
+                  ('2023-10-10 22:43:59', '/img/parot1.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2022-10-02','Chisinau', 'M', 'Rag', 'Chisinau', 3, 1),
+                  ('2023-10-10 22:43:59', '/img/parot2.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2020-10-02','Chisinau', 'M', 'Rag', 'Chisinau', 3, 3),
+                  ('2023-10-10 22:43:59', '/img/parot3.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2021-10-02','Chisinau', 'M', 'Rag', 'Chisinau', 3, 4);
 
-            INSERT INTO petmate.pets (adding_date, avatar_path, bio, birth_date, city, gender, nickname, region, breed_id, user_id)
-            VALUES ('2023-10-10 22:43:59', '/img/standard_puddel.jpg', 'I am a dog', '2021-10-02','Chisinau', 'F', 'Rickie', 'Chisinau', 4, 2);
         </sql>
     </changeSet>
 </databaseChangeLog>
