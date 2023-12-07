@@ -1,28 +1,6 @@
-<#--<div class = "container">-->
-<#--    <div class="row">-->
-<#--        <div class="card shadow-sm">-->
-<#--            <img src="/${pet.avatarPath}" class="img-fluid d-placeholder-img card-img-top" alt="...">-->
-<#--            <div class="card-body">-->
-<#--                <h3 class="card-title">${pet.nickname}</h3>-->
-<#--            </div>-->
-<#--        </div>-->
-<#--            <div class="col">-->
-<#--                <div class="card shadow-sm">-->
-<#--                    <img src="/${user.avatarPath}" class="img-fluid d-placeholder-img card-img-top" alt="...">-->
-<#--                    <div class="card-body">-->
-<#--                        <a href="http://localhost:8080/profile/${user.id}">-->
-<#--                            <h3 class="card-title">${user.firstName}</h3>-->
-<#--                            <h3 class="card-title">${user.lastName}</h3>-->
-<#--                        </a>-->
-
-<#--                    </div>-->
-<#--                </div>-->
-<#--            </div>-->
-<#--    </div>-->
-<#--</div>-->
 
 <link rel="stylesheet" href="/css/pet-profile.css">
-<section id="intro">
+<div>
     <div class="container-lg">
         <div class="row justify-content-center">
             <div class="co-md-5 text-center text-md-start">
@@ -53,29 +31,10 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <img src="${pet.avatarPath}" class="img-fluid" alt="Nickname">
-                                    <div class="carousel-caption d-none d-md-block">
-
-                                        <h5>${pet.bio}</h5>
-
-<#--                                        <p>I like walks</p>-->
-                                    </div>
+                                    <h5>${pet.bio}</h5>
                                 </div>
-<#--                                <div class="carousel-item">-->
-<#--                                    <img src="img/pet_1.1.jpg" class="img-fluid" alt="Willow">-->
-<#--                                    <div class="carousel-caption d-none d-md-block">-->
-<#--                                        <h5>This my brother</h5>-->
-<#--                                        <p>I love my family</p>-->
-<#--                                    </div>-->
-<#--                                </div>-->
+
                             </div>
-<#--                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">-->
-<#--                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-<#--                                <span class="visually-hidden">Previous</span>-->
-<#--                            </button>-->
-<#--                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">-->
-<#--                                <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-<#--                                <span class="visually-hidden">Next</span>-->
-<#--                            </button>-->
                         </div>
                     </div>
 
@@ -157,4 +116,4 @@
             </div>
         </div>
     </div>
-</section>
+</div>

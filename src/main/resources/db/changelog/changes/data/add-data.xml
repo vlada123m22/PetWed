@@ -60,8 +60,4 @@
 
         </sql>
     </changeSet>
-    <changeSet id="01" author="Catalina">
-        <sql>
-        </sql>
-    </changeSet>
 </databaseChangeLog>
