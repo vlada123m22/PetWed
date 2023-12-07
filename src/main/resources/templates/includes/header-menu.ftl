@@ -42,7 +42,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                             <#list personalPets as pet>
-                                <li><a class="dropdown-item" href="/personal-pet/edit/${pet.id}">${pet.nickname}</a></li>
+                                <li><a class="dropdown-item" href="/personal-pet/${pet.id}">${pet.nickname}</a></li>
                             </#list>
                         </ul>
                     </li>

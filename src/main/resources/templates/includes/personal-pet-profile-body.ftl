@@ -1,7 +1,7 @@
 <div class = "container">
     <div class="row">
         <div class="card shadow-sm">
-            <img src="/${pet.avatarPath}" class="img-fluid d-placeholder-img card-img-top" alt="...">
+            <img src="${pet.avatarPath}" class="img-fluid d-placeholder-img card-img-top" alt="...">
             <div class="card-body">
                 <h3 class="card-title">${pet.nickname}</h3>
             </div>
