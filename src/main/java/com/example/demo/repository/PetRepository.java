@@ -14,8 +14,7 @@ public interface PetRepository extends CrudRepository<Pet, Integer> {
 //    List<Pet> getSameBreedPets(Pet pet);
 
 
-    @Query("SELECT p  from  Pet  p where p.breed= :breed and p.user.id!= :userId " +
-            "AND p.id NOT IN (SELECT m.toPet.id FROM Like m WHERE m.toPet.id= p.id)")
+    @Query("SELECT p  from  Pet  p where p.breed= :breed and p.user.id!= :userId ")
     List<Pet> getSuitablePets(Breed breed, Long userId); //returns all pets of the indicated breed excluding the pets of the user with the indicated userId
 
     @Query("SELECT p  from  Pet p where p.user.id= :userId ")
