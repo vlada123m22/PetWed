@@ -47,7 +47,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="petmate.html"><span class="bi bi-person"></span>Log out</a>
+                        <a class="nav-link" href="/"><span class="bi bi-person"></span>Log out</a>
                     </li>
                 </ul>
             </div>

@@ -14,6 +14,9 @@
             }
             let url ="http://localhost:8080/like/"+petFromId+"/"+petToId;
             console.log(url);
+            if(petFromId==="null"){
+                return;
+            }
             fetch(url, {
                 method: "POST",
                 headers: {

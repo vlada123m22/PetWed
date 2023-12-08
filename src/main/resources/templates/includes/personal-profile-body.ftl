@@ -6,9 +6,17 @@
             <div class="col-12 col-lg-6">
                 <div class="card" style="width: 100%; border: 2px solid #eee; padding: 10px;">
                     <div class="container text-center">
+                        <#if user.avatarPath?has_content>
                         <img src="${user.avatarPath}" alt="${user.firstName} ${user.lastName}" class="img-fluid" style="max-width: 100%;">
+                        <#else>
+                            <img src="/img/default_image.png" alt="${user.firstName} ${user.lastName}" class="img-fluid" style="max-width: 100%;">
+                        </#if>
                         <p class="p"><h4>${user.firstName} ${user.lastName}</h4></p>
+                        <#if user.bio?has_content>
                         <p class="about-text italic-text">"${user.bio}"</p>
+                        <#else>
+                            <p class="about-text italic-text">No bio</p>
+                        </#if>
                     </div>
                 </div>
             </div>
@@ -19,7 +27,12 @@
                         <p><span class="label">Name:</span> ${user.firstName} ${user.lastName}</p>
                         <p><span class="label">Location:</span> ${user.region}, Republica Moldova</p>
                         <p><span class="label">Date of birth:</span> ${user.birthDate}</p>
-                        <p class="text-center">${user.bio} </p>
+                        <#if user.bio?has_content>
+                            <p class="text-center">${user.bio} </p>
+                        <#else>
+                            <p class="text-center">No bio</p>
+                        </#if>
+
                         <a href="/profile/edit" type="button" class="btn btn-primary btn-lg float-right">Edit Profile info</a>
                     </div>
                 </div>
