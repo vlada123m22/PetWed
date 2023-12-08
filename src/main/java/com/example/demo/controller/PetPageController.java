@@ -54,7 +54,9 @@ public class PetPageController {
         if (pet.getUser() != user) {
             return "Whitelabel-page";
         }
+
         List<Pet> personalPets = petService.getPetsByUserId(user.getId());
+
         petService.computeAge(pet);
         model.addAttribute("personalPets", personalPets);
         model.addAttribute("pet", pet);
