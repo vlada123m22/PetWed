@@ -1,7 +1,11 @@
 <div class="row">
     <div class="col-md-3 border-right">
         <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-            <img class="rounded-circle mt-5" width="150px" src="${user.avatarPath}">
+            <#if user.avatarPath?has_content>
+                <img class="rounded-circle mt-5" width="150px" src="${user.avatarPath}" alt="No image">
+            <#else>
+                <img class="rounded-circle mt-5" width="150px" src="/img/default_image.png" alt="No image"> >
+            </#if>
             <span class="font-weight-bold">${user.firstName}</span>
             <span class="text-black-50">${user.email}</span>
         </div>
@@ -13,7 +17,11 @@
                 <h4 class="text-right">Profile Settings</h4>
             </div>
             <input type="hidden" name ="userId" class="user-profile-input" value="${user.id}"/>
-            <input id="userProfileImagePath" type="hidden" name="imgPath" class="user-profile-input" value="${user.avatarPath}"/>
+            <#if user.avatarPath?has_content>
+                <input id="userProfileImagePath" type="hidden" name="imgPath" class="user-profile-input" value="${user.avatarPath}"/>
+            <#else>
+                <input id="userProfileImagePath" type="hidden" name="imgPath" class="user-profile-input" value="/img/default_image.png"/>
+            </#if>
             <div class="row mt-2">
                 <div class="col-md-6">
                     <label class="labels">Name</label>

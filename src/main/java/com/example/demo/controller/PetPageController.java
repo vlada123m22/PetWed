@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -31,11 +32,11 @@ public class PetPageController {
 
     @Secured("REGISTERED")
     @GetMapping("/new-pet")
-    public String newPet(Model model){
+    public String newPet(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String email= authentication.getName();
+        String email = authentication.getName();
         User authorisedUser = userService.getUserByEmail(email);
-        List<Pet> personalPets=petService.getPetsByUserId(authorisedUser.getId());
+        List<Pet> personalPets = petService.getPetsByUserId(authorisedUser.getId());
         model.addAttribute("personalPets", personalPets);
         model.addAttribute("pageTitle", "New Pet");
         model.addAttribute("pageContent", "new-pet");
@@ -48,12 +49,12 @@ public class PetPageController {
     public String getPersonalPetProfilePage(Model model, @PathVariable Long petId) {
         Pet pet = petService.getPetById(petId);
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String email= authentication.getName();
+        String email = authentication.getName();
         User user = userService.getUserByEmail(email);
-        if (pet.getUser()!=user){
+        if (pet.getUser() != user) {
             return "Whitelabel-page";
         }
-        List<Pet> personalPets=petService.getPetsByUserId(user.getId());
+        List<Pet> personalPets = petService.getPetsByUserId(user.getId());
         petService.computeAge(pet);
         model.addAttribute("personalPets", personalPets);
         model.addAttribute("pet", pet);
@@ -63,16 +64,22 @@ public class PetPageController {
         return "layout";
     }
 
-    @Secured("REGISTERED")
+
     @GetMapping("/pet/{petId}")
-    public String getPetProfilePage(Model model,@PathVariable Long petId) {
+    public String getPetProfilePage(Model model, @PathVariable Long petId) {
         Pet pet = petService.getPetById(petId);
         petService.computeAge(pet);
         User user = userService.getUserByPetId(petId);
+        List<Pet> personalPets;
+
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String email= authentication.getName();
+        String email = authentication.getName();
         User authorisedUser = userService.getUserByEmail(email);
-        List<Pet> personalPets=petService.getPetsByUserId(authorisedUser.getId());
+        if (Objects.nonNull(authorisedUser)) {
+            personalPets = petService.getPetsByUserId(authorisedUser.getId());
+        } else {
+            personalPets = new ArrayList<>();
+        }
         model.addAttribute("personalPets", personalPets);
         model.addAttribute("pet", pet);
         model.addAttribute("user", user);
@@ -83,15 +90,15 @@ public class PetPageController {
 
     @Secured("REGISTERED")
     @GetMapping("personal-pet/edit/{petId}")
-    public String getEditPetPage(Model model, @PathVariable Long petId){
+    public String getEditPetPage(Model model, @PathVariable Long petId) {
         Pet pet = petService.getPetById(petId);
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String email= authentication.getName();
+        String email = authentication.getName();
         User user = userService.getUserByEmail(email);
-        if (pet.getUser()!=user){
+        if (pet.getUser() != user) {
             return "Whitelabel-page";
         }
-        List<Pet> personalPets=petService.getPetsByUserId(user.getId());
+        List<Pet> personalPets = petService.getPetsByUserId(user.getId());
         model.addAttribute("personalPets", personalPets);
         model.addAttribute("pet", pet);
         model.addAttribute("user", user);
@@ -101,14 +108,13 @@ public class PetPageController {
     }
 
 
-
     @PostMapping("/add-new-pet")
     public ResponseEntity<String> addNewPet(@RequestBody AddNewPetRequestDTO newPetRequest) {
-        Pet newPet=null;
+        Pet newPet = null;
         if (Objects.nonNull(newPetRequest)) {
-            newPet  =     petService.savePet(newPetRequest);
+            newPet = petService.savePet(newPetRequest);
         }
-        if(Objects.nonNull(newPet)){
+        if (Objects.nonNull(newPet)) {
 
             return ResponseEntity.ok("success");
 

@@ -21,42 +21,44 @@
 
             INSERT INTO petmate.users (avatar_path, bio, birth_date, city, email, first_name, gender, last_name, password, region,
                                        registration_date_time, user_role_id, account_non_locked)
-            VALUES ('/img/user1.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2023-01-07', 'Chisinau',
+            VALUES ('/img/user1.jpeg', 'Animal lover and advocate for pet adoption. Enthusiastic about creating a better world for our furry friends.', '2000-05-15', 'Chisinau',
                     'mary.wolf@gmail.com', 'Mary', 'F', 'Wolf', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT),
-                    ( '/img/user3.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2023-01-07', 'Chisinau',
+                   ('/img/user3.jpeg', 'Tech enthusiast and coffee lover. Always looking for new coding challenges and enjoying a good cup of joe.', '1995-08-22', 'Chisinau',
                     'john.smith@gmail.com', 'John', 'M', 'Smith', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT),
-                    ( '/img/user2.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2023-01-07', 'Chisinau',
-                     'valeria.grosu@gmail.com', 'Valeria', 'F', 'Grosu', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT),
-                    ( '/img/user4.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2023-01-07', 'Chisinau',
-                     'adela.mihaiescu@gmail.com', 'Adela', 'F', 'Mihaiescu', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT),
-                    ( '/img/user5.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2023-01-07', 'Chisinau',
-                     'nenea.vasea@gmail.com', 'Nenea', 'M', 'Vasea', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT),
-                    ( '/img/user6.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2023-01-07', 'Chisinau',
+                   ('/img/user2.jpeg', 'Passionate about art and design. Transforming imagination into reality, one pixel at a time.', '1992-03-10', 'Chisinau',
+                    'valeria.grosu@gmail.com', 'Valeria', 'F', 'Grosu', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT),
+                   ('/img/user4.jpeg', 'Adventure seeker and nature enthusiast. Finding joy in exploring new trails and connecting with the great outdoors.', '1988-11-28', 'Chisinau',
+                    'adela.mihaiescu@gmail.com', 'Adela', 'F', 'Mihaiescu', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT),
+                   ('/img/user5.jpeg', 'Fitness freak and health advocate. Inspiring others to lead an active lifestyle and achieve their wellness goals.', '1993-07-05', 'Chisinau',
+                    'nenea.vasea@gmail.com', 'Nenea', 'M', 'Vasea', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT),
+                   ('/img/user6.jpeg', 'Bookworm and aspiring writer. Imagination knows no bounds, and every story is an adventure waiting to be told.', '1996-02-18', 'Chisinau',
                     'ion.calugarescu@gmail.com', 'Ion', 'M', 'Calugarescu', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT),
-                   ( '/img/user7.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2023-01-07', 'Chisinau',
-                     'maria.gutu@gmail.com', 'Maria', 'F', 'Gutu', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT);
+                   ('/img/user7.jpeg', 'Music enthusiast and dreamer. Believes in the power of melodies to create moments that last a lifetime.', '1990-09-14', 'Chisinau',
+                    'maria.gutu@gmail.com', 'Maria', 'F', 'Gutu', '$2a$05$ywBND.LXrdGwl7//REf0c.n39cHpXb/S/KhMp9IrHPAge18EdGmji', 'Chisinau', '2023-10-10 22:43:59', 2, DEFAULT);
+
 
 
             INSERT INTO petmate.pets (adding_date, avatar_path, bio, birth_date, city, gender, nickname, region, breed_id, user_id)
-            VALUES('2023-10-10 22:43:59', '/img/cat1.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2019-10-06', 'Chisinau', 'M', 'Nick',
-                    'Chisinau', 2, 1),
-                  ('2023-10-10 22:43:59', '/img/cat2.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2020-10-06', 'Chisinau', 'M', 'Rag',
+            VALUES('2023-10-10 22:43:59', '/img/cat1.jpeg', 'Playful and curious, Nick enjoys chasing after feather toys and lounging in sunlit spots.', '2019-10-06', 'Chisinau', 'M', 'Nick',
+                   'Chisinau', 2, 1),
+                  ('2023-10-10 22:43:59', '/img/cat2.jpeg', 'Meet Rag, a mischievous feline with a penchant for climbing and exploring high places.', '2020-10-06', 'Chisinau', 'M', 'Rag',
                    'Chisinau', 2, 2),
-                  ('2023-10-10 22:43:59', '/img/cat3.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2018-10-06', 'Chisinau', 'M', 'Nickie',
+                  ('2023-10-10 22:43:59', '/img/cat3.jpeg', 'Nickie, the sophisticated kitty, enjoys curling up with a good book (or a cozy blanket) on lazy afternoons.', '2018-10-06', 'Chisinau', 'M', 'Nickie',
                    'Chisinau', 2, 4),
-                  ('2023-10-10 22:43:59', '/img/cat4.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2021-10-06', 'Chisinau', 'M', 'Alexa',
+                  ('2023-10-10 22:43:59', '/img/cat4.jpeg', 'Alexa is a friendly cat who loves meeting new people and receiving head scratches.', '2021-10-06', 'Chisinau', 'M', 'Alexa',
                    'Chisinau', 2, 5),
-                  ('2023-10-10 22:43:59', '/img/cat5.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2020-10-06', 'Chisinau', 'M', 'Murzik',
+                  ('2023-10-10 22:43:59', '/img/cat5.jpeg', 'Murzik, the adventurous explorer, enjoys outdoor walks on a leash and discovering new scents.', '2020-10-06', 'Chisinau', 'M', 'Murzik',
                    'Chisinau', 2, 7),
 
-                  ('2023-10-10 22:43:59', '/img/dog1.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2022-10-02','Chisinau', 'M', 'Rag', 'Sharik', 1, 1),
-                  ('2023-10-10 22:43:59', '/img/dog2.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2019-10-02','Chisinau', 'F', 'Rag', 'Crowly', 1, 2),
-                  ('2023-10-10 22:43:59', '/img/dog3.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2020-10-02','Chisinau', 'M', 'Rag', 'Cutu', 1, 7),
-                  ('2023-10-10 22:43:59', '/img/dog4.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2021-10-02','Chisinau', 'F', 'Rag', 'Annie', 1, 5),
+                  ('2023-10-10 22:43:59', '/img/dog1.jpeg', 'Meet Sharik, an energetic dog who loves playing fetch and going for long runs in the park.', '2022-10-02','Chisinau', 'M', 'Rag', 'Sharik', 1, 1),
+                  ('2023-10-10 22:43:59', '/img/dog2.jpeg', 'Crowly, the friendly pup, enjoys meeting new doggy friends and cuddling up for a cozy nap.', '2019-10-02','Chisinau', 'F', 'Rag', 'Crowly', 1, 2),
+                  ('2023-10-10 22:43:59', '/img/dog3.jpeg', 'Cutu is a playful and loyal companion, always ready for an adventure or a game of tug-of-war.', '2020-10-02','Chisinau', 'M', 'Rag', 'Cutu', 1, 7),
+                  ('2023-10-10 22:43:59', '/img/dog4.jpeg', 'Annie is a sweet and gentle dog who loves cuddling on the couch and going for leisurely walks.', '2021-10-02','Chisinau', 'F', 'Rag', 'Annie', 1, 5),
 
-                  ('2023-10-10 22:43:59', '/img/parot1.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2022-10-02','Chisinau', 'M', 'Rag', 'Chisinau', 3, 1),
-                  ('2023-10-10 22:43:59', '/img/parot2.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2020-10-02','Chisinau', 'M', 'Rag', 'Chisinau', 3, 3),
-                  ('2023-10-10 22:43:59', '/img/parot3.jpeg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2021-10-02','Chisinau', 'M', 'Rag', 'Chisinau', 3, 4);
+                  ('2023-10-10 22:43:59', '/img/parot1.jpeg', 'The talkative parrot, loves mimicking sounds and engaging in lively conversations with anyone who will listen.', '2022-10-02','Chisinau', 'M', 'Rag', 'Chisinau', 3, 1),
+                  ('2023-10-10 22:43:59', '/img/parot2.jpeg', 'With his vibrant plumage, this feathered friend  is an expert at whistling catchy tunes and brightening up any room.', '2020-10-02','Chisinau', 'M', 'Rag', 'Chisinau', 3, 3),
+                  ('2023-10-10 22:43:59', '/img/parot3.jpeg', 'Meet  the playful parrot who loves showing off his acrobatic tricks and sharing laughs with his human friends.', '2021-10-02','Chisinau', 'M', 'Rag', 'Chisinau', 3, 4);
+
 
         </sql>
     </changeSet>

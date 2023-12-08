@@ -30,7 +30,7 @@
 
     .carousel-caption {
         position: absolute;
-        background-color: rgba(255,255,255, 0.5);
+        background-color: rgba(255, 255, 255, 0.5);
         padding: 20px;
         font-size: 20px;
         color: #462d21; /* Soft brown text color */
@@ -48,7 +48,7 @@
     }
 
     .dropdown-menu {
-        background-color: rgba(255,255,255, 0.6); /* White background */
+        background-color: rgba(255, 255, 255, 0.6); /* White background */
         border: none;
         text-align: center; /* Center the text */
         border-radius: 10px; /* Rounded corners */
@@ -71,85 +71,98 @@
 
 
 <div>
-<div class="btn-group">
-    <a class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Select pet
-    </a>
-    <ul class="dropdown-menu">
-        <#list personalPets as pp>
-            <li>
-                <a href="/home/${pp.id}">${pp.nickname}</a>
-            </li>
-        </#list>
-    </ul>
-</div>
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
-    <div class="carousel-inner">
-        <#list pets>
-            <div class="carousel-item active">
-                <img src="/img/picture_animals.jpeg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Select the pet for which you're seeking a partner and then click right or left</h5>
-                </div>
-<#--                <script>-->
-<#--                    var petFromId="${petFromId}";-->
-<#--                    var petToId="${petToId}";-->
-<#--                </script>-->
-                <button class="btn carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <div class="btn-group">
+        <a class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
+           aria-expanded="false">
+            Select pet
+        </a>
+        <ul class="dropdown-menu">
+            <#list personalPets as pp>
+                <li>
+                    <a href="/home/${pp.id}">${pp.nickname}</a>
+                </li>
+            </#list>
+        </ul>
+    </div>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+        <div class="carousel-inner">
+            <#list pets>
+                <div class="carousel-item active">
+                    <img src="/img/picture_animals.jpeg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Select the pet for which you're seeking a partner and then click right or left</h5>
+                    </div>
+                    <#--                <script>-->
+                    <#--                    var petFromId="${petFromId}";-->
+                    <#--                    var petToId="${petToId}";-->
+                    <#--                </script>-->
+                    <button class="btn carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next">
 
-                    <#--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="btn carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                    <#--                <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-
-            <#items as pet>
-                <div class="carousel-item">
-                <img src="${pet.avatarPath}" class="d-block mx-auto" alt="Slide 2">
-                <div class="carousel-caption d-none d-md-block text-left" >
-                    <a href="/pet/${pet.id}" ><h5> ${pet.nickname} ${pet.age} y/o</h5></a>
-
-
-<#--                    <#assign petToId= "${pet.id}" >-->
-                    <p>${pet.bio}</p>
-                </div>
-                    <button class="btn dislike-button carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" data-from="${petFrom}" data-to="${pet.id}">
+                        <#--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="btn like-button carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next"  data-from="${petFrom}" data-to="${pet.id}">
+                    <button class="btn carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next">
                         <#--                <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
                         <span class="visually-hidden">Next</span>
                     </button>
-
-<#--                    <script>-->
-<#--                        petFromId="${petFromId}";-->
-<#--                        petToId="${petToId}";-->
-<#--                    </script>-->
                 </div>
-<#--                    <input type="hidden" class="pet-to-id" value="2">-->
-<#--                    <input type="hidden" class="pet-from-id" value="${pet.id}">-->
+
+                <#items as pet>
+                    <div class="carousel-item">
+                        <img src="${pet.avatarPath}" class="d-block mx-auto" alt="Slide 2">
+                        <div class="carousel-caption d-none d-md-block text-left">
+                            <a href="/pet/${pet.id}"><h5> ${pet.nickname} ${pet.age} y/o</h5></a>
 
 
-            </#items>
+                            <#--                    <#assign petToId= "${pet.id}" >-->
+                            <p>${pet.bio}</p>
+                        </div>
+                        <#if petFrom?has_content>
+                            <button class="btn dislike-button carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleCaptions" data-bs-slide="next"
+                                    data-from="${petFrom}" data-to="${pet.id}">
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="btn like-button carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleCaptions" data-bs-slide="next"
+                                    data-from="${petFrom}" data-to="${pet.id}">
+                                <#--                <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        <#else>
+                            <button class="btn dislike-button carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleCaptions" data-bs-slide="next" data-from="null"
+                                    data-to="null">
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="btn like-button carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleCaptions" data-bs-slide="next" data-from="null"
+                                    data-to="null">
+                                <#--                <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </#if>
 
-        <#else>
-            <div class="carousel-item active">
-                <img src="/img/picture_animals.jpeg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Select the pet for which you're seeking a partner and then click right or left</h5>
+                    </div>
+
+                </#items>
+
+            <#else>
+                <div class="carousel-item active">
+                    <img src="/img/picture_animals.jpeg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Select the pet for which you're seeking a partner and then click right or left</h5>
+                    </div>
                 </div>
-            </div>
 
-        </#list>
+            </#list>
+        </div>
+
+
     </div>
-
-
 </div>
-</div>
-
 
 
 <script src="/js/like.js"></script>

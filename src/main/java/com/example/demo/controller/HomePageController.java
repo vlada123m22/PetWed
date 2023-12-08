@@ -47,8 +47,13 @@ public class HomePageController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email= authentication.getName();
         User user = userService.getUserByEmail(email);
-        model.addAttribute("pets", new ArrayList<>());
+        List<Pet> allPets = petService.allPets();
+        for (Pet p:
+             allPets) {
+            petService.computeAge(p);
+        }
         List<Pet> personalPets=petService.getPetsByUserId(user.getId());
+        model.addAttribute("pets", allPets);
         model.addAttribute("personalPets", personalPets);
         model.addAttribute("pageContent", "home-body");
         model.addAttribute("pageTitle", "Home");

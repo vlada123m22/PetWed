@@ -31,7 +31,7 @@ public class User {
     private LocalDateTime registrationDateTime;
     @Column(name = "bio")
     private String bio;
-    @Column(name = "avatar_path")
+    @Column(name = "avatar_path", columnDefinition = "VARCHAR(255) DEFAULT='/img/default_image.png'")
     private String avatarPath;
     @Column(name = "account_non_locked", columnDefinition = "BOOLEAN DEFAULT true")
     private Boolean accountNonLocked;

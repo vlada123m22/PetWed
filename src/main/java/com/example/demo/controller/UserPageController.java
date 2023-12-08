@@ -18,10 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 
 @Controller
@@ -76,7 +73,12 @@ public class UserPageController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email= authentication.getName();
         User authorisedUser = userService.getUserByEmail(email);
-        List<Pet> personalPets=petService.getPetsByUserId(authorisedUser.getId());
+        List<Pet> personalPets;
+        if (Objects.nonNull(authorisedUser)) {
+            personalPets = petService.getPetsByUserId(authorisedUser.getId());
+        } else {
+            personalPets = new ArrayList<>();
+        }
         model.addAttribute("personalPets", personalPets);
         model.addAttribute("pets", pets);
         model.addAttribute("user", user);

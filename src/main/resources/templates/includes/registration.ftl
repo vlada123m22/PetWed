@@ -22,13 +22,16 @@
                         <input name="city" type="text" class="form-control" id="City" placeholder="City">
                     </div>
                     <div class="mb-3">
+                        <input name="gender" type="text" class="form-control" id="City" placeholder="Gender">
+                    </div>
+                    <div class="mb-3">
+                        <input name="birthDate" type="date" class="form-control" id="City" placeholder="Date of birth">
+                    </div>
+                    <div class="mb-3">
                         <input name="password" type="password" class="form-control" id="password" placeholder="Password">
                     </div>
                     <div class="mb-3">
                         <input name="passwordForCheck" type="password" class="form-control" id="passwordCheck" placeholder="Confirm Password">
-                    </div>
-                    <div class="mb-3">
-                        <input id="file" type="file">
                     </div>
                     <div id="submitButton" class="text-center">
                             <input type="submit" value="Create Account" class="btn btn-primary px-5 mb-5 w-100" style="background-color: #E28E9E; border: 2px solid #E28E9E; text-decoration: underline; font-size: 18px;">

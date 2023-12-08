@@ -43,6 +43,7 @@ public class UserServiceImpl implements UserService {
         newUser.setRegion(dto.getRegion());
         newUser.setCity(dto.getCity());
         newUser.setRegistrationDateTime(LocalDateTime.now());
+        newUser.setBirthDate(dto.getBirthDate());
         newUser.setPassword(passwordEncoder.encode(dto.getPassword()));
         newUser=userRepository.save(newUser);
         UserRole registered = userRoleRepository.getUserRoleByName(RoleName.REGISTERED);

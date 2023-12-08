@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <a href="/"><h2 class="text-center text-dark mt-5">Login Form</h2></a>
+            <h2 class="text-center text-dark mt-5">Login Form</h2>
             <div class="card my-5">
                 <form id="loginForm" class="card-body cardbody-color p-lg-5" action="/login" method='POST'>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

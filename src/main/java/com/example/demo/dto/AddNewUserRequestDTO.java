@@ -1,11 +1,14 @@
 package com.example.demo.dto;
 
+import java.sql.Date;
+
 public class AddNewUserRequestDTO {
     private String firstName;
     private String lastName;
     private String email;
     private String region;
     private String city;
+    private Date birthDate;
     private String password;
     private String passwordForCheck;
 
@@ -63,5 +66,13 @@ public class AddNewUserRequestDTO {
 
     public void setPasswordForCheck(String passwordForCheck) {
         this.passwordForCheck = passwordForCheck;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 }

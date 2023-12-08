@@ -3,7 +3,7 @@ package com.example.demo.dto;
 
 import com.example.demo.entity.Chat;
 
-public class ChatMessage {
+public class ChatMessageDTO {
     private Chat chat;
     private String content;
     private String sender;
